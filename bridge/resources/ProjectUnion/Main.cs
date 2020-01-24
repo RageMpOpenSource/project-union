@@ -1,9 +1,9 @@
 ﻿using GTANetworkAPI;
-using ProjectUnionFreeroam.Database;
-using ProjectUnionFreeroam.Utilities;
+using ProjectUnion.Database;
+using ProjectUnion.Utilities;
 using System;
 
-namespace ProjectUnionFreeroam
+namespace ProjectUnion
 {
     public class Main : Script
     {

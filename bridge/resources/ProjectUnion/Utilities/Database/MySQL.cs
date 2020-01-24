@@ -1,7 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 
-namespace ProjectUnionFreeroam.Database
+namespace ProjectUnion.Database
 {
     public class MySQL
     {
@@ -13,7 +13,7 @@ namespace ProjectUnionFreeroam.Database
 
 
 
-            string connectionString = "SERVER=localhost;PASSWORD=;UID=root;DATABASE=projectunionfreeroam;";
+            string connectionString = "SERVER=localhost;PASSWORD=;UID=root;DATABASE=projectunion;";
             connection = new MySqlConnection(connectionString);
             try
             {

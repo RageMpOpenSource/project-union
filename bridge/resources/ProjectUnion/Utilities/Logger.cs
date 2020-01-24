@@ -1,7 +1,7 @@
 ﻿using GTANetworkAPI;
 using System;
 
-namespace ProjectUnionFreeroam.Utilities
+namespace ProjectUnion.Utilities
 {
     public class Logger
     {

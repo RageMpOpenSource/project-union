@@ -710,3 +710,1193 @@ ProjectUnion: loading commands.. found 2 command(s)
 ProjectUnion: loaded 2 commands(s)
 -> Resource ProjectUnion started!
 Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 1:36:21 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnionFreeroam.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnionFreeroam.Player.Commands..
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loaded 2 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 1:53:28 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log ERROR] MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'projectunion' ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ContinueAuthentication(Byte[] data)
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(Boolean reset)
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at ProjectUnion.Database.MySQL.Connect() in D:\Servers\project-union\bridge\resources\ProjectUnion\Utilities\Database\MySQL.cs:line 20
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] System.InvalidOperationException: Connection must be valid and open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProjectUnion.Player.Data.PlayerDatabase.<CreateTable>d__1.MoveNext() in D:\Servers\project-union\bridge\resources\ProjectUnion\Player\Data\PlayerDatabase.cs:line 27
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loaded 2 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 1:54:10 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log ERROR] MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'projectunion' ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ContinueAuthentication(Byte[] data)
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(Boolean reset)
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at ProjectUnion.Database.MySQL.Connect() in D:\Servers\project-union\bridge\resources\ProjectUnion\Utilities\Database\MySQL.cs:line 20
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] System.InvalidOperationException: Connection must be valid and open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProjectUnion.Player.Data.PlayerDatabase.<CreateTable>d__1.MoveNext() in D:\Servers\project-union\bridge\resources\ProjectUnion\Player\Data\PlayerDatabase.cs:line 27
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loaded 2 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 1:54:33 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log ERROR] MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'projectunion' ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ContinueAuthentication(Byte[] data)
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(Boolean reset)
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at ProjectUnion.Database.MySQL.Connect() in D:\Servers\project-union\bridge\resources\ProjectUnion\Utilities\Database\MySQL.cs:line 20
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] System.InvalidOperationException: Connection must be valid and open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProjectUnion.Player.Data.PlayerDatabase.<CreateTable>d__1.MoveNext() in D:\Servers\project-union\bridge\resources\ProjectUnion\Player\Data\PlayerDatabase.cs:line 27
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loaded 2 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 1:55:16 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 6
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProjectUnion.Player.Data.PlayerDatabase.<CreateTable>d__1.MoveNext() in D:\Servers\project-union\bridge\resources\ProjectUnion\Player\Data\PlayerDatabase.cs:line 27
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loaded 2 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 1:58:01 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loaded 2 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:00:03 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND CREATE TABLE characters (
+                                id INT(6) UNSIGNE' at line 6
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProjectUnion.Player.Data.PlayerDatabase.<CreateTable>d__1.MoveNext() in D:\Servers\project-union\bridge\resources\ProjectUnion\Player\Data\PlayerDatabase.cs:line 36
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loaded 2 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:01:48 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] MySql.Data.MySqlClient.MySqlException (0x80004005): Referencing column 'owner_id' and referenced column 'id' in foreign key constraint 'characters_ibfk_1' are incompatible.
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProjectUnion.Player.Data.PlayerDatabase.<CreateTable>d__1.MoveNext() in D:\Servers\project-union\bridge\resources\ProjectUnion\Player\Data\PlayerDatabase.cs:line 35
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loaded 2 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:02:28 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProjectUnion.Player.Data.PlayerDatabase.<CreateTable>d__1.MoveNext() in D:\Servers\project-union\bridge\resources\ProjectUnion\Player\Data\PlayerDatabase.cs:line 35
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loaded 2 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:02:44 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loaded 2 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:10:08 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:10:54 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:11:32 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:12:05 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:12:52 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:13:25 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:14:06 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:14:27 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:14:42 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:15:11 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:16:29 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at ProjectUnion.Player.Data.PlayerDatabase.<CreateTable>d__1.MoveNext() in D:\Servers\project-union\bridge\resources\ProjectUnion\Player\Data\PlayerDatabase.cs:line 35
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 1 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loaded 3 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:17:18 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'users' already exists
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 1 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loaded 3 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:24:31 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'users' already exists
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loaded 3 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loaded 3 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:26:52 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'users' already exists
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loaded 3 server events(s)
+ProjectUnion: loading commands.. found 4 command(s)
+ProjectUnion: loaded 4 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:32:30 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'users' already exists
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loaded 3 server events(s)
+ProjectUnion: loading commands.. found 4 command(s)
+ProjectUnion: loaded 4 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:32:55 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'users' already exists
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loaded 3 server events(s)
+ProjectUnion: loading commands.. found 4 command(s)
+ProjectUnion: loaded 4 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:33:57 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'users' already exists
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loaded 3 server events(s)
+ProjectUnion: loading commands.. found 4 command(s)
+ProjectUnion: loaded 4 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:35:26 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'users' already exists
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loaded 3 server events(s)
+ProjectUnion: loading commands.. found 4 command(s)
+ProjectUnion: loaded 4 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:38:43 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'users' already exists
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loaded 3 server events(s)
+ProjectUnion: loading commands.. found 4 command(s)
+ProjectUnion: loaded 4 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:39:09 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'users' already exists
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loaded 3 server events(s)
+ProjectUnion: loading commands.. found 4 command(s)
+ProjectUnion: loaded 4 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:39:23 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'users' already exists
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loaded 3 server events(s)
+ProjectUnion: loading commands.. found 4 command(s)
+ProjectUnion: loaded 4 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:39:51 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'users' already exists
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loaded 3 server events(s)
+ProjectUnion: loading commands.. found 4 command(s)
+ProjectUnion: loaded 4 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:40:13 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'users' already exists
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loaded 3 server events(s)
+ProjectUnion: loading commands.. found 4 command(s)
+ProjectUnion: loaded 4 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/24/2020 2:42:00 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+ProjectUnion: instantiating ProjectUnion.Player.Commands..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'users' already exists
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loaded 3 server events(s)
+ProjectUnion: loading commands.. found 4 command(s)
+ProjectUnion: loaded 4 commands(s)
+-> Resource ProjectUnion started!
+Started! Waiting for connections..

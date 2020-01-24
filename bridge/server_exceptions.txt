@@ -347,3 +347,1620 @@ File name: 'System.Security.Principal.Windows.resources'
 System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
    at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
 =========================================================
+
+==================[1/24/2020 1:36:25 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 1:36:25 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 1:36:25 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 1:53:32 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 1:53:32 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 1:53:32 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 1:53:32 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 1:53:32 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'projectunion' ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+=========================================================
+
+==================[1/24/2020 1:53:32 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'projectunion' ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ContinueAuthentication(byte[] data)
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(bool reset)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+   at void MySql.Data.MySqlClient.Driver.Open()
+   at Driver MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+=========================================================
+
+==================[1/24/2020 1:53:32 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'projectunion' ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ContinueAuthentication(byte[] data)
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(bool reset)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+   at void MySql.Data.MySqlClient.Driver.Open()
+   at Driver MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at Driver MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+=========================================================
+
+==================[1/24/2020 1:53:32 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'projectunion' ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ContinueAuthentication(byte[] data)
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(bool reset)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+   at void MySql.Data.MySqlClient.Driver.Open()
+   at Driver MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at Driver MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at Driver MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at void MySql.Data.MySqlClient.MySqlConnection.Open()
+=========================================================
+
+==================[1/24/2020 1:53:33 PM]==================
+System.InvalidOperationException: Connection must be valid and open.
+   at void MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+=========================================================
+
+==================[1/24/2020 1:53:33 PM]==================
+System.InvalidOperationException: Connection must be valid and open.
+   at void MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at void MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at void MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 1:54:14 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 1:54:14 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 1:54:14 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 1:54:14 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 1:54:14 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'projectunion' ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+=========================================================
+
+==================[1/24/2020 1:54:14 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'projectunion' ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ContinueAuthentication(byte[] data)
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(bool reset)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+   at void MySql.Data.MySqlClient.Driver.Open()
+   at Driver MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+=========================================================
+
+==================[1/24/2020 1:54:14 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'projectunion' ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ContinueAuthentication(byte[] data)
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(bool reset)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+   at void MySql.Data.MySqlClient.Driver.Open()
+   at Driver MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at Driver MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+=========================================================
+
+==================[1/24/2020 1:54:14 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'projectunion' ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ContinueAuthentication(byte[] data)
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(bool reset)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+   at void MySql.Data.MySqlClient.Driver.Open()
+   at Driver MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at Driver MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at Driver MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at void MySql.Data.MySqlClient.MySqlConnection.Open()
+=========================================================
+
+==================[1/24/2020 1:54:14 PM]==================
+System.InvalidOperationException: Connection must be valid and open.
+   at void MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+=========================================================
+
+==================[1/24/2020 1:54:14 PM]==================
+System.InvalidOperationException: Connection must be valid and open.
+   at void MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at void MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at void MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 1:54:37 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 1:54:37 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 1:54:37 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 1:54:37 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 1:54:37 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'projectunion' ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+=========================================================
+
+==================[1/24/2020 1:54:37 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'projectunion' ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ContinueAuthentication(byte[] data)
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(bool reset)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+   at void MySql.Data.MySqlClient.Driver.Open()
+   at Driver MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+=========================================================
+
+==================[1/24/2020 1:54:37 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'projectunion' ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ContinueAuthentication(byte[] data)
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(bool reset)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+   at void MySql.Data.MySqlClient.Driver.Open()
+   at Driver MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at Driver MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+=========================================================
+
+==================[1/24/2020 1:54:37 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'projectunion' ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'projectunion'
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+   at MySqlPacket MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ContinueAuthentication(byte[] data)
+   at void MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(bool reset)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+   at void MySql.Data.MySqlClient.Driver.Open()
+   at Driver MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at Driver MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at Driver MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at void MySql.Data.MySqlClient.MySqlConnection.Open()
+=========================================================
+
+==================[1/24/2020 1:54:37 PM]==================
+System.InvalidOperationException: Connection must be valid and open.
+   at void MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+=========================================================
+
+==================[1/24/2020 1:54:37 PM]==================
+System.InvalidOperationException: Connection must be valid and open.
+   at void MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at void MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at void MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 1:55:20 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 1:55:20 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 1:55:20 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 1:55:20 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 6
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 1:55:20 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 6
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 1:55:20 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 6
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 1:55:20 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 6
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 1:55:20 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 6
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 1:58:05 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 1:58:05 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 1:58:05 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:00:07 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:00:07 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:00:07 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:00:07 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND CREATE TABLE characters (
+                                id INT(6) UNSIGNE' at line 6
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:00:07 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND CREATE TABLE characters (
+                                id INT(6) UNSIGNE' at line 6
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:00:07 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND CREATE TABLE characters (
+                                id INT(6) UNSIGNE' at line 6
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:00:07 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND CREATE TABLE characters (
+                                id INT(6) UNSIGNE' at line 6
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:00:07 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND CREATE TABLE characters (
+                                id INT(6) UNSIGNE' at line 6
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 2:01:52 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:01:52 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:01:52 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:01:53 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Referencing column 'owner_id' and referenced column 'id' in foreign key constraint 'characters_ibfk_1' are incompatible.
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:01:53 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Referencing column 'owner_id' and referenced column 'id' in foreign key constraint 'characters_ibfk_1' are incompatible.
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:01:53 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Referencing column 'owner_id' and referenced column 'id' in foreign key constraint 'characters_ibfk_1' are incompatible.
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:01:53 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Referencing column 'owner_id' and referenced column 'id' in foreign key constraint 'characters_ibfk_1' are incompatible.
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:01:53 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Referencing column 'owner_id' and referenced column 'id' in foreign key constraint 'characters_ibfk_1' are incompatible.
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 2:02:32 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:02:32 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:02:32 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:02:32 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:02:32 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:02:32 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:02:32 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:02:32 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 2:02:48 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:02:48 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:02:48 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:10:12 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:10:12 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:10:12 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:10:12 PM]==================
+System.IO.FileNotFoundException: Could not find file 'D:\Servers\project-union\PlayerSpawnPoints.json'.
+File name: 'D:\Servers\project-union\PlayerSpawnPoints.json'
+   at SafeFileHandle System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+=========================================================
+
+==================[1/24/2020 2:10:59 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:10:59 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:10:59 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:10:59 PM]==================
+System.IO.FileNotFoundException: Could not find file 'D:\Servers\project-union\PlayerSpawnPoints.json'.
+File name: 'D:\Servers\project-union\PlayerSpawnPoints.json'
+   at SafeFileHandle System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+=========================================================
+
+==================[1/24/2020 2:11:36 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:11:36 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:11:36 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:11:36 PM]==================
+System.IO.FileNotFoundException: Could not find file 'D:\PlayerSpawnPoints.json'.
+File name: 'D:\PlayerSpawnPoints.json'
+   at SafeFileHandle System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+=========================================================
+
+==================[1/24/2020 2:12:09 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:12:09 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:12:09 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:12:09 PM]==================
+System.IO.FileNotFoundException: Could not find file 'D:\PlayerSpawnPoints.json'.
+File name: 'D:\PlayerSpawnPoints.json'
+   at SafeFileHandle System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+=========================================================
+
+==================[1/24/2020 2:12:56 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:12:56 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:12:56 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:12:56 PM]==================
+System.IO.FileNotFoundException: Could not find file 'D:\PlayerSpawnPoints.json'.
+File name: 'D:\PlayerSpawnPoints.json'
+   at SafeFileHandle System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+=========================================================
+
+==================[1/24/2020 2:13:29 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:13:29 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:13:29 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:13:29 PM]==================
+System.IO.FileNotFoundException: Could not find file 'D:\Servers\project-union\bridge\runtime\PlayerSpawnPoints.json'.
+File name: 'D:\Servers\project-union\bridge\runtime\PlayerSpawnPoints.json'
+   at SafeFileHandle System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+=========================================================
+
+==================[1/24/2020 2:14:10 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:14:10 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:14:10 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:14:10 PM]==================
+System.IO.FileNotFoundException: Could not find file 'D:\Servers\project-union\PlayerSpawnPoints.json'.
+File name: 'D:\Servers\project-union\PlayerSpawnPoints.json'
+   at SafeFileHandle System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+=========================================================
+
+==================[1/24/2020 2:14:31 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:14:31 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:14:31 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:14:31 PM]==================
+System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\Player\Events\Spawning\PlayerSpawnPoints.json'.
+   at SafeFileHandle System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+=========================================================
+
+==================[1/24/2020 2:14:46 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:14:46 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:14:46 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:14:46 PM]==================
+System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\Player\Events\Spawning\PlayerSpawnPoints.json'.
+   at SafeFileHandle System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+=========================================================
+
+==================[1/24/2020 2:15:15 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:15:15 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:15:15 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:15:15 PM]==================
+Newtonsoft.Json.JsonReaderException: Invalid character after parsing property name. Expected ':' but got: ,. Path 'Locations[0]', line 3, position 8.
+   at bool Newtonsoft.Json.JsonTextReader.ParseProperty()
+=========================================================
+
+==================[1/24/2020 2:15:15 PM]==================
+Newtonsoft.Json.JsonReaderException: Invalid character after parsing property name. Expected ':' but got: ,. Path 'Locations[0]', line 3, position 8.
+   at bool Newtonsoft.Json.JsonTextReader.ParseProperty()
+   at void Newtonsoft.Json.JsonReader.ReadAndAssert()
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, object existingValue)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, string id)
+=========================================================
+
+==================[1/24/2020 2:15:15 PM]==================
+Newtonsoft.Json.JsonReaderException: Invalid character after parsing property name. Expected ':' but got: ,. Path 'Locations[0]', line 3, position 8.
+   at bool Newtonsoft.Json.JsonTextReader.ParseProperty()
+   at void Newtonsoft.Json.JsonReader.ReadAndAssert()
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, object existingValue)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, string id)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, object existingValue, string id)
+   at bool Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, object target)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, string id)
+=========================================================
+
+==================[1/24/2020 2:15:15 PM]==================
+Newtonsoft.Json.JsonReaderException: Invalid character after parsing property name. Expected ':' but got: ,. Path 'Locations[0]', line 3, position 8.
+   at bool Newtonsoft.Json.JsonTextReader.ParseProperty()
+   at void Newtonsoft.Json.JsonReader.ReadAndAssert()
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, object existingValue)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, string id)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, object existingValue, string id)
+   at bool Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, object target)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, string id)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, object existingValue)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, bool checkAdditionalContent)
+=========================================================
+
+==================[1/24/2020 2:16:33 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:16:33 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:16:33 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:16:34 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:16:34 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:16:34 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:16:34 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:16:34 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 2:17:23 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:17:23 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:17:23 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:17:23 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:17:23 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:17:23 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:17:23 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:17:23 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 2:24:36 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:24:36 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:24:36 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:24:36 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:24:36 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:24:36 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:24:36 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:24:36 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 2:26:56 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:26:56 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:26:56 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:26:57 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:26:57 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:26:57 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:26:57 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:26:57 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 2:32:34 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:32:34 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:32:34 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:32:34 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:32:34 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:32:34 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:32:34 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:32:34 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 2:32:59 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:32:59 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:32:59 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:32:59 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:32:59 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:32:59 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:32:59 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:32:59 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 2:34:01 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:34:01 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:34:01 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:34:01 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:34:01 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:34:01 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:34:01 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:34:01 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 2:35:30 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:35:30 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:35:30 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:35:30 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:35:30 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:35:30 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:35:30 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:35:30 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 2:38:47 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:38:47 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:38:47 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:38:47 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:38:47 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:38:47 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:38:47 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:38:47 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 2:39:13 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:39:13 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:39:13 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:39:13 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:39:13 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:39:13 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:39:13 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:39:13 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 2:39:27 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:39:27 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:39:27 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:39:28 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:39:28 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:39:28 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:39:28 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:39:28 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 2:39:55 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:39:55 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:39:55 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:39:56 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:39:56 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:39:56 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:39:56 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:39:56 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 2:40:17 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:40:17 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:40:17 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:40:18 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:40:18 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:40:18 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:40:18 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:40:18 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 2:42:04 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:42:04 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 2:42:04 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 2:42:04 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 2:42:04 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 2:42:04 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 2:42:04 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 2:42:04 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
