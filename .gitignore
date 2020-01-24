@@ -8,3 +8,5 @@ bridge/runtime
 
 /plugins
 /database.sql
+/bridge/resources/ProjectUnion/bin/
+/bridge/resources/ProjectUnion/obj/

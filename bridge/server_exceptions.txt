@@ -1964,3 +1964,303 @@ MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
    at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
    at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
 =========================================================
+
+==================[1/24/2020 4:20:27 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 4:20:27 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 4:20:27 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 4:20:28 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 4:20:28 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 4:20:28 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 4:20:28 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 4:20:28 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 4:20:28 PM]==================
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at void ProjectUnion.Vehicles.WorldVehicleGenerator.GenerateVehicles() in D:\Servers\project-union\bridge\resources\ProjectUnion\Vehicles\Generator\WorldVehicleGenerator.cs:line 44
+=========================================================
+
+==================[1/24/2020 4:20:44 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 4:20:44 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 4:20:44 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 4:20:45 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 4:20:45 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 4:20:45 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 4:20:45 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 4:20:45 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 4:20:45 PM]==================
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at void ProjectUnion.Vehicles.WorldVehicleGenerator.GenerateVehicles() in D:\Servers\project-union\bridge\resources\ProjectUnion\Vehicles\Generator\WorldVehicleGenerator.cs:line 44
+=========================================================
+
+==================[1/24/2020 4:21:26 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 4:21:26 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 4:21:26 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 4:21:26 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 4:21:26 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 4:21:26 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 4:21:27 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 4:21:27 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 4:21:27 PM]==================
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at void ProjectUnion.Vehicles.WorldVehicleGenerator.GenerateVehicles() in D:\Servers\project-union\bridge\resources\ProjectUnion\Vehicles\Generator\WorldVehicleGenerator.cs:line 44
+=========================================================
+
+==================[1/24/2020 4:22:07 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 4:22:07 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 4:22:07 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 4:22:08 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 4:22:08 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 4:22:08 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 4:22:08 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 4:22:08 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/24/2020 4:23:00 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 4:23:00 PM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/24/2020 4:23:00 PM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/24/2020 4:23:00 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/24/2020 4:23:00 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/24/2020 4:23:00 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/24/2020 4:23:00 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/24/2020 4:23:00 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'users' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
