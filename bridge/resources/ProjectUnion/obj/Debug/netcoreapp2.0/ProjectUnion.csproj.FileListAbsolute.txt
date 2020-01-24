@@ -36,3 +36,5 @@ D:\Servers\project-union\bridge\resources\ProjectUnion\bin\Debug\netcoreapp2.0\r
 D:\Servers\project-union\bridge\resources\ProjectUnion\bin\Debug\netcoreapp2.0\runtimes\unix\lib\netcoreapp2.0\System.Security.Principal.Windows.dll
 D:\Servers\project-union\bridge\resources\ProjectUnion\bin\Debug\netcoreapp2.0\runtimes\win\lib\netcoreapp2.0\System.Security.Principal.Windows.dll
 D:\Servers\project-union\bridge\resources\ProjectUnion\bin\Debug\netcoreapp2.0\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll
+D:\Servers\project-union\bridge\resources\ProjectUnion\bin\Debug\netcoreapp2.0\PlayerGroups.dll
+D:\Servers\project-union\bridge\resources\ProjectUnion\bin\Debug\netcoreapp2.0\PlayerGroups.pdb

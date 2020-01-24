@@ -8,5 +8,5 @@ bridge/runtime
 
 /plugins
 /database.sql
-/bridge/resources/ProjectUnion/bin/Debug/netcoreapp2.0/
-/bridge/resources/ProjectUnion/obj/Debug/netcoreapp2.0/
+/bridge/resources/ProjectUnion/bin/Debug/netcoreapp2.0
+/bridge/resources/ProjectUnion/obj/Debug/netcoreapp2.0

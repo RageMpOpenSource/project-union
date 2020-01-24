@@ -50,5 +50,6 @@ namespace ProjectUnion.Vehicles
 
             Main.Logger.Log($"Random Vehicle Generator: Spawned {totalSpawned} out of {totalSpawnOpportunities}");
         }
+
     }
 }

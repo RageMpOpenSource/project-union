@@ -9,7 +9,8 @@
       "ProjectUnion/1.0.0": {
         "dependencies": {
           "MySql.Data": "8.0.19",
-          "Bootstrapper": "0.3.7.0"
+          "Bootstrapper": "0.3.7.0",
+          "PlayerGroups": "1.0.0.0"
         },
         "runtime": {
           "ProjectUnion.dll": {}
@@ -699,6 +700,14 @@
           }
         }
       },
+      "PlayerGroups/1.0.0.0": {
+        "runtime": {
+          "PlayerGroups.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Colorful.Console/1.2.6.0": {
         "runtime": {
           "Colorful.Console.dll": {
@@ -1206,6 +1215,11 @@
       "hashPath": "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
     },
     "Bootstrapper/0.3.7.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PlayerGroups/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

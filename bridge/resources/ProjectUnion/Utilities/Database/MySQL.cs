@@ -11,8 +11,6 @@ namespace ProjectUnion.Database
         {
             //TODO: Place connection string into config file
 
-
-
             string connectionString = "SERVER=localhost;PASSWORD=;UID=root;DATABASE=projectunion;";
             connection = new MySqlConnection(connectionString);
             try
