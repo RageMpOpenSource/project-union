@@ -1,0 +1,5 @@
+D:\Servers\project-union\bridge\resources\ProjectUnion\bin\Debug\netcoreapp3.1\ProjectUnion.deps.json
+D:\Servers\project-union\bridge\resources\ProjectUnion\bin\Debug\netcoreapp3.1\ProjectUnion.dll
+D:\Servers\project-union\bridge\resources\ProjectUnion\obj\Debug\netcoreapp3.1\ProjectUnion.csprojAssemblyReference.cache
+D:\Servers\project-union\bridge\resources\ProjectUnion\obj\Debug\netcoreapp3.1\ProjectUnion.AssemblyInfoInputs.cache
+D:\Servers\project-union\bridge\resources\ProjectUnion\obj\Debug\netcoreapp3.1\ProjectUnion.AssemblyInfo.cs

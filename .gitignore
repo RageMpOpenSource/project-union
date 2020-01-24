@@ -1,0 +1,10 @@
+bt.dat
+conf.json
+node.dll
+server.exe
+client_packages/.listcache
+bridge/runtime
+
+
+/plugins
+/database.sql
