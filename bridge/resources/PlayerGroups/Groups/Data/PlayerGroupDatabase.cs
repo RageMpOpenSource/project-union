@@ -19,7 +19,8 @@ namespace PlayerGroups
                                 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                                 name VARCHAR(255) UNIQUE NOT NULL DEFAULT 'Simple Name',
                                 color INT(255) NOT NULL DEFAULT 0,
-                                commands VARCHAR(255) NOT NULL DEFAULT ''
+                                commands VARCHAR(255) NOT NULL DEFAULT '',
+                                group_rank INT(2) UNSIGNED NOT NULL DEFAULT 1
                              );";
 
 
@@ -81,14 +82,14 @@ namespace PlayerGroups
             return false;
         }
 
-        public static async Task<long> CreateGroup(MySqlConnection connection, string groupName, System.Drawing.Color groupColor, string[] commands = null)
+        public static async Task<long> CreateGroup(MySqlConnection connection, string groupName, System.Drawing.Color groupColor, uint rank = 1, string[] commands = null)
         {
             var groupData = await GetGroupData(connection, groupName);
             if (groupData != null) return groupData.Id;
 
             if (commands == null) commands = new string[0];
 
-            var query = $@"INSERT INTO `{PLAYER_GROUPS_TABLE}` (name, color, commands) VALUES ('{groupName}', {groupColor.ToArgb()}, '{ string.Join(", ", commands)}')";
+            var query = $@"INSERT INTO `{PLAYER_GROUPS_TABLE}` (name, color, commands, group_rank) VALUES ('{groupName}', {groupColor.ToArgb()}, '{ string.Join(", ", commands)}', {rank})";
 
             using (var sqlCommand = new MySqlCommand(query, connection))
             {
@@ -105,6 +106,7 @@ namespace PlayerGroups
 
             return -1;
         }
+
 
         public static async Task<bool> RemoveAllPlayersFromGroup(MySqlConnection connection, string groupName)
         {
@@ -194,6 +196,55 @@ namespace PlayerGroups
 
             return null;
         }
+
+
+
+        public static async Task<PlayerGroupData> GetPlayerHighestRankingGroup(MySqlConnection connection, uint playerId)
+        {
+
+            var query = $@"SELECT B.* FROM {PLAYER_GROUP_ASSIGNMENT_TABLE} AS A INNER JOIN {PLAYER_GROUPS_TABLE} AS B WHERE A.player_id = {playerId} AND B.id = A.group_id";
+
+            using (var sqlCommand = new MySqlCommand(query, connection))
+            {
+                try
+                {
+                    using (var reader = await sqlCommand.ExecuteReaderAsync())
+                    {
+
+                        try
+                        {
+
+                            while (await reader.ReadAsync())
+                            {
+                                var group = new PlayerGroupData()
+                                {
+                                    Id = (uint)reader[0],
+                                    Name = reader[1].ToString(),
+                                    Color = System.Drawing.Color.FromArgb(int.Parse(reader[2].ToString())),
+                                    Commands = reader[3].ToString().Trim().Split(","),
+                                    Rank = (uint)reader[4]
+                                };
+                                return group;
+                            }
+
+                        }
+                        catch (Exception e)
+                        {
+                            NAPI.Util.ConsoleOutput(e.ToString());
+                        }
+
+
+                    }
+                }
+                catch (Exception e)
+                {
+                    NAPI.Util.ConsoleOutput(e.Message);
+                }
+            }
+
+            return null;
+        }
+
 
         public static async Task<bool> IsPlayerInGroup(MySqlConnection connection, uint playerId, string groupName)
         {

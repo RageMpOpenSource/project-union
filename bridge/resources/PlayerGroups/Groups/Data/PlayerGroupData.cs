@@ -9,5 +9,6 @@ namespace PlayerGroups.Groups.Data
         public string Name { get; set; }
         public Color Color { get; set; }
         public string[] Commands { get; set; }
+        public uint Rank { get;  set; }
     }
 }

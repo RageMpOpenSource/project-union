@@ -8,11 +8,13 @@ bridge/runtime/**
 
 plugins
 database.sql
+bridge/resources/ProjectUnion/.vs/**
 bridge/resources/ProjectUnion/bin/**
-bridge/resources/PlayerGroups/.vs/**
+bridge/resources/ProjectUnion/obj/**
+bbridge/resources/ProjectUnion/ProjectUnion.csproj
+ridge/resources/PlayerGroups/.vs/**
+bridge/resources/PlayerGroups/bin/**
 bridge/resources/PlayerGroups/obj/**
 bridge/resources/PlayerGroups/PlayerGroups.csproj
-bridge/resources/ProjectUnion/.vs/**
-bridge/resources/ProjectUnion/obj/**
 bridge/server_exceptions.txt
 bridge/server_logs.txt
