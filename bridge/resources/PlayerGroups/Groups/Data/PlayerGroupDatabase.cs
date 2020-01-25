@@ -47,9 +47,10 @@ namespace PlayerGroups
             return false;
         }
 
-        public static async Task<bool> HasCommand(MySqlConnection connection, uint groupId, string command)
+        public static async Task<bool> DoesGroupHaveCommand(MySqlConnection connection, string groupName, string command)
         {
-            var query = $@"SELECT `id`, `commands` FROM `{PLAYER_GROUPS_TABLE}` WHERE `id` = {groupId} AND `commands` LIKE '%{command}%'";
+            var groupData = await GetGroupData(connection, groupName);
+            var query = $@"SELECT `id`, `commands` FROM `{PLAYER_GROUPS_TABLE}` WHERE `id` = {groupData.Id} AND `commands` LIKE '%{command}%'";
 
             using (var sqlCommand = new MySqlCommand(query, connection))
             {
@@ -74,7 +75,7 @@ namespace PlayerGroups
             var playerGroups = await GetPlayerGroups(connection, playerId);
             foreach (var group in playerGroups)
             {
-                if (await HasCommand(connection, group.Id, command)) return true;
+                if (await DoesGroupHaveCommand(connection, group.Name, command)) return true;
             }
 
             return false;
@@ -100,9 +101,12 @@ namespace PlayerGroups
             return -1;
         }
 
-        public static async Task<bool> RemoveAllPlayersFromGroup(MySqlConnection connection, int groupId)
+        public static async Task<bool> RemoveAllPlayersFromGroup(MySqlConnection connection, string groupName)
         {
-            var query = $@"DELETE FROM `{PLAYER_GROUP_ASSIGNMENT_TABLE}` WHERE `group_id` = {groupId}";
+            var groupData = await GetGroupData(connection, groupName);
+            var query = $@"DELETE FROM `{PLAYER_GROUP_ASSIGNMENT_TABLE}` WHERE `group_id` = {groupData.Id}";
+
+
 
             using (var sqlCommand = new MySqlCommand(query, connection))
             {
@@ -144,7 +148,7 @@ namespace PlayerGroups
         public static async Task<PlayerGroupData> GetGroupData(MySqlConnection connection, string groupName)
         {
 
-            var query = $@"SELECT * FROM `{PLAYER_GROUPS_TABLE}` WHERE name = `{groupName}`";
+            var query = $@"SELECT * FROM `{PLAYER_GROUPS_TABLE}` WHERE name = '{groupName}'";
 
             using (var sqlCommand = new MySqlCommand(query, connection))
             {
@@ -231,11 +235,15 @@ namespace PlayerGroups
             return false;
         }
 
-        public static async Task<bool> AddPlayerToGroup(MySqlConnection connection, uint playerId, uint groupId)
+        public static async Task<bool> AddPlayerToGroup(MySqlConnection connection, uint playerId, string groupName)
         {
-            if (await IsPlayerInGroup(connection, playerId, groupId)) return false;
+            if (await IsPlayerInGroup(connection, playerId, groupName)) return false;
 
-            var query = $@"INSERT INTO `{PLAYER_GROUP_ASSIGNMENT_TABLE}` (group_id, player_id) VALUES ({groupId}, {playerId});";
+            var groupData = await GetGroupData(connection, groupName);
+
+
+
+            var query = $@"INSERT INTO `{PLAYER_GROUP_ASSIGNMENT_TABLE}` (group_id, player_id) VALUES ({groupData.Id}, {playerId});";
 
             using (var sqlCommand = new MySqlCommand(query, connection))
             {
@@ -254,11 +262,12 @@ namespace PlayerGroups
         }
 
 
-        public static async Task<bool> RemovePlayerFromGroup(MySqlConnection connection, uint playerId, uint groupId)
+        public static async Task<bool> RemovePlayerFromGroup(MySqlConnection connection, uint playerId, string groupName)
         {
-            if (await IsPlayerInGroup(connection, playerId, groupId) == false) return true;
+            if (await IsPlayerInGroup(connection, playerId, groupName) == false) return true;
+            var groupData = await GetGroupData(connection, groupName);
 
-            var query = $@"DELETE FROM `{PLAYER_GROUP_ASSIGNMENT_TABLE}` WHERE `player_id` = {playerId} AND `group_id` = {groupId};";
+            var query = $@"DELETE FROM `{PLAYER_GROUP_ASSIGNMENT_TABLE}` WHERE `player_id` = {playerId} AND `group_id` = {groupData.Id};";
 
             using (var sqlCommand = new MySqlCommand(query, connection))
             {
@@ -325,9 +334,10 @@ namespace PlayerGroups
             return null;
         }
 
-        public static async Task<long> RemoveGroup(MySqlConnection connection, uint groupId)
+        public static async Task<long> RemoveGroup(MySqlConnection connection, string groupName)
         {
-            var query = $@"DELETE FROM `{PLAYER_GROUPS_TABLE}` WHERE `id` = {groupId}";
+            var groupData = await GetGroupData(connection, groupName);
+            var query = $@"DELETE FROM `{PLAYER_GROUPS_TABLE}` WHERE `id` = {groupData.Id}";
 
             using (var sqlCommand = new MySqlCommand(query, connection))
             {
@@ -345,9 +355,10 @@ namespace PlayerGroups
             return -1;
         }
 
-        public static async Task<bool> AddCommandToGroup(MySqlConnection connection, uint groupId, string command)
+        public static async Task<bool> AddCommandToGroup(MySqlConnection connection, string groupName, string command)
         {
-            var query = $@"UPDATE `{PLAYER_GROUPS_TABLE}` SET `commands` = CONCAT(commands, ', {command}')  WHERE `id` = {groupId} ";
+            var groupData = await GetGroupData(connection, groupName);
+            var query = $@"UPDATE `{PLAYER_GROUPS_TABLE}` SET `commands` = CONCAT(commands, ', {command}')  WHERE `id` = {groupData.Id} ";
 
             using (var sqlCommand = new MySqlCommand(query, connection))
             {
@@ -365,9 +376,10 @@ namespace PlayerGroups
             return false;
         }
 
-        public static async Task<bool> RemoveCommandFromGroup(MySqlConnection connection, uint groupId, string command)
+        public static async Task<bool> RemoveCommandFromGroup(MySqlConnection connection, string groupName, string command)
         {
-            var query = $@"UPDATE `{PLAYER_GROUPS_TABLE}` SET `commands` = REPLACE (commands, ', {command}' , '') WHERE `id` = {groupId} ";
+            var groupData = await GetGroupData(connection, groupName);
+            var query = $@"UPDATE `{PLAYER_GROUPS_TABLE}` SET `commands` = REPLACE (commands, ', {command}' , '') WHERE `id` = {groupData.Id} ";
 
             using (var sqlCommand = new MySqlCommand(query, connection))
             {
