@@ -1,8 +1,5 @@
 ﻿using GTANetworkAPI;
 using ProjectUnion.Player.Data;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ProjectUnion.Player.Events
 {
@@ -19,5 +16,15 @@ namespace ProjectUnion.Player.Events
                 NAPI.Util.ConsoleOutput("New Player Created!");
             }
         }
+
+        [ServerEvent(Event.PlayerDisconnected)]
+        public async void OnPlayerDisconnected(Client client, DisconnectionType type, string reason)
+        {
+            var playerData = await PlayerData.GetPlayerData(client);
+            var charData = await CharacterData.GetCharacterData(client, 1);
+            charData.SpawnPosition = client.Position;
+            CharacterData.Save(charData);
+        }
+
     }
 }

@@ -11,6 +11,9 @@ namespace ProjectUnion.Player.Data
         public const string PLAYER_DATA = "PLAYER_DATA";
         public uint Id { get; set; }
 
+        //TODO: Hook up Character Id with Database [Get only one]
+        public uint CurrentCharacterId { get; set; }
+
 
         #region Database Handling
         public static async Task<PlayerData> GetPlayerData(Client client)

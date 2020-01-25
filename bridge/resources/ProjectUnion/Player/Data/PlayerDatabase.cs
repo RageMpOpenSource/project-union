@@ -21,9 +21,9 @@ namespace ProjectUnion.Player.Data
             queryString += @"CREATE TABLE characters (
                                 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                                 name VARCHAR(255) NOT NULL DEFAULT 'John Doe',
-                                position_x INT(11) NULL DEFAULT NULL,
-                                position_y INT(11) NULL DEFAULT NULL,
-                                position_z INT(11) NULL DEFAULT NULL,
+                                position_x VARCHAR(255) NULL DEFAULT NULL,
+                                position_y VARCHAR(255) NULL DEFAULT NULL,
+                                position_z VARCHAR(255) NULL DEFAULT NULL,
                                 owner_id int(6) UNSIGNED NOT NULL,
                                 cash int(6) UNSIGNED NOT NULL,
                                 FOREIGN KEY (owner_id) REFERENCES Users(id)

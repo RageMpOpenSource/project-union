@@ -7547,3 +7547,804 @@ ProjectUnion: loaded 13 commands(s)
 [Server Log] Random Vehicle Generator: Spawned 1017 out of 9876
 -> Resource ProjectUnion started!
 Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:39:13 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1001 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:41:54 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1009 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:42:25 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1044 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:43:21 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1051 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:43:37 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1025 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:44:37 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1017 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:45:53 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1050 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:46:36 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1038 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:47:39 PM
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:47:51 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1029 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:49:50 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1027 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:52:15 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1027 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:54:05 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1016 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:55:07 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1019 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:56:20 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1032 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:57:05 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1013 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:57:52 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1023 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 1/25/2020 11:59:36 PM
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting ProjectUnion resource..
+ProjectUnion: loading scripts.. found 1 script(s)
+ProjectUnion: instantiating ProjectUnion.Main..
+[Server Log] Connected SQL!
+Table 'player_groups' already exists
+ProjectUnion: instantiating ProjectUnion.Vehicles.WorldVehicleGenerator..
+ProjectUnion: instantiating ProjectUnion.Vehicles.Data.VehicleData..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Events.Spawning.Events..
+ProjectUnion: instantiating ProjectUnion.Player.Data.PlayerDatabase..
+[Server Log ERROR] Table 'characters' already exists
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupInitializer..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.AdminCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GeneralCommands..
+ProjectUnion: instantiating ProjectUnion.Player.Commands.GroupCommands..
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loading server events.. found 2 server event(s)
+ProjectUnion: loading server events.. found 3 server event(s)
+ProjectUnion: loading server events.. found 1 server event(s)
+ProjectUnion: loaded 7 server events(s)
+ProjectUnion: loading commands.. found 3 command(s)
+ProjectUnion: loading commands.. found 2 command(s)
+ProjectUnion: loading commands.. found 8 command(s)
+ProjectUnion: loaded 13 commands(s)
+[Server Log] Random Vehicle Generator: Spawned 1039 out of 9876
+-> Resource ProjectUnion started!
+Started! Waiting for connections..

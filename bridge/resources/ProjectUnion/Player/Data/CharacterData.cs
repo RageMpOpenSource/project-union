@@ -20,6 +20,8 @@ namespace ProjectUnion.Player.Data
         public string Name { get; set; }
         /// <summary>Private attribute for spawning a character.</summary>
         private Vector3 _spawnPosition;
+
+
         /// <summary>
         /// This holds the position of the character's spawn location.
         /// <returns>The getter gets the <see cref="Vector3"/> last updated spawn poosition.</returns>
@@ -60,7 +62,26 @@ namespace ProjectUnion.Player.Data
 
 
         #region Database 
-        public static async Task<CharacterData> GetCharacterData(Client client, int characterId)
+        public static async void Save(CharacterData data)
+        {
+            var query = $"UPDATE characters SET position_x='{data.SpawnPosition.X.ToString()}', position_y='{data.SpawnPosition.Y.ToString()}', position_z='{data.SpawnPosition.Z.ToString()}' WHERE id = {data.Id}";
+            using (MySqlCommand mySqlCommand = new MySqlCommand(query, Database.MySQL.connection))
+            {
+                try
+                {
+                    await mySqlCommand.ExecuteNonQueryAsync();
+                }
+                catch (Exception e)
+                {
+                    Main.Logger.LogError(e.Message);
+                }
+
+            }
+        }
+
+
+
+        public static async Task<CharacterData> GetCharacterData(Client client, uint characterId)
         {
             var playerData = await PlayerData.GetPlayerData(client);
             var query = $"SELECT * FROM characters WHERE owner_id={playerData.Id} AND id ={characterId} LIMIT 1";
@@ -70,7 +91,12 @@ namespace ProjectUnion.Player.Data
                 {
                     if (reader.Read())
                     {
-                        var pos = new Vector3((float)reader[2], (float)reader[3], (float)reader[4]);
+                        Vector3 pos = null;
+                        if (string.IsNullOrEmpty(reader[2].ToString()) == false)
+                        {
+                            pos = new Vector3(float.Parse(reader[2].ToString()), float.Parse(reader[3].ToString()), float.Parse(reader[4].ToString()));
+                        }
+
 
                         return new CharacterData()
                         {
@@ -101,7 +127,7 @@ namespace ProjectUnion.Player.Data
                 try
                 {
                     await mySqlCommand.ExecuteNonQueryAsync();
-                    return await GetCharacterData(client, (int)mySqlCommand.LastInsertedId);
+                    return await GetCharacterData(client, (uint)mySqlCommand.LastInsertedId);
                 }
                 catch (Exception e)
                 {

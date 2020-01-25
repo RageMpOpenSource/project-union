@@ -1,4 +1,5 @@
 ﻿using GTANetworkAPI;
+using ProjectUnion.Player.Data;
 using System;
 using System.IO;
 
@@ -36,11 +37,20 @@ namespace ProjectUnion.Player.Events.Spawning
         }
 
         [ServerEvent(Event.PlayerConnected)]
-        public void OnPlayerConnected(Client client)
+        public async void OnPlayerConnected(Client client)
         {
-            var spawnPoint = spawnPositions.Locations[Main.Random.Next(spawnPositions.Locations.Length)];
-            var pos = new Vector3(spawnPoint.X, spawnPoint.Y, spawnPoint.Z);
-            NAPI.Player.SpawnPlayer(client, pos, spawnPoint.Heading);
+            var playerData = await PlayerData.GetPlayerData(client);
+            var charData = await CharacterData.GetCharacterData(client, 1);
+            if (charData.SpawnPosition == null)
+            {
+                var spawnPoint = spawnPositions.Locations[Main.Random.Next(spawnPositions.Locations.Length)];
+                var pos = new Vector3(spawnPoint.X, spawnPoint.Y, spawnPoint.Z);
+                NAPI.Player.SpawnPlayer(client, pos, spawnPoint.Heading);
+            }
+            else
+            {
+                NAPI.Player.SpawnPlayer(client, charData.SpawnPosition, 0);
+            }
         }
 
         [ServerEvent(Event.PlayerDeath)]
