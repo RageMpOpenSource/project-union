@@ -81,8 +81,13 @@ namespace PlayerGroups
             return false;
         }
 
-        public static async Task<long> CreateGroup(MySqlConnection connection, string groupName, System.Drawing.Color groupColor, string[] commands)
+        public static async Task<long> CreateGroup(MySqlConnection connection, string groupName, System.Drawing.Color groupColor, string[] commands = null)
         {
+            var groupData = await GetGroupData(connection, groupName);
+            if (groupData != null) return groupData.Id;
+
+            if (commands == null) commands = new string[0];
+
             var query = $@"INSERT INTO `{PLAYER_GROUPS_TABLE}` (name, color, commands) VALUES ('{groupName}', {groupColor.ToArgb()}, '{ string.Join(", ", commands)}')";
 
             using (var sqlCommand = new MySqlCommand(query, connection))
@@ -334,9 +339,11 @@ namespace PlayerGroups
             return null;
         }
 
-        public static async Task<long> RemoveGroup(MySqlConnection connection, string groupName)
+        public static async Task<long> DeleteGroup(MySqlConnection connection, string groupName)
         {
             var groupData = await GetGroupData(connection, groupName);
+            if (groupData == null) return -1;
+
             var query = $@"DELETE FROM `{PLAYER_GROUPS_TABLE}` WHERE `id` = {groupData.Id}";
 
             using (var sqlCommand = new MySqlCommand(query, connection))
@@ -358,6 +365,7 @@ namespace PlayerGroups
         public static async Task<bool> AddCommandToGroup(MySqlConnection connection, string groupName, string command)
         {
             var groupData = await GetGroupData(connection, groupName);
+            if (Array.IndexOf(groupData.Commands, command) > -1) return true;
             var query = $@"UPDATE `{PLAYER_GROUPS_TABLE}` SET `commands` = CONCAT(commands, ', {command}')  WHERE `id` = {groupData.Id} ";
 
             using (var sqlCommand = new MySqlCommand(query, connection))
@@ -376,9 +384,33 @@ namespace PlayerGroups
             return false;
         }
 
+        public static async Task<bool> AddCommandsToGroup(MySqlConnection connection, string groupName, string[] commands)
+        {
+            foreach (var command in commands)
+            {
+                await AddCommandToGroup(connection, groupName, command);
+            }
+
+            return true;
+        }
+
+
+        public static async Task<bool> RemoveCommandsFromGroup(MySqlConnection connection, string groupName, string[] commands)
+        {
+            foreach (var command in commands)
+            {
+                await RemoveCommandFromGroup(connection, groupName, command);
+            }
+
+            return true;
+        }
+
+
+
         public static async Task<bool> RemoveCommandFromGroup(MySqlConnection connection, string groupName, string command)
         {
             var groupData = await GetGroupData(connection, groupName);
+            if (Array.IndexOf(groupData.Commands, command) == -1) return false;
             var query = $@"UPDATE `{PLAYER_GROUPS_TABLE}` SET `commands` = REPLACE (commands, ', {command}' , '') WHERE `id` = {groupData.Id} ";
 
             using (var sqlCommand = new MySqlCommand(query, connection))
