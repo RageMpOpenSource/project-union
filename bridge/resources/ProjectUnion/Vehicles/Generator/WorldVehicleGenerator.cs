@@ -10,11 +10,14 @@ namespace ProjectUnion.Vehicles
     {
         private class VehicleSpawnData
         {
+// TO-DO: Use a constructor to remove the CS0649 warning, then remove the pragma. //
+#pragma warning disable 649
             public float X;
             public float Y;
             public float Z;
             public float Heading;
             public string[] Models;
+#pragma warning restore 649
         }
 
         private readonly VehicleSpawnData[] allVehicleSpawnData;
