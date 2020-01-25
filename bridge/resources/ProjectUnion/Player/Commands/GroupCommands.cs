@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace ProjectUnion.Player.Commands
 {
-    public class GroupCommands : Script
+    public class GroupCommands : Script, ICommands
     {
         public static readonly List<string> AllGroupCommands = new List<string> { CREATE_GROUP_COMMAND, DELETE_GROUP_COMMAND, ADD_COMMAND_TO_GROUP_COMMAND, REVOKE_COMMAND_TO_GROUP_COMMAND };
 
-        public const string CREATE_GROUP_COMMAND = "creategroup";
-        public const string DELETE_GROUP_COMMAND = "deletegroup";
-        public const string ADD_COMMAND_TO_GROUP_COMMAND = "addgroupcommand";
-        public const string REVOKE_COMMAND_TO_GROUP_COMMAND = "revokegroupcommand";
+        public const string CREATE_GROUP_COMMAND = "groupcreate";
+        public const string DELETE_GROUP_COMMAND = "groupdelete";
+        public const string ADD_COMMAND_TO_GROUP_COMMAND = "groupaddcommand";
+        public const string REVOKE_COMMAND_TO_GROUP_COMMAND = "grouprevokecommand";
+
+        public const string ADD_PLAYER_TO_GROUP_COMMAND = "groupaddplayer";
+        public const string REMOVE_PLAYER_FROM_GROUP_COMMAND = "groupremoveplayer";
 
         public async Task<bool> VerifyGroup(Client client, string groupName, bool exists)
         {
@@ -85,6 +88,15 @@ namespace ProjectUnion.Player.Commands
             NAPI.Chat.SendChatMessageToPlayer(client, $"Group {groupName} has been removed.");
         }
 
+        List<string> ICommands.GetAllCommands()
+        {
+            return AllGroupCommands;
+        }
 
+        void ICommands.GetCommandHelpResponse(out string title, out List<string> commands)
+        {
+            title = "Group Commands Help: \n";
+            commands = AllGroupCommands;
+        }
     }
 }
