@@ -14,3 +14,5 @@ bridge/resources/PlayerGroups/obj/*
 bridge/resources/PlayerGroups/PlayerGroups.csproj
 bridge/resources/ProjectUnion/.vs/**
 bridge/resources/ProjectUnion/obj/**
+bridge/server_exceptions.txt
+bridge/server_logs.txt

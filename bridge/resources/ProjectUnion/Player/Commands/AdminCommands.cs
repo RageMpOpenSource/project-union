@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ProjectUnion.Player.Commands
 {
-    public class AdminCommands : Script, ICommands
+    public class AdminCommands : Script
     {
 
         public static readonly List<string> AllAdminCommands = new List<string> { COMMAND_FREEZE, COMMAND_UNFREEZE, COMMAND_KICK, COMMAND_INVISIBLE, COMMAND_VISIBLE, COMMAND_TELEPORT };
@@ -30,24 +30,12 @@ namespace ProjectUnion.Player.Commands
             NAPI.ClientEvent.TriggerClientEvent(target, "FreezePlayer", false, client.Name);
         }
 
-        [Command("helpadmin")]
+
+        [Command("adminhelp")]
         public void CMD_HelpAdminResponse(Client client)
         {
-            var title = "";
-            var commands = new List<string>();
-            GetCommandHelpResponse(out title, out commands);
-            CommandUtilities.WriteHelpResponse(client, title, commands);
+            CommandUtilities.WriteHelpResponse(client, "Admin Commands Help:", AllAdminCommands);
         }
 
-        public List<string> GetAllCommands()
-        {
-            return AllAdminCommands;
-        }
-
-        public void GetCommandHelpResponse(out string title, out List<string> commands)
-        {
-            title = "Admin Commands Help: \n";
-            commands = AllAdminCommands;
-        }
     }
 }

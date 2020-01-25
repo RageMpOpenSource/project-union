@@ -29,7 +29,7 @@ namespace ProjectUnion.Player.Commands
 
         public static async void WriteHelpResponse(Client client, string title, List<string> commands)
         {
-            var response = title;
+            var response = "";
 
             var totalCommands = 0;
             for (int i = 0; i < commands.Count; i++)
@@ -51,8 +51,8 @@ namespace ProjectUnion.Player.Commands
                 response += "You do not have access to any of these commands.";
             }
 
+            NAPI.Chat.SendChatMessageToPlayer(client, title);
             NAPI.Chat.SendChatMessageToPlayer(client, response);
-            NAPI.Util.ConsoleOutput($"{response}");
         }
     }
 }

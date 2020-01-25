@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectUnion.Player.Commands
 {
-    public class GroupCommands : Script, ICommands
+    public class GroupCommands : Script
     {
         public static readonly List<string> AllGroupCommands = new List<string> { CREATE_GROUP_COMMAND, DELETE_GROUP_COMMAND, ADD_COMMAND_TO_GROUP_COMMAND, REVOKE_COMMAND_TO_GROUP_COMMAND };
 
@@ -88,15 +88,14 @@ namespace ProjectUnion.Player.Commands
             NAPI.Chat.SendChatMessageToPlayer(client, $"Group {groupName} has been removed.");
         }
 
-        List<string> ICommands.GetAllCommands()
+
+
+        [Command("grouphelp")]
+        public void CMD_HelpAdminResponse(Client client)
         {
-            return AllGroupCommands;
+            CommandUtilities.WriteHelpResponse(client, "Group Commands Help:", AllGroupCommands);
         }
 
-        void ICommands.GetCommandHelpResponse(out string title, out List<string> commands)
-        {
-            title = "Group Commands Help: \n";
-            commands = AllGroupCommands;
-        }
+     
     }
 }
