@@ -10,7 +10,7 @@ plugins
 database.sql
 bridge/resources/ProjectUnion/bin/**
 bridge/resources/PlayerGroups/.vs/**
-bridge/resources/PlayerGroups/obj/*
+bridge/resources/PlayerGroups/obj/**
 bridge/resources/PlayerGroups/PlayerGroups.csproj
 bridge/resources/ProjectUnion/.vs/**
 bridge/resources/ProjectUnion/obj/**
