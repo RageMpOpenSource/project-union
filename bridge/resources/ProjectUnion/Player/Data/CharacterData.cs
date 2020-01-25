@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Threading.Tasks;
 using GTANetworkAPI;
+using MySql.Data.MySqlClient;
 
 namespace ProjectUnion.Player.Data
 {
@@ -12,9 +14,10 @@ namespace ProjectUnion.Player.Data
     public class CharacterData
     {
         /// <summary>The SQL ID for a character is stored in this attribute.</summary>
-        public int Id { get; set; }
+        public uint Id { get; set; }
         /// <summary>The Master account ID which is linked to the current character is stored in this attribute.</summary>
-        public int PlayerId { get; set; }
+        public uint PlayerId { get; set; }
+        public string Name { get; set; }
         /// <summary>Private attribute for spawning a character.</summary>
         private Vector3 _spawnPosition;
         /// <summary>
@@ -30,7 +33,6 @@ namespace ProjectUnion.Player.Data
             }
             set
             {
-                // TO-DO: make a function to save data and use it to update the location in the db //
                 this._spawnPosition = value;
             }
         }
@@ -55,5 +57,61 @@ namespace ProjectUnion.Player.Data
             }
         }
 
+
+
+        #region Database 
+        public static async Task<CharacterData> GetCharacterData(Client client, int characterId)
+        {
+            var playerData = await PlayerData.GetPlayerData(client);
+            var query = $"SELECT * FROM characters WHERE owner_id={playerData.Id} AND id ={characterId} LIMIT 1";
+            using (MySqlCommand mySqlCommand = new MySqlCommand(query, Database.MySQL.connection))
+            {
+                using (var reader = await mySqlCommand.ExecuteReaderAsync())
+                {
+                    if (reader.Read())
+                    {
+                        var pos = new Vector3((float)reader[2], (float)reader[3], (float)reader[4]);
+
+                        return new CharacterData()
+                        {
+                            Id = (uint)reader[0],
+                            Name = (string)reader[1],
+                            SpawnPosition = pos,
+                            PlayerId = (uint)reader[5],
+                            Cash = (uint)reader[6],
+
+                        };
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+        }
+
+        public async static Task<CharacterData> CreateCharacterData(Client client)
+        {
+            var playerData = await PlayerData.GetPlayerData(client);
+            var query = $"INSERT INTO characters (owner_id) VALUES ({playerData.Id});";
+
+            NAPI.Util.ConsoleOutput("CREATE CHARACTER");
+            using (MySqlCommand mySqlCommand = new MySqlCommand(query, Database.MySQL.connection))
+            {
+                try
+                {
+                    await mySqlCommand.ExecuteNonQueryAsync();
+                    return await GetCharacterData(client, (int)mySqlCommand.LastInsertedId);
+                }
+                catch (Exception e)
+                {
+                    Main.Logger.LogError(e.ToString());
+                }
+            }
+
+            return null;
+        }
+
+        #endregion
     }
 }
