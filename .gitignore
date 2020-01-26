@@ -23,6 +23,6 @@ bridge/client_packages/cs_packages/ClientProjectUnion/bin/**
 bridge/client_packages/cs_packages/ClientProjectUnion/obj/**
 bridge/client_packages/cs_packages/ClientProjectUnion/ClientProjectUnion.csproj
 
-bridge/server_exceptions.txt
-bridge/server_logs.txt
+bridge/**
+
 
