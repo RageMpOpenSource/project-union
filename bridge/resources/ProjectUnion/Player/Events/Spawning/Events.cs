@@ -38,7 +38,7 @@ namespace ProjectUnion.Player.Events.Spawning
 
 
         [ServerEvent(Event.PlayerDeath)]
-        public void OnPlayerDeath(Client client)
+        public void OnPlayerDeath(Client client, Client killer, uint reason)
         {
             var spawnPoint = spawnPositions.Locations[Main.Random.Next(spawnPositions.Locations.Length)];
             var pos = new Vector3(spawnPoint.X, spawnPoint.Y, spawnPoint.Z);
