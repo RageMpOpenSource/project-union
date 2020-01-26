@@ -41,13 +41,9 @@ namespace ProjectUnion.Player.Events
                 await PlayerGroups.PlayerGroupDatabase.AddPlayerToGroup(ProjectUnion.Database.MySQL.connection, playerData.Id, Config.GroupConfig.GROUP_NAME_PLAYER);
                 NAPI.Util.ConsoleOutput("New Player Created!");
             }
-
-            var allCharData = await CharacterData.GetAllCharacters(playerData.Id);
-            var characterIds = allCharData.Select(e => e.Id).ToArray();
-            var characterNames = allCharData.Select(e => e.Name).ToArray();
-
             client.SetData(PlayerData.PLAYER_DATA_ID, playerData);
-            NAPI.ClientEvent.TriggerClientEvent(client, "ShowCharacterSelectMenu", string.Join(",", characterIds), string.Join(",", characterNames));
+
+            ShowCharacterSelectScreen(client);
         }
 
         [RemoteEvent("CharacterSelected")]
@@ -70,6 +66,27 @@ namespace ProjectUnion.Player.Events
                 NAPI.Chat.SendChatMessageToPlayer(client, "Spawned at old position " + characterData.SpawnPosition);
                 NAPI.Player.SpawnPlayer(client, characterData.SpawnPosition, 0);
             }
+        }
+
+        string[] Names = new string[] { "Jack", "Tom", "Michael", "Ricky", "Steven", "Jacob" };
+
+        [RemoteEvent("CharacterCreated")]
+        public async void OnCharacterCreated(Client client)
+        {
+            var charData = await CharacterData.CreateCharacterData(client);
+            charData.Name = Names[Main.Random.Next(Names.Length - 1)];
+            CharacterData.Save(charData);
+            ShowCharacterSelectScreen(client);
+        }
+
+        private async void ShowCharacterSelectScreen(Client client)
+        {
+            var playerData = client.GetData(PlayerData.PLAYER_DATA_ID);
+            CharacterData[] allCharData = await CharacterData.GetAllCharacters(playerData.Id);
+            var characterIds = allCharData.Select(e => e.Id).ToArray();
+            var characterNames = allCharData.Select(e => e.Name).ToArray();
+            NAPI.ClientEvent.TriggerClientEvent(client, "ShowCharacterSelectMenu", string.Join(",", characterIds), string.Join(",", characterNames));
+
         }
 
         [ServerEvent(Event.PlayerDisconnected)]

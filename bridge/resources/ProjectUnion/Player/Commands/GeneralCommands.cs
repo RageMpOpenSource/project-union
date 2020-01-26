@@ -10,6 +10,12 @@ namespace ProjectUnion.Player.Commands
             NAPI.Chat.SendChatMessageToPlayer(client, $"Position {client.Position} | {client.Heading}");
         }
 
-      
+        [Command("dc")]
+        public void CMD_Disconnect(Client client)
+        {
+            NAPI.Player.KickPlayer(client, "reconnect");
+        }
+
+
     }
 }

@@ -109,7 +109,22 @@ namespace ProjectUnion.Player.Data
 
         public static async void Save(CharacterData data)
         {
-            var query = $"UPDATE characters SET position_x='{data.SpawnPosition.X.ToString()}', position_y='{data.SpawnPosition.Y.ToString()}', position_z='{data.SpawnPosition.Z.ToString()}' WHERE id = {data.Id}";
+            var query = $"UPDATE characters SET ";
+
+            query += $"name='{data.Name}'";
+
+            if (data.SpawnPosition != null)
+            {
+                query += ",";
+                query += $@"position_x='{data.SpawnPosition.X.ToString()}', 
+                            position_y='{data.SpawnPosition.Y.ToString()}',
+                            position_z='{data.SpawnPosition.Z.ToString()}'
+                            ";
+            }
+
+            query += $" WHERE id = {data.Id}";
+
+            NAPI.Util.ConsoleOutput(query);
             using (MySqlCommand mySqlCommand = new MySqlCommand(query, Database.MySQL.connection))
             {
                 try
@@ -118,7 +133,7 @@ namespace ProjectUnion.Player.Data
                 }
                 catch (Exception e)
                 {
-                    Main.Logger.LogError(e.Message);
+                    Main.Logger.LogError(e.ToString());
                 }
 
             }
