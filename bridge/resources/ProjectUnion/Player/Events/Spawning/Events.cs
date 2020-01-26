@@ -24,7 +24,7 @@ namespace ProjectUnion.Player.Events.Spawning
 
         public Events()
         {
-            var json = File.ReadAllText("./bridge/resources/ProjectUnion/Player/Events/Spawning/PlayerSpawnPoints.json");
+            var json = File.ReadAllText("./bridge/resources/ProjectUnion/Player/Events/PlayerSpawnPoints.json");
             spawnPositions = NAPI.Util.FromJson<PlayerSpawnPoints>(json);
         }
 
@@ -36,22 +36,6 @@ namespace ProjectUnion.Player.Events.Spawning
             NAPI.Server.SetAutoRespawnAfterDeath(false);
         }
 
-        [ServerEvent(Event.PlayerConnected)]
-        public async void OnPlayerConnected(Client client)
-        {
-            var playerData = await PlayerData.GetPlayerData(client);
-            var charData = await CharacterData.GetCharacterData(client, 1);
-            if (charData.SpawnPosition == null)
-            {
-                var spawnPoint = spawnPositions.Locations[Main.Random.Next(spawnPositions.Locations.Length)];
-                var pos = new Vector3(spawnPoint.X, spawnPoint.Y, spawnPoint.Z);
-                NAPI.Player.SpawnPlayer(client, pos, spawnPoint.Heading);
-            }
-            else
-            {
-                NAPI.Player.SpawnPlayer(client, charData.SpawnPosition, 0);
-            }
-        }
 
         [ServerEvent(Event.PlayerDeath)]
         public void OnPlayerDeath(Client client)

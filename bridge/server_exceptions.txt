@@ -19978,3 +19978,2221 @@ MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already e
    at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
    at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
 =========================================================
+
+==================[1/26/2020 10:08:00 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:08:03 AM]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:08:03 AM]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:08:03 AM]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:08:03 AM]==================
+System.AggregateException: One or more errors occurred. (No connection could be made because the target machine actively refused it 127.0.0.1:3306) ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)
+   --- End of inner exception stack trace ---
+   at void System.Threading.Tasks.Task.ThrowIfExceptional(bool includeTaskCanceledExceptions)
+---> (Inner Exception #0) System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)<---
+
+=========================================================
+
+==================[1/26/2020 10:08:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: One or more errors occurred. (No connection could be made because the target machine actively refused it 127.0.0.1:3306) ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)
+   --- End of inner exception stack trace ---
+   at void System.Threading.Tasks.Task.ThrowIfExceptional(bool includeTaskCanceledExceptions)
+   at bool System.Threading.Tasks.Task.Wait(int millisecondsTimeout, CancellationToken cancellationToken)
+   at Stream MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Inner Exception #0) System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)<---
+
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+=========================================================
+
+==================[1/26/2020 10:08:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: One or more errors occurred. (No connection could be made because the target machine actively refused it 127.0.0.1:3306) ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)
+   --- End of inner exception stack trace ---
+   at void System.Threading.Tasks.Task.ThrowIfExceptional(bool includeTaskCanceledExceptions)
+   at bool System.Threading.Tasks.Task.Wait(int millisecondsTimeout, CancellationToken cancellationToken)
+   at Stream MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Inner Exception #0) System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)<---
+
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+   at void MySql.Data.MySqlClient.Driver.Open()
+   at Driver MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+=========================================================
+
+==================[1/26/2020 10:08:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: One or more errors occurred. (No connection could be made because the target machine actively refused it 127.0.0.1:3306) ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)
+   --- End of inner exception stack trace ---
+   at void System.Threading.Tasks.Task.ThrowIfExceptional(bool includeTaskCanceledExceptions)
+   at bool System.Threading.Tasks.Task.Wait(int millisecondsTimeout, CancellationToken cancellationToken)
+   at Stream MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Inner Exception #0) System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)<---
+
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+   at void MySql.Data.MySqlClient.Driver.Open()
+   at Driver MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at Driver MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+=========================================================
+
+==================[1/26/2020 10:08:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: One or more errors occurred. (No connection could be made because the target machine actively refused it 127.0.0.1:3306) ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)
+   --- End of inner exception stack trace ---
+   at void System.Threading.Tasks.Task.ThrowIfExceptional(bool includeTaskCanceledExceptions)
+   at bool System.Threading.Tasks.Task.Wait(int millisecondsTimeout, CancellationToken cancellationToken)
+   at Stream MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Inner Exception #0) System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)<---
+
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+   at void MySql.Data.MySqlClient.Driver.Open()
+   at Driver MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at Driver MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at Driver MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at void MySql.Data.MySqlClient.MySqlConnection.Open()
+=========================================================
+
+==================[1/26/2020 10:08:03 AM]==================
+System.FormatException: Input string was not in a correct format.
+   at void System.Text.StringBuilder.FormatError()
+=========================================================
+
+==================[1/26/2020 10:08:48 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:08:50 AM]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:08:50 AM]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:08:50 AM]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:08:50 AM]==================
+System.AggregateException: One or more errors occurred. (No connection could be made because the target machine actively refused it 127.0.0.1:3306) ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)
+   --- End of inner exception stack trace ---
+   at void System.Threading.Tasks.Task.ThrowIfExceptional(bool includeTaskCanceledExceptions)
+---> (Inner Exception #0) System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)<---
+
+=========================================================
+
+==================[1/26/2020 10:08:50 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: One or more errors occurred. (No connection could be made because the target machine actively refused it 127.0.0.1:3306) ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)
+   --- End of inner exception stack trace ---
+   at void System.Threading.Tasks.Task.ThrowIfExceptional(bool includeTaskCanceledExceptions)
+   at bool System.Threading.Tasks.Task.Wait(int millisecondsTimeout, CancellationToken cancellationToken)
+   at Stream MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Inner Exception #0) System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)<---
+
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+=========================================================
+
+==================[1/26/2020 10:08:50 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: One or more errors occurred. (No connection could be made because the target machine actively refused it 127.0.0.1:3306) ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)
+   --- End of inner exception stack trace ---
+   at void System.Threading.Tasks.Task.ThrowIfExceptional(bool includeTaskCanceledExceptions)
+   at bool System.Threading.Tasks.Task.Wait(int millisecondsTimeout, CancellationToken cancellationToken)
+   at Stream MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Inner Exception #0) System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)<---
+
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+   at void MySql.Data.MySqlClient.Driver.Open()
+   at Driver MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+=========================================================
+
+==================[1/26/2020 10:08:50 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: One or more errors occurred. (No connection could be made because the target machine actively refused it 127.0.0.1:3306) ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)
+   --- End of inner exception stack trace ---
+   at void System.Threading.Tasks.Task.ThrowIfExceptional(bool includeTaskCanceledExceptions)
+   at bool System.Threading.Tasks.Task.Wait(int millisecondsTimeout, CancellationToken cancellationToken)
+   at Stream MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Inner Exception #0) System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)<---
+
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+   at void MySql.Data.MySqlClient.Driver.Open()
+   at Driver MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at Driver MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+=========================================================
+
+==================[1/26/2020 10:08:50 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: One or more errors occurred. (No connection could be made because the target machine actively refused it 127.0.0.1:3306) ---> System.Net.Internals.SocketExceptionFactory+ExtendedSocketException: No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)
+   --- End of inner exception stack trace ---
+   at void System.Threading.Tasks.Task.ThrowIfExceptional(bool includeTaskCanceledExceptions)
+   at bool System.Threading.Tasks.Task.Wait(int millisecondsTimeout, CancellationToken cancellationToken)
+   at Stream MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Inner Exception #0) System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:3306
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at bool System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(object result, MultipleAddressConnectAsyncResult context)
+   at void System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+   at void System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at void System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at Task System.Net.Sockets.TcpClient.ConnectAsync(string host, int port)+(IAsyncResult asyncResult) => { } [1]
+   at void System.Threading.Tasks.TaskFactory<TResult>.FromAsyncCoreLogic(IAsyncResult iar, Func<IAsyncResult, TResult> endFunction, Action<IAsyncResult> endAction, Task<TResult> promise, bool requiresSynchronization)<---
+
+   at void MySql.Data.MySqlClient.NativeDriver.Open()
+   at void MySql.Data.MySqlClient.Driver.Open()
+   at Driver MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at Driver MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at Driver MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at Driver MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at void MySql.Data.MySqlClient.MySqlConnection.Open()
+=========================================================
+
+==================[1/26/2020 10:08:50 AM]==================
+System.FormatException: Input string was not in a correct format.
+   at void System.Text.StringBuilder.FormatError()
+=========================================================
+
+==================[1/26/2020 10:09:02 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:09:02 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:09:02 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:09:02 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:09:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:09:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:09:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:09:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:09:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:09:04 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:09:04 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:09:04 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:09:04 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:09:04 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:17:31 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:17:31 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:17:31 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:17:31 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:17:31 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:17:31 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:17:31 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:17:31 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:17:31 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:17:32 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:17:32 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:17:32 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:17:32 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:17:32 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:20:16 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:20:16 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:20:16 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:20:16 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:20:16 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:20:17 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:20:17 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:20:17 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:20:17 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:20:17 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:20:17 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:20:17 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:20:17 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:20:17 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:20:48 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:20:48 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:20:48 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:20:48 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:20:48 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:20:48 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:20:48 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:20:48 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:20:48 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:20:49 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:20:49 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:20:49 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:20:49 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:20:49 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:28:22 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:28:22 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:28:22 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:28:22 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:28:22 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:28:22 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:28:22 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:28:22 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:28:22 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:28:23 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:28:23 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:28:23 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:28:23 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:28:23 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:31:01 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:31:02 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:31:02 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:31:02 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:31:02 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:31:02 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:31:02 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:31:02 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:31:02 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:31:02 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:31:02 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:31:02 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:31:02 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:31:02 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:31:33 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:31:33 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:31:33 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:31:33 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:31:33 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:31:33 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:31:33 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:31:33 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:31:33 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:31:34 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:31:34 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:31:34 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:31:34 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:31:34 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:33:34 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:33:34 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:33:34 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:33:34 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:33:34 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:33:34 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:33:34 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:33:34 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:33:34 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:33:35 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:33:35 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:33:35 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:33:35 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:33:35 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:34:18 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:34:18 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:34:18 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:34:18 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:34:18 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:34:18 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:34:18 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:34:18 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:34:18 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:34:19 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:34:19 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:34:19 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:34:19 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:34:19 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:34:28 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:34:28 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:34:28 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:34:28 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:34:29 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:34:29 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:34:29 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:34:29 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:34:29 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:34:29 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:34:29 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:34:29 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:34:29 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:34:29 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:35:09 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:35:09 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:35:09 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:35:09 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:35:09 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:35:09 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:35:09 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:35:09 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:35:09 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:35:10 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:35:10 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:35:10 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:35:10 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:35:10 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:38:50 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:38:51 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:38:51 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:38:51 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:38:51 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:38:51 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:38:51 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:38:51 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:38:51 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:38:51 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:38:51 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:38:51 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:38:51 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:38:51 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:44:52 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:44:52 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:44:52 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:44:52 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:44:52 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:44:52 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:44:52 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:44:52 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:44:52 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:44:53 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:44:53 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:44:53 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:44:53 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:44:53 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:46:16 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:46:16 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:46:16 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:46:16 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:46:16 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:46:16 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:46:16 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:46:16 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:46:16 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:46:17 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:46:17 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:46:17 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:46:17 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:46:17 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:48:07 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:48:07 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:48:07 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:48:07 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:48:07 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:48:07 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:48:07 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:48:07 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:48:07 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:48:08 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:48:08 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:48:08 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:48:08 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:48:08 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:48:34 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:48:34 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:48:34 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:48:34 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:48:34 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:48:34 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:48:34 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:48:34 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:48:34 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:48:35 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:48:35 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:48:35 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:48:35 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:48:35 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:52:30 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:52:31 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:52:31 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:52:31 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:52:31 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:52:31 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:52:31 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:52:31 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:52:31 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:52:32 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:52:32 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:52:32 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:52:32 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:52:32 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:54:02 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'PlayerGroups'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:54:02 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:54:02 AM]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Security.Principal.Windows.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[1/26/2020 10:54:02 AM]==================
+System.PlatformNotSupportedException: Windows Principal functionality is not supported on this platform.
+   at SafeAccessTokenHandle Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.get_InvalidHandle()
+=========================================================
+
+==================[1/26/2020 10:54:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:54:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:54:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:54:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:54:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'player_groups' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[1/26/2020 10:54:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+=========================================================
+
+==================[1/26/2020 10:54:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+=========================================================
+
+==================[1/26/2020 10:54:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+=========================================================
+
+==================[1/26/2020 10:54:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+=========================================================
+
+==================[1/26/2020 10:54:03 AM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'characters' already exists
+   at MySqlPacket MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at int MySql.Data.MySqlClient.NativeDriver.GetResult(ref int affectedRow, ref long insertedId)
+   at ResultSet MySql.Data.MySqlClient.Driver.NextResult(int statementId, bool force)
+   at bool MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySqlDataReader MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at int MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Task<int> System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================

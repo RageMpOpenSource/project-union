@@ -11,7 +11,7 @@ namespace ProjectUnion.Player.Commands
         public static async Task<bool> VerifyCommandAccess(Client client, string command)
         {
             //TODO : Player Data
-            var playerData = client.GetData(Player.Data.PlayerData.PLAYER_DATA) as PlayerData;
+            var playerData = client.GetData(Player.Data.PlayerData.PLAYER_DATA_ID) as PlayerData;
 
             //TEMP TILL PLAYER DATA IMPLEMENTED
             playerData = new PlayerData()

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using GTANetworkAPI;
 using MySql.Data.MySqlClient;
@@ -13,6 +14,8 @@ namespace ProjectUnion.Player.Data
 
     public class CharacterData
     {
+        public const string CHARACTER_DATA_ID = "CHARACTER_DATA_ID";
+
         /// <summary>The SQL ID for a character is stored in this attribute.</summary>
         public uint Id { get; set; }
         /// <summary>The Master account ID which is linked to the current character is stored in this attribute.</summary>
@@ -38,6 +41,8 @@ namespace ProjectUnion.Player.Data
                 this._spawnPosition = value;
             }
         }
+
+
         /// <summary>Contains the cash the character of the player has.</summary>
         private long _cash;
         /// <summary>
@@ -62,6 +67,46 @@ namespace ProjectUnion.Player.Data
 
 
         #region Database 
+
+        public static async Task<CharacterData[]> GetAllCharacters(uint playerId)
+        {
+            var query = $"SELECT * FROM characters WHERE owner_id={playerId} ";
+            using (MySqlCommand mySqlCommand = new MySqlCommand(query, Database.MySQL.connection))
+            {
+                using (var reader = await mySqlCommand.ExecuteReaderAsync())
+                {
+                    if (reader.HasRows)
+                    {
+                        List<CharacterData> characters = new List<CharacterData>();
+                        while (reader.Read())
+                        {
+                            Vector3 pos = null;
+                            if (string.IsNullOrEmpty(reader[2].ToString()) == false)
+                            {
+                                pos = new Vector3(float.Parse(reader[2].ToString()), float.Parse(reader[3].ToString()), float.Parse(reader[4].ToString()));
+                            }
+
+                            var charData = new CharacterData()
+                            {
+                                Id = (uint)reader[0],
+                                Name = (string)reader[1],
+                                SpawnPosition = pos,
+                                PlayerId = (uint)reader[5],
+                                Cash = (uint)reader[6],
+
+                            };
+
+                            characters.Add(charData);
+                        }
+                        return characters.ToArray();
+                    }
+                }
+            }
+
+            return null;
+        }
+
+
         public static async void Save(CharacterData data)
         {
             var query = $"UPDATE characters SET position_x='{data.SpawnPosition.X.ToString()}', position_y='{data.SpawnPosition.Y.ToString()}', position_z='{data.SpawnPosition.Z.ToString()}' WHERE id = {data.Id}";

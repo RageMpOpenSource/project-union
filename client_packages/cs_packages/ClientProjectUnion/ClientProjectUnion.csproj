@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="rage-sharp">
+      <HintPath>..\..\..\bridge\runtime\rage-sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

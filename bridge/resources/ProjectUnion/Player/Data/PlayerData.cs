@@ -8,7 +8,7 @@ namespace ProjectUnion.Player.Data
 {
     public class PlayerData
     {
-        public const string PLAYER_DATA = "PLAYER_DATA";
+        public const string PLAYER_DATA_ID = "PLAYER_DATA_ID";
         public uint Id { get; set; }
 
         //TODO: Hook up Character Id with Database [Get only one]

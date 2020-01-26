@@ -102,7 +102,7 @@ namespace ProjectUnion.Player.Commands
             //TODO: Verify player and get player data
             var targetPlayer = NAPI.Player.GetPlayerFromName(playerName);
             //TODO: Save player data from SQL
-            var targetPlayerData = targetPlayer.GetData(PlayerData.PLAYER_DATA);
+            var targetPlayerData = targetPlayer.GetData(PlayerData.PLAYER_DATA_ID);
 
             targetPlayerData = new PlayerData()
             {

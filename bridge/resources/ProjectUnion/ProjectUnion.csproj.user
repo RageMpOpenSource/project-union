@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <None Update="Player\Events\Spawning\PlayerSpawnPoints.json">
+    <None Update="Player\Events\PlayerSpawnPoints.json">
       <SubType>Component</SubType>
     </None>
   </ItemGroup>
