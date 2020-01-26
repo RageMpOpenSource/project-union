@@ -479,35 +479,5 @@ namespace PlayerGroups
 
             return false;
         }
-
-        //PlayerGroupData[] GetGroups()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //string[] GetGroupCommands()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //void AddPlayerToGroup(Client client, int groupId)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //void AddPlayerFromGroup(Client client, int groupId)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //void AddCommandToGroup(string command, int groupId)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //void RemoveCommandFromGroup(string command, int groupId)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }
