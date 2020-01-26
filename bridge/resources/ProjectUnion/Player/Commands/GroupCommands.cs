@@ -50,7 +50,7 @@ namespace ProjectUnion.Player.Commands
         {
             if (await CommandUtilities.VerifyCommandAccess(client, GET_GROUPS) == false) return;
 
-            var playerData = new PlayerData() { Id = 0 };
+            PlayerData playerData = client.GetData(PlayerData.PLAYER_DATA_ID);
 
             var groups = await PlayerGroups.PlayerGroupDatabase.GetPlayerGroups(Database.MySQL.connection, playerData.Id);
 
@@ -79,15 +79,9 @@ namespace ProjectUnion.Player.Commands
         {
             if (await CommandUtilities.VerifyCommandAccess(client, ADD_COMMAND_TO_GROUP_COMMAND) == false) return;
             if (await VerifyGroup(client, groupName, false) == false) return;
-            //TODO: Verify player and get player data
+          
             var player = NAPI.Player.GetPlayerFromName(playerName);
-            //TODO: Save player data from SQL
-            PlayerData playerData = null; //player.GetData(PlayerData.PLAYER_DATA);
-
-            playerData = new PlayerData()
-            {
-                Id = 0,
-            };
+            PlayerData playerData = player.GetData(PlayerData.PLAYER_DATA_ID);
 
             await PlayerGroups.PlayerGroupDatabase.AddPlayerToGroup(ProjectUnion.Database.MySQL.connection, playerData.Id, groupName);
             NAPI.Chat.SendChatMessageToPlayer(client, $"{playerName} has been added to {groupName}");
@@ -99,21 +93,11 @@ namespace ProjectUnion.Player.Commands
         {
             if (await CommandUtilities.VerifyCommandAccess(client, REMOVE_PLAYER_FROM_GROUP_COMMAND) == false) return;
             if (await VerifyGroup(client, groupName, false) == false) return;
-            //TODO: Verify player and get player data
+            
+            
             var targetPlayer = NAPI.Player.GetPlayerFromName(playerName);
-            //TODO: Save player data from SQL
+            var clientPlayerData = client.GetData(PlayerData.PLAYER_DATA_ID);
             var targetPlayerData = targetPlayer.GetData(PlayerData.PLAYER_DATA_ID);
-
-            targetPlayerData = new PlayerData()
-            {
-                Id = 0,
-            };
-
-            var clientPlayerData = new PlayerData()
-            {
-                Id = 0,
-            };
-
 
             var targetGroupWithHighestRank = await PlayerGroups.PlayerGroupDatabase.GetPlayerHighestRankingGroup(Database.MySQL.connection, targetPlayerData.Id);
             var clientGroupWithHighestRank = await PlayerGroups.PlayerGroupDatabase.GetPlayerHighestRankingGroup(Database.MySQL.connection, clientPlayerData.Id);
@@ -147,8 +131,8 @@ namespace ProjectUnion.Player.Commands
 
 
             await PlayerGroups.PlayerGroupDatabase.RemovePlayerFromGroup(ProjectUnion.Database.MySQL.connection, targetPlayerData.Id, groupName);
-            NAPI.Chat.SendChatMessageToPlayer(client, $"{playerName} has been removed from {groupName}");
-            NAPI.Chat.SendChatMessageToPlayer(client, $"You have been removed from {groupName} by {client.Name}");
+            NAPI.Chat.SendChatMessageToPlayer(client, $"{targetPlayer.Name} has been removed from {groupName}");
+            NAPI.Chat.SendChatMessageToPlayer(targetPlayer, $"You have been removed from {groupName} by {client.Name}");
         }
 
 

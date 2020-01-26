@@ -38,6 +38,7 @@ namespace ProjectUnion.Player.Events
             if (playerData == null)
             {
                 playerData = await PlayerData.CreatePlayerData(client);
+                await PlayerGroups.PlayerGroupDatabase.AddPlayerToGroup(ProjectUnion.Database.MySQL.connection, playerData.Id, Config.GroupConfig.GROUP_NAME_PLAYER);
                 NAPI.Util.ConsoleOutput("New Player Created!");
             }
 
@@ -72,10 +73,10 @@ namespace ProjectUnion.Player.Events
         }
 
         [ServerEvent(Event.PlayerDisconnected)]
-        public async void OnPlayerDisconnected(Client client, DisconnectionType type, string reason)
+        public void OnPlayerDisconnected(Client client, DisconnectionType type, string reason)
         {
-            var playerData = await PlayerData.GetPlayerData(client);
-            var charData = await CharacterData.GetCharacterData(client, 1);
+            var charData = client.GetData(CharacterData.CHARACTER_DATA_ID);
+            if (charData == null) return;
             charData.SpawnPosition = client.Position;
             CharacterData.Save(charData);
         }
@@ -83,7 +84,7 @@ namespace ProjectUnion.Player.Events
 
 
         [Command("savepos")]
-        public async void OnSavePos(Client client)
+        public void OnSavePos(Client client)
         {
             var charData = client.GetData(CharacterData.CHARACTER_DATA_ID);
             charData.SpawnPosition = client.Position;

@@ -1,4 +1,4 @@
-﻿using GTANetworkAPI;
+using GTANetworkAPI;
 using MySql.Data.MySqlClient;
 using PlayerGroups.Groups.Data;
 using System;
@@ -19,7 +19,7 @@ namespace PlayerGroups
                                 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                                 name VARCHAR(255) UNIQUE NOT NULL DEFAULT 'Simple Name',
                                 color INT(255) NOT NULL DEFAULT 0,
-                                commands VARCHAR(255) NOT NULL DEFAULT '',
+                                commands LONGTEXT NOT NULL DEFAULT '',
                                 group_rank INT(2) UNSIGNED NOT NULL DEFAULT 1
                              );";
 
@@ -345,7 +345,7 @@ namespace PlayerGroups
 
         public static async Task<PlayerGroupData[]> GetPlayerGroups(MySqlConnection connection, uint playerId)
         {
-            var query = $@"SELECT A.* FROM `{PLAYER_GROUPS_TABLE}` as A  INNER JOIN `{PLAYER_GROUP_ASSIGNMENT_TABLE}` as B ON B.player_id = 0 AND A.id = B.group_id";
+            var query = $@"SELECT A.* FROM `{PLAYER_GROUPS_TABLE}` as A  INNER JOIN `{PLAYER_GROUP_ASSIGNMENT_TABLE}` as B ON B.player_id = {playerId} AND A.id = B.group_id";
 
             using (var sqlCommand = new MySqlCommand(query, connection))
             {
