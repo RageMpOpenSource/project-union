@@ -1,1 +1,0 @@
-Find more resources on: https://github.com/GTANetworkDev/ExampleResources

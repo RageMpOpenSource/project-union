@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "PlayerGroups": {
-      "commandName": "Executable",
-      "executablePath": "D:\\Servers\\project-union\\server.exe",
-      "workingDirectory": "D:\\Servers\\project-union"
-    }
-  }
-}

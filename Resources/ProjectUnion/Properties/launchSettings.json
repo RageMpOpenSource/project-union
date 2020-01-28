@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "ProjectUnion": {
+      "commandName": "Executable",
+      "executablePath": "E:\\Servers\\project_union\\server.exe",
+      "workingDirectory": "E:\\Servers\\project_union"
+    }
+  }
+}
