@@ -33,7 +33,7 @@ namespace ProjectUnion.Server
                 {
                     if (isRespawnAnnounced == false && DateTime.Now.Minute == (60 - timeBeforeRespawnToAnnounceInMinutes))
                     {
-                        NAPI.Chat.SendChatMessageToAll($"Vehicles will be respawned in {(60 - timeBeforeRespawnToAnnounceInMinutes)} minutes.");
+                        NAPI.Chat.SendChatMessageToAll($"Vehicles will be respawned in {(timeBeforeRespawnToAnnounceInMinutes)} minutes.");
                         NAPI.Chat.SendChatMessageToAll($"Make sure you / park to save your vehicle's position. (or get in it to avoid respawn)");
                         isRespawnAnnounced = true;
                     }

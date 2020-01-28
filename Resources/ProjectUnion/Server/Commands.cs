@@ -31,14 +31,14 @@ namespace ProjectUnion.Server
         #region Utilities
         public async Task<bool> CanUseCommand(Client client, string command)
         {
-            var playerData = client.GetData(PlayerData.PLAYER_DATA_KEY);
+            PlayerData playerData = client.GetData(PlayerData.PLAYER_DATA_KEY);
             if (playerData == null)
             {
                 client.SendChatMessage("You are not logged in! Please reconnect.");
                 return false;
             }
 
-            var canUse = await GroupDatabase.DoesPlayerHaveCommand(playerData.Id, command);
+            bool canUse = await GroupDatabase.DoesPlayerHaveCommand(playerData.Id, command);
             if (canUse == false)
             {
                 Main.Logger.LogClient(client, "You do not have access to this command.");
@@ -66,6 +66,11 @@ namespace ProjectUnion.Server
 
         #region General Commands
 
+        [Command("pos")]
+        public void CMD_GetPosition(Client client)
+        {
+            Main.Logger.LogClient(client, $"Position: [{client.Position}]");
+        }
         [Command("dc")]
         public void Disconnect(Client client)
         {
@@ -204,6 +209,15 @@ namespace ProjectUnion.Server
 
         #endregion
 
+
+        #region Ped Commands
+        [Command("friend")]
+        public void CMD_CreatePed(Client client)
+        {
+            uint tempModel = NAPI.Util.GetHashKey("ig_ballasog");
+            NAPI.ClientEvent.TriggerClientEvent(client, "PedCreated", tempModel, client.Position, client.Heading);
+        }
+        #endregion
 
     }
 }

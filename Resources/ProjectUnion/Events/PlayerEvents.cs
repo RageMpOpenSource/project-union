@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 using System.Timers;
 
 namespace ProjectUnion.Events
@@ -13,9 +14,9 @@ namespace ProjectUnion.Events
     public class PlayerEvents : Script
     {
 
-        private readonly PlayerSpawnPoints spawnPositions;
+        private readonly PlayerSpawnPoint spawnPositions;
 
-        private class PlayerSpawnPoints
+        private class PlayerSpawnPoint
         {
             public class Vector4
             {
@@ -23,6 +24,11 @@ namespace ProjectUnion.Events
                 public float Y { get; set; }
                 public float Z { get; set; }
                 public float Heading { get; set; }
+
+                public Vector3 GetPosition()
+                {
+                    return new Vector3(X, Y, Z);
+                }
             }
 
             public Vector4[] Locations { get; set; }
@@ -41,7 +47,7 @@ namespace ProjectUnion.Events
         {
             var currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             var json = File.ReadAllText(Path.Combine(currentDirectory, "PlayerSpawnPoints.json"));
-            spawnPositions = NAPI.Util.FromJson<PlayerSpawnPoints>(json);
+            spawnPositions = NAPI.Util.FromJson<PlayerSpawnPoint>(json);
         }
 
         [ServerEvent(Event.PlayerConnected)]
@@ -57,6 +63,7 @@ namespace ProjectUnion.Events
                 Main.Logger.Log($"Last login was at {playerData.LastLogin.ToString()}");
             }
 
+            uint[] characters = await CharacterDatabase.GetCharacters(playerData.Id);
             if (playerData == null)
             {
 
@@ -77,7 +84,6 @@ namespace ProjectUnion.Events
             }
             else
             {
-                uint[] characters = await CharacterDatabase.GetCharacters(playerData.Id);
                 characterData = await CharacterDatabase.GetCharacterData(characters.First());
             }
 
@@ -85,7 +91,56 @@ namespace ProjectUnion.Events
             client.SetData(PlayerData.PLAYER_DATA_KEY, playerData);
             client.SetData(CharacterData.CHARACTER_DATA_KEY, characterData);
 
-            SpawnPlayer(client);
+            CharacterData[] charactersData = await Task.WhenAll(characters.Select(async e => await CharacterDatabase.GetCharacterData(e)));
+            string[] characterNames = charactersData.Select(e => e.Name).ToArray();
+
+            NAPI.ClientEvent.TriggerClientEvent(client, "SelectCharacter", string.Join(",", characters), string.Join(",", characterNames));
+
+            NAPI.Player.SetPlayerSkin(client, PedHash.MovAlien01);
+        }
+
+
+        [RemoteEvent("CreateCharacter")]
+        public async void CreateCharacter(Client client, object[] args)
+        {
+            PlayerData playerData = client.GetData(PlayerData.PLAYER_DATA_KEY);
+            CharacterData characterData = new CharacterData()
+            {
+                OwnerId = playerData.Id
+            };
+
+            await Data.CharacterDatabase.CreateCharacter(characterData);
+            client.SetData(CharacterData.CHARACTER_DATA_KEY, characterData);
+            var spawnPoint = GetRandomSpawnPoint();
+            UpdatePlayerPed(client, spawnPoint.GetPosition(), spawnPoint.Heading);
+        }
+
+
+        [RemoteEvent("SelectCharacter")]
+        public async void SelectCharacter(Client client, object[] args)
+        {
+            uint characterId = (uint)(int)args[0];
+            CharacterData characterData = await CharacterDatabase.GetCharacterData(characterId);
+            UpdatePlayerPed(client, characterData.GetPosition(), 0);
+        }
+
+        private void UpdatePlayerPed(Client client, Vector3 pos, float heading)
+        {
+            uint tempModel = (uint)PedHash.AviSchwartzman;
+            NAPI.ClientEvent.TriggerClientEvent(client, "StartPlayerSwitch");
+
+            System.Timers.Timer aTimer = new System.Timers.Timer();
+            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            aTimer.Interval = 100;
+            aTimer.Enabled = true;
+            void OnTimedEvent(object sender, EventArgs e)
+            {
+                NAPI.Player.SetPlayerSkin(client, tempModel);
+                client.Position = pos;
+                NAPI.ClientEvent.TriggerClientEvent(client, "StartPlayerSwitch");
+                aTimer.Stop();
+                aTimer.Dispose();
+            };
         }
 
 
@@ -98,15 +153,20 @@ namespace ProjectUnion.Events
 
             if (characterData.GetPosition() == null)
             {
-                var spawnPoint = spawnPositions.Locations[Main.Random.Next(spawnPositions.Locations.Length)];
-                var pos = new Vector3(spawnPoint.X, spawnPoint.Y, spawnPoint.Z);
-                NAPI.Player.SpawnPlayer(client, pos, spawnPoint.Heading);
+                var spawnPoint = GetRandomSpawnPoint();
+                NAPI.Player.SpawnPlayer(client, spawnPoint.GetPosition(), spawnPoint.Heading);
                 NAPI.Chat.SendChatMessageToPlayer(client, "Spawned at random pos");
             }
             else
             {
                 NAPI.Player.SpawnPlayer(client, characterData.GetPosition(), 0);
             }
+        }
+
+        private PlayerSpawnPoint.Vector4 GetRandomSpawnPoint()
+        {
+            var spawnPoint = spawnPositions.Locations[Main.Random.Next(spawnPositions.Locations.Length)];
+            return spawnPoint;
         }
 
         [ServerEvent(Event.PlayerDeath)]
