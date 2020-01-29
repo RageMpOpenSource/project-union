@@ -23,6 +23,10 @@ namespace ClientSelectCharacter
 
             createCharacterWindow = new RAGE.Ui.HtmlWindow("package://cs_packages/ClientSelectCharacter/SelectCharacter.html");
             createCharacterWindow.Active = false;
+
+
+            //TODO : Move this into it's own client package
+            RAGE.Nametags.Enabled = true;
         }
 
 
@@ -63,15 +67,22 @@ namespace ClientSelectCharacter
             UIMenuItem createCharacterButton = new UIMenuItem("Create Character");
             characterSelectionMenu.AddItem(createCharacterButton);
 
-            uint[] characterIds = (args[0].ToString()).Split(",").Select(e => UInt32.Parse(e)).ToArray();
-            uint selectedCharacterId = characterIds[0];
-            List<dynamic> characterNames = (args[1].ToString()).Split(",").ToList<dynamic>();
 
-            UIMenuListItem characterNamesList = new UIMenuListItem("Character", characterNames, 0);
-            UIMenuItem selectCharacterButton = new UIMenuItem("Select Character");
+            uint[] characterIds = null;
+            List<dynamic> characterNames = null;
+            UIMenuListItem characterNamesList = null;
+            UIMenuItem selectCharacterButton = null;
+            uint selectedCharacterId = 0;
 
-            if (characterIds.Length > 0)
+            if (string.IsNullOrEmpty(args[0].ToString()) == false)
             {
+                characterIds = (args[0].ToString()).Split(",").Select(e => UInt32.Parse(e)).ToArray();
+                characterNames = (args[1].ToString()).Split(",").ToList<dynamic>();
+                selectedCharacterId = characterIds[0];
+
+                characterNamesList = new UIMenuListItem("Character", characterNames, 0);
+                selectCharacterButton = new UIMenuItem("Select Character");
+
                 characterSelectionMenu.AddItem(characterNamesList);
                 characterSelectionMenu.AddItem(selectCharacterButton);
             }
@@ -139,7 +150,7 @@ namespace ClientSelectCharacter
 
             characterSelectionMenu.OnMenuClose += (UIMenu sender) =>
             {
-                if(sender == characterSelectionMenu)
+                if (sender == characterSelectionMenu)
                 {
                     ShowMenu();
                 }

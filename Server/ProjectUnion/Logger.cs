@@ -33,5 +33,18 @@ namespace ProjectUnion
             NAPI.Chat.SendChatMessageToPlayer(client, $"[SERVER ERROR]: {message}");
         }
 
+        public void LogAllClients(string message)
+        {
+            NAPI.Chat.SendChatMessageToAll($"[SERVER]: {message}");
+        }
+        public void LogAllClientsWarning(string message)
+        {
+            NAPI.Chat.SendChatMessageToAll(message);
+        }
+        public void LogAllClientsError(string message)
+        {
+            NAPI.Chat.SendChatMessageToAll($"[SERVER ERROR]: {message}");
+        }
+
     }
 }

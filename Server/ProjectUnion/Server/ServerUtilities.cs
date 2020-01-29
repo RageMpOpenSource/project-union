@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using GTANetworkAPI;
 using ProjectUnion.Data;
 
@@ -28,5 +31,105 @@ namespace ProjectUnion.Server
 
             return smallestIndex;
         }
+
+        public static async void SetPlayerNametag(Client client)
+        {
+
+            PlayerData playerData = client.GetData(PlayerData.PLAYER_DATA_KEY);
+            CharacterData characterData = client.GetData(CharacterData.CHARACTER_DATA_KEY);
+            GroupData highestRankedGroup = await GroupDatabase.GetPlayerHighestRankingGroup(playerData.Id);
+            
+
+
+            if (characterData == null) return;
+            client.Name = characterData.Name;
+
+            if (highestRankedGroup == null)
+            {
+                client.Name = characterData.Name;
+                NAPI.Player.SetPlayerName(client, characterData.Name);
+                return;
+            }
+
+            var hexColor = highestRankedGroup.Color;
+
+            client.Name = "[!{" + hexColor + "}" + highestRankedGroup.Name + "~w~] " + characterData.Name;
+            NAPI.Player.SetPlayerName(client, "[!{" + hexColor + "}" + highestRankedGroup.Name + "~w~] " + characterData.Name);
+        }
+
+
+        public static async Task<bool> CanUseCommand(Client client, string command)
+        {
+            PlayerData playerData = client.GetData(PlayerData.PLAYER_DATA_KEY);
+            if (playerData == null)
+            {
+                client.SendChatMessage("You are not logged in! Please reconnect.");
+                return false;
+            }
+
+            bool canUse = await GroupDatabase.DoesPlayerHaveCommand(playerData.Id, command);
+            if (canUse == false)
+            {
+                Main.Logger.LogClient(client, "You do not have access to this command.");
+                return false;
+            }
+
+            return true;
+        }
+
+        public static Client GetPlayerIfExists(Client client, string playerFirstName, string playerSurname = "")
+        {
+            var players = NAPI.Pools.GetAllPlayers();
+            var playerNames = players.Select(e => e.Name);
+
+            playerFirstName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(playerFirstName);
+
+            int playersWithSimilarFirstName = 0;
+            if (playerNames.Any(e => e.Contains(playerFirstName)))
+            {
+                playersWithSimilarFirstName++;
+            }
+
+            Client existingPlayer = null;
+
+            if (playersWithSimilarFirstName == 1)
+            {
+                foreach (var player in players)
+                {
+                    if (player.Name.IndexOf(playerFirstName) > -1)
+                    {
+                        existingPlayer = player;
+                    }
+                }
+            }
+            else
+            {
+                if (playersWithSimilarFirstName > 1)
+                {
+                    if (string.IsNullOrEmpty(playerSurname) == false)
+                    {
+                        foreach (var player in players)
+                        {
+                            if (player.Name.IndexOf(playerFirstName) > -1 && player.Name.IndexOf(playerSurname) > -1)
+                            {
+                                existingPlayer = player;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            if (existingPlayer == null)
+            {
+
+                Main.Logger.LogClient(client, $"Player {playerFirstName} not found.");
+                return null;
+            }
+
+            return existingPlayer;
+        }
+
+
     }
 }

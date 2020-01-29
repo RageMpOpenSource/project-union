@@ -11,17 +11,21 @@ namespace ProjectUnion.Server
     public class VehicleRespawner : Script
     {
 
+        private System.Threading.Timer _timer;
+
         [ServerEvent(Event.ResourceStart)]
         public void OnResourceStart()
         {
+            NAPI.Util.ConsoleOutput("Initialized veh spawner");
+
             RespawnVehicles();
 
-            int timeBeforeRespawnToAnnounceInMinutes = 15;
+            int timeBeforeRespawnToAnnounceInMinutes = 1;
             int lastHour = DateTime.Now.Hour;
             bool isRespawnAnnounced = false;
 
-
-            var checkTime = new System.Threading.Timer((e) =>
+            
+            _timer = new System.Threading.Timer((e) =>
             {
                 if (lastHour < DateTime.Now.Hour || (lastHour == 23 && DateTime.Now.Hour == 0))
                 {
@@ -33,14 +37,16 @@ namespace ProjectUnion.Server
                 {
                     if (isRespawnAnnounced == false && DateTime.Now.Minute == (60 - timeBeforeRespawnToAnnounceInMinutes))
                     {
-                        NAPI.Chat.SendChatMessageToAll($"Vehicles will be respawned in {(timeBeforeRespawnToAnnounceInMinutes)} minutes.");
-                        NAPI.Chat.SendChatMessageToAll($"Make sure you / park to save your vehicle's position. (or get in it to avoid respawn)");
+                        //TODO : Logger.LogChatAll
+                        Main.Logger.LogAllClients($"Vehicles will be respawned in {(timeBeforeRespawnToAnnounceInMinutes)} minutes.");
+                        Main.Logger.LogAllClients($"Make sure you / park to save your vehicle's position. (or get in it to avoid respawn)");
                         isRespawnAnnounced = true;
                     }
                 }
 
+                _timer.Change(1000, System.Threading.Timeout.Infinite);
+            }, null, 1000, System.Threading.Timeout.Infinite);
 
-            }, null, 0, 1000);
         }
 
         public static async void RespawnVehicles()

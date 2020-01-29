@@ -47,7 +47,6 @@ namespace ProjectUnion.Events
         public async void OnPlayerConnected(Client client)
         {
             PlayerData playerData = null;
-            CharacterData characterData = null;
 
             playerData = await Data.PlayerDatabase.GetPlayerData(client.Address);
 
@@ -56,8 +55,7 @@ namespace ProjectUnion.Events
                 Main.Logger.Log($"Last login was at {playerData.LastLogin.ToString()}");
             }
 
-            uint[] characters = await CharacterDatabase.GetCharacters(playerData.Id);
-            if (playerData == null)
+           if (playerData == null)
             {
 
                 playerData = new PlayerData()
@@ -78,6 +76,8 @@ namespace ProjectUnion.Events
             };
             client.SetData(PlayerTempData.PLAYER_TEMP_DATA_KEY, playerTempData);
 
+
+            ServerUtilities.SetPlayerNametag(client);
 
             ShowCharacterSelectScreen(client);
         }
@@ -111,6 +111,14 @@ namespace ProjectUnion.Events
 
             client.SetData(CharacterData.CHARACTER_DATA_KEY, characterData);
 
+            PlayerData playerData = client.GetData(PlayerData.PLAYER_DATA_KEY);
+            GroupData highestRankedGroup = await GroupDatabase.GetPlayerHighestRankingGroup(playerData.Id);
+
+            if (highestRankedGroup == null) return;
+            if (characterData == null) return;
+
+            ServerUtilities.SetPlayerNametag(client);
+
             UpdatePlayerPed(client, position, heading);
         }
 
@@ -121,7 +129,7 @@ namespace ProjectUnion.Events
 
             System.Timers.Timer aTimer = new System.Timers.Timer();
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 3000;
+            aTimer.Interval = 2500;
             aTimer.Enabled = true;
             void OnTimedEvent(object sender, EventArgs e)
             {

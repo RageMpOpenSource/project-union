@@ -21,6 +21,8 @@ namespace ProjectUnion
 
             //NAPI.Server.SetAutoRespawnAfterDeath(false);
             //NAPI.Server.SetAutoSpawnOnConnect(false);
+            //NAPI.Server.SetGlobalServerChat(false);
+            //NAPI.Server.SetCommandErrorMessage("");
 
             Database db = new Database();
             Connection = db.Connection;

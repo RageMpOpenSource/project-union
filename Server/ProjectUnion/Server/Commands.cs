@@ -2,6 +2,7 @@
 using ProjectUnion.Data;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProjectUnion.Server
@@ -29,38 +30,6 @@ namespace ProjectUnion.Server
 
 
         #region Utilities
-        public async Task<bool> CanUseCommand(Client client, string command)
-        {
-            PlayerData playerData = client.GetData(PlayerData.PLAYER_DATA_KEY);
-            if (playerData == null)
-            {
-                client.SendChatMessage("You are not logged in! Please reconnect.");
-                return false;
-            }
-
-            bool canUse = await GroupDatabase.DoesPlayerHaveCommand(playerData.Id, command);
-            if (canUse == false)
-            {
-                Main.Logger.LogClient(client, "You do not have access to this command.");
-                return false;
-            }
-
-            return true;
-        }
-
-        public Client GetPlayerIfExists(Client client, string playerName)
-        {
-            playerName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(playerName);
-            Client player = NAPI.Player.GetPlayerFromName(playerName);
-            if (player == null)
-            {
-
-                Main.Logger.LogClient(client, $"Player {playerName} not found.");
-                return null;
-            }
-
-            return player;
-        }
 
         #endregion
 
@@ -95,7 +64,7 @@ namespace ProjectUnion.Server
         [Command(COMMAND_VEHICLE_CREATE)]
         public async void SpawnVeh(Client client, string vehName)
         {
-            if (await CanUseCommand(client, COMMAND_VEHICLE_CREATE) == false) return;
+            if (await ServerUtilities.CanUseCommand(client, COMMAND_VEHICLE_CREATE) == false) return;
             uint vehHash = NAPI.Util.GetHashKey(vehName);
             NAPI.Vehicle.CreateVehicle(vehHash, client.Position.Around(5), client.Heading, 112, 112);
         }
@@ -107,14 +76,14 @@ namespace ProjectUnion.Server
         [Command(COMMAND_VEHICLE_RESPAWN_ALL)]
         public async void CMD_ForceRespawnVehicles(Client client)
         {
-            if (await CanUseCommand(client, COMMAND_VEHICLE_RESPAWN_ALL) == false) return;
+            if (await ServerUtilities.CanUseCommand(client, COMMAND_VEHICLE_RESPAWN_ALL) == false) return;
             VehicleRespawner.RespawnVehicles();
         }
 
         [Command(COMMAND_VEHICLE_PARK)]
         public async void CMD_ParkVehicle(Client client)
         {
-            if (await CanUseCommand(client, COMMAND_VEHICLE_PARK) == false) return;
+            if (await ServerUtilities.CanUseCommand(client, COMMAND_VEHICLE_PARK) == false) return;
             Vehicle vehicle = NAPI.Player.GetPlayerVehicle(client);
             if (vehicle == null) return;
 
@@ -143,11 +112,11 @@ namespace ProjectUnion.Server
 
 
         [Command(COMMAND_VEHICLE_SET_OWNER)]
-        public async void CMD_TakeOwnershipOfVehicle(Client client, string ownerName)
+        public async void CMD_TakeOwnershipOfVehicle(Client client, string targetFirstName, string targetSurname = "")
         {
-            if (await CanUseCommand(client, COMMAND_VEHICLE_SET_OWNER) == false) return;
+            if (await ServerUtilities.CanUseCommand(client, COMMAND_VEHICLE_SET_OWNER) == false) return;
 
-            Client owner = GetPlayerIfExists(client, ownerName);
+            Client owner = ServerUtilities.GetPlayerIfExists(client, targetFirstName, targetSurname);
             if (owner == null) return;
 
             Vehicle vehicle = NAPI.Player.GetPlayerVehicle(owner);

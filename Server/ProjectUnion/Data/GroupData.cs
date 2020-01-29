@@ -11,7 +11,7 @@ namespace ProjectUnion.Data
     {
         public uint Id { get; set; }
         public string Name { get; set; }
-        public Color Color { get; set; }
+        public string Color { get; set; }
         public string[] Commands { get; set; }
         public uint Rank { get; set; }
 
@@ -36,7 +36,7 @@ namespace ProjectUnion.Data
             var queryString = $@"CREATE TABLE IF NOT EXISTS {PLAYER_GROUPS_TABLE}(
                                 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                                 name VARCHAR(255) UNIQUE NOT NULL DEFAULT 'Simple Name',
-                                color INT(255) NOT NULL DEFAULT 0,
+                                color VARCHAR(7) NOT NULL DEFAULT '#FFFFFF',
                                 commands LONGTEXT NOT NULL DEFAULT '',
                                 group_rank INT UNSIGNED NOT NULL DEFAULT 1
                              );";
@@ -65,9 +65,9 @@ namespace ProjectUnion.Data
 
         public static async void InitializeGroups()
         {
-            await CreateGroup(Config.GROUP_NAME_ADMIN, System.Drawing.Color.LightGoldenrodYellow, 5);
-            await CreateGroup(Config.GROUP_NAME_LEAD_ADMIN, System.Drawing.Color.DarkRed, 10);
-            await CreateGroup(Config.GROUP_NAME_OWNER, System.Drawing.Color.IndianRed, 30);
+            await CreateGroup(Config.GROUP_NAME_ADMIN, "#ebac36", 5);
+            await CreateGroup(Config.GROUP_NAME_LEAD_ADMIN, "#9b1406", 10);
+            await CreateGroup(Config.GROUP_NAME_OWNER, "#971717", 30);
         }
 
         public static async Task<bool> DoesGroupHaveCommand(string groupName, string command)
@@ -104,14 +104,14 @@ namespace ProjectUnion.Data
             return false;
         }
 
-        public static async Task<long> CreateGroup(string groupName, System.Drawing.Color groupColor, uint rank = 1, string[] commands = null)
+        public static async Task<long> CreateGroup(string groupName, string  groupColor = "#ffffff", uint rank = 1, string[] commands = null)
         {
             var groupData = await GetGroupData(groupName);
             if (groupData != null) return groupData.Id;
 
             if (commands == null) commands = new string[0];
 
-            var query = $@"INSERT INTO `{PLAYER_GROUPS_TABLE}` (name, color, commands, group_rank) VALUES ('{groupName}', {groupColor.ToArgb()}, '{ string.Join(", ", commands)}', {rank})";
+            var query = $@"INSERT INTO `{PLAYER_GROUPS_TABLE}` (name, color, commands, group_rank) VALUES ('{groupName}', '{groupColor}', '{ string.Join(", ", commands)}', {rank})";
 
             using (var sqlCommand = new MySqlCommand(query, Main.Connection))
             {
@@ -196,7 +196,7 @@ namespace ProjectUnion.Data
                                     Id = (uint)reader[0],
                                     Name = reader[1].ToString(),
                                     Commands = reader[3].ToString().Trim().Split(","),
-                                    Color = ToColor(System.Drawing.Color.FromArgb(int.Parse(reader[2].ToString())))
+                                    Color = reader[2].ToString()
                                 };
                                 return group;
                             }
@@ -242,7 +242,7 @@ namespace ProjectUnion.Data
                                 {
                                     Id = (uint)reader[0],
                                     Name = reader[1].ToString(),
-                                    Color = ToColor(System.Drawing.Color.FromArgb(int.Parse(reader[2].ToString()))),
+                                    Color = reader[2].ToString(),
                                     Commands = reader[3].ToString().Trim().Split(","),
                                     Rank = (uint)reader[4]
                                 };
@@ -386,7 +386,7 @@ namespace ProjectUnion.Data
                                     Id = (uint)reader[0],
                                     Name = reader[1].ToString(),
                                     Commands = reader[3].ToString().Trim().Split(","),
-                                    Color = ToColor(System.Drawing.Color.FromArgb(int.Parse(reader[2].ToString())))
+                                    Color = reader[2].ToString()
                                 };
 
                                 groups.Add(group);

@@ -10,7 +10,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="PlayerSpawnPoints.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <CustomToolNamespace>Content</CustomToolNamespace>
     </Content>
   </ItemGroup>
