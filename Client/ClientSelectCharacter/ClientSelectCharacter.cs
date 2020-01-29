@@ -139,7 +139,10 @@ namespace ClientSelectCharacter
 
             characterSelectionMenu.OnMenuClose += (UIMenu sender) =>
             {
-                //Do not allow closing
+                if(sender == characterSelectionMenu)
+                {
+                    ShowMenu();
+                }
             };
         }
 

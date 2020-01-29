@@ -8,6 +8,12 @@ using System.Threading.Tasks;
 
 namespace ProjectUnion.Data
 {
+    public class PlayerTempData
+    {
+        public const string PLAYER_TEMP_DATA_KEY = "PLAYER_TEMP_DATA_KEY";
+        public uint LoginIndex { get; set; }
+    }
+
     public class PlayerData
     {
         public const string PLAYER_DATA_KEY = "PLAYER_DATA_KEY";

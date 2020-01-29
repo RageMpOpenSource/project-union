@@ -1,5 +1,6 @@
 ﻿using GTANetworkAPI;
 using ProjectUnion.Data;
+using ProjectUnion.Server;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -66,22 +67,17 @@ namespace ProjectUnion.Events
                 };
 
                 playerData = await Data.PlayerDatabase.CreatePlayer(playerData);
-
-                characterData = new CharacterData()
-                {
-                    OwnerId = playerData.Id
-                };
-
-                characterData = await Data.CharacterDatabase.CreateCharacter(characterData);
-            }
-            else
-            {
-                characterData = await CharacterDatabase.GetCharacterData(characters.First());
             }
 
 
             client.SetData(PlayerData.PLAYER_DATA_KEY, playerData);
-            client.SetData(CharacterData.CHARACTER_DATA_KEY, characterData);
+            
+            PlayerTempData playerTempData = new PlayerTempData()
+            {
+                LoginIndex = ServerUtilities.GetPlayerLoginIndex()
+            };
+            client.SetData(PlayerTempData.PLAYER_TEMP_DATA_KEY, playerTempData);
+
 
             ShowCharacterSelectScreen(client);
         }
@@ -112,6 +108,9 @@ namespace ProjectUnion.Events
                 heading = spawnPoint.Heading;
             }
 
+
+            client.SetData(CharacterData.CHARACTER_DATA_KEY, characterData);
+
             UpdatePlayerPed(client, position, heading);
         }
 
@@ -128,7 +127,6 @@ namespace ProjectUnion.Events
             {
                 NAPI.Player.SetPlayerSkin(client, tempModel);
                 client.Position = pos;
-                //NAPI.ClientEvent.TriggerClientEvent(client, "StartPlayerSwitch");
                 aTimer.Stop();
                 aTimer.Dispose();
             };
@@ -188,6 +186,11 @@ namespace ProjectUnion.Events
             characterData.PositionY = player.Position.Y;
             characterData.PositionZ = player.Position.Z;
             CharacterDatabase.SaveCharacter(characterData);
+
+
+            player.ResetData(PlayerData.PLAYER_DATA_KEY);
+            player.ResetData(CharacterData.CHARACTER_DATA_KEY);
+            player.ResetData(PlayerTempData.PLAYER_TEMP_DATA_KEY);
         }
 
 
