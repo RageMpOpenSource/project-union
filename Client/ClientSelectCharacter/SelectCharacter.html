@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" style ="height: 100%; width: 100%; margin: 0">
+<head>
+    <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+</head>
+<body style="display: flex; height: 100%; width: 100%; margin: 0;">
+    <form style="margin:auto; border: solid; padding: 10px;">
+        <label style="font-size:40px">Welcome!</label>
+        <br>
+        <input id="characterName" type="text" placeholder="Character Name"></input>
+        <input id="createCharacterButton" type="submit" value="Create Character"></input>
+        <input id="goBackButton" type="submit" value="Back"></input>
+        <br>
+        <small id="alertText"></small>
+    </form>
+    <script>
+
+        function CharacterNameExists(){
+            $("#alertText").text("Character name already exists!");
+        }
+
+
+    $(document).ready(() =>{
+        $("#createCharacterButton").click((e)=>{
+        e.preventDefault();
+            if($("#characterName").val() == ''){
+                $("#alertText").text("Name cannot be empty!");
+            }else{
+                mp.trigger("CharacterInfoFromCEF", $("#characterName").val());
+            }
+        });
+        $("#goBackButton").click((e)=>{
+            e.preventDefault();
+            mp.trigger("GoBackToCharacterSelection");
+        });
+    });
+    </script>
+
+</body>
+</html>

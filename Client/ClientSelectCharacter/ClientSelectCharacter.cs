@@ -9,23 +9,51 @@ namespace ClientSelectCharacter
     public class ClientSelectCharacter : Events.Script
     {
 
+        private RAGE.Ui.HtmlWindow createCharacterWindow = null;
+
         public ClientSelectCharacter()
         {
             Events.Add("SelectCharacter", ShowSelectCharacterMenu);
-            Events.Add("PedCreated", OnPedCreated);
+
+            Events.Add("ToggleCreateCharacterMenu", ToggleCreateCharacterMenu);
+            Events.Add("CharacterInfoFromCEF", SendCreateCharInfoToServer);
+            Events.Add("CharacterNameExists", OnCharacterNameExists);
+            Events.Add("GoBackToCharacterSelection", OnGoBackToCharacterSelection);
+
+
+            createCharacterWindow = new RAGE.Ui.HtmlWindow("package://cs_packages/ClientSelectCharacter/SelectCharacter.html");
+            createCharacterWindow.Active = false;
         }
 
-        private void OnPedCreated(object[] args)
+
+        private void OnGoBackToCharacterSelection(object[] args)
         {
-            RAGE.Elements.Ped ped = new RAGE.Elements.Ped(((uint)(int)args[0]), (Vector3)args[1], (float)args[2]);
+            RAGE.Events.CallRemote("GoBackToCharacterSelection");
         }
 
-        private RAGE.Elements.Ped ped = null;
+        private void OnCharacterNameExists(object[] args)
+        {
+            createCharacterWindow.ExecuteJs("CharacterNameExists()");
+        }
 
-  
+        private void SendCreateCharInfoToServer(object[] args)
+        {
+            ToggleCreateCharacterMenu(new object[] { false });
+            RAGE.Events.CallRemote("CreateCharacter", (string)args[0]);
+        }
+
+        private void ToggleCreateCharacterMenu(object[] args)
+        {
+            bool flag = (bool)args[0];
+            RAGE.Chat.Show(!flag);
+            RAGE.Ui.Cursor.Visible = flag;
+            createCharacterWindow.Active = flag;
+            RAGE.Elements.Player.LocalPlayer.FreezePosition(flag);
+            RAGE.Elements.Player.LocalPlayer.FreezeCameraRotation();
+        }
+
         private void ShowSelectCharacterMenu(object[] args)
         {
-
             MenuPool menuPool = new MenuPool();
 
             UIMenu characterSelectionMenu = new UIMenu("Character Select", "Select a character!");
@@ -68,7 +96,7 @@ namespace ClientSelectCharacter
                     if (selectedItem == createCharacterButton)
                     {
                         CloseMenu();
-                        RAGE.Events.CallRemote("CreateCharacter");
+                        ToggleCreateCharacterMenu(new object[] { true });
                     }
 
                     if (selectedItem == selectCharacterButton)
@@ -87,6 +115,7 @@ namespace ClientSelectCharacter
                 RAGE.Chat.Show(true);
                 characterSelectionMenu.FreezeAllInput = false;
                 characterSelectionMenu.Visible = false;
+                RAGE.Elements.Player.LocalPlayer.FreezePosition(false);
             }
 
 
@@ -98,6 +127,7 @@ namespace ClientSelectCharacter
                 characterSelectionMenu.FreezeAllInput = true;
                 characterSelectionMenu.Visible = true;
                 characterSelectionMenu.RefreshIndex();
+                RAGE.Elements.Player.LocalPlayer.FreezePosition(true);
             }
 
 
@@ -106,8 +136,13 @@ namespace ClientSelectCharacter
             {
                 menuPool.ProcessMenus();
             };
+
+            characterSelectionMenu.OnMenuClose += (UIMenu sender) =>
+            {
+                //Do not allow closing
+            };
         }
 
-      
+
     }
 }

@@ -13,6 +13,7 @@ namespace ProjectUnion.Events
 {
     public class PlayerEvents : Script
     {
+        //TODO : Create LoginEvents class?
 
         private readonly PlayerSpawnPoint spawnPositions;
 
@@ -33,16 +34,7 @@ namespace ProjectUnion.Events
 
             public Vector4[] Locations { get; set; }
         }
-        public static string AssemblyDirectory
-        {
-            get
-            {
-                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
-                UriBuilder uri = new UriBuilder(codeBase);
-                string path = Uri.UnescapeDataString(uri.Path);
-                return Path.GetDirectoryName(path);
-            }
-        }
+
         public PlayerEvents()
         {
             var currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -91,28 +83,17 @@ namespace ProjectUnion.Events
             client.SetData(PlayerData.PLAYER_DATA_KEY, playerData);
             client.SetData(CharacterData.CHARACTER_DATA_KEY, characterData);
 
-            CharacterData[] charactersData = await Task.WhenAll(characters.Select(async e => await CharacterDatabase.GetCharacterData(e)));
-            string[] characterNames = charactersData.Select(e => e.Name).ToArray();
-
-            NAPI.ClientEvent.TriggerClientEvent(client, "SelectCharacter", string.Join(",", characters), string.Join(",", characterNames));
-
-            NAPI.Player.SetPlayerSkin(client, PedHash.MovAlien01);
+            ShowCharacterSelectScreen(client);
         }
 
-
-        [RemoteEvent("CreateCharacter")]
-        public async void CreateCharacter(Client client, object[] args)
+        private async void ShowCharacterSelectScreen(Client client)
         {
-            PlayerData playerData = client.GetData(PlayerData.PLAYER_DATA_KEY);
-            CharacterData characterData = new CharacterData()
-            {
-                OwnerId = playerData.Id
-            };
-
-            await Data.CharacterDatabase.CreateCharacter(characterData);
-            client.SetData(CharacterData.CHARACTER_DATA_KEY, characterData);
-            var spawnPoint = GetRandomSpawnPoint();
-            UpdatePlayerPed(client, spawnPoint.GetPosition(), spawnPoint.Heading);
+            PlayerData playerData = await Data.PlayerDatabase.GetPlayerData(client.Address);
+            uint[] characters = await CharacterDatabase.GetCharacters(playerData.Id);
+            CharacterData[] charactersData = await Task.WhenAll(characters.Select(async e => await CharacterDatabase.GetCharacterData(e)));
+            string[] characterNames = charactersData.Select(e => e.Name).ToArray();
+            NAPI.ClientEvent.TriggerClientEvent(client, "SelectCharacter", string.Join(",", characters), string.Join(",", characterNames));
+            NAPI.Player.SetPlayerSkin(client, PedHash.MovAlien01);
         }
 
 
@@ -121,7 +102,17 @@ namespace ProjectUnion.Events
         {
             uint characterId = (uint)(int)args[0];
             CharacterData characterData = await CharacterDatabase.GetCharacterData(characterId);
-            UpdatePlayerPed(client, characterData.GetPosition(), 0);
+
+            var position = characterData.GetPosition();
+            float heading = 0;
+            if (position == null)
+            {
+                var spawnPoint = GetRandomSpawnPoint();
+                position = spawnPoint.GetPosition();
+                heading = spawnPoint.Heading;
+            }
+
+            UpdatePlayerPed(client, position, heading);
         }
 
         private void UpdatePlayerPed(Client client, Vector3 pos, float heading)
@@ -166,6 +157,8 @@ namespace ProjectUnion.Events
             return spawnPoint;
         }
 
+
+
         [ServerEvent(Event.PlayerDeath)]
         public void OnPlayerDeath(Client client, Client killer, uint reason)
         {
@@ -196,5 +189,45 @@ namespace ProjectUnion.Events
             characterData.PositionZ = player.Position.Z;
             CharacterDatabase.SaveCharacter(characterData);
         }
+
+
+        #region Login Events
+
+
+        [RemoteEvent("CreateCharacter")]
+        public async void CreateCharacter(Client client, object[] args)
+        {
+            string name = args[0].ToString();
+
+            PlayerData playerData = client.GetData(PlayerData.PLAYER_DATA_KEY);
+            CharacterData characterData = new CharacterData()
+            {
+                OwnerId = playerData.Id,
+                Name = name
+            };
+
+            await Data.CharacterDatabase.CreateCharacter(characterData);
+            //client.SetData(CharacterData.CHARACTER_DATA_KEY, characterData);
+            //var spawnPoint = GetRandomSpawnPoint();
+            //UpdatePlayerPed(client, spawnPoint.GetPosition(), spawnPoint.Heading);
+            ShowCharacterSelectScreen(client);
+        }
+
+
+
+        [RemoteEvent("GoBackToCharacterSelection")]
+        public async void OnGoBackToCharacterSelect(Client client)
+        {
+            PlayerData playerData = await Data.PlayerDatabase.GetPlayerData(client.Address);
+
+            uint[] characters = await CharacterDatabase.GetCharacters(playerData.Id);
+            CharacterData[] charactersData = await Task.WhenAll(characters.Select(async e => await CharacterDatabase.GetCharacterData(e)));
+            string[] characterNames = charactersData.Select(e => e.Name).ToArray();
+
+            NAPI.ClientEvent.TriggerClientEvent(client, "ToggleCreateCharacterMenu", false);
+            NAPI.ClientEvent.TriggerClientEvent(client, "SelectCharacter", string.Join(",", characters), string.Join(",", characterNames));
+        }
+
+        #endregion
     }
 }

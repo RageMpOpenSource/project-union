@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <Reference Include="Bootstrapper">
-      <HintPath>..\..\project_union\bridge\runtime\Bootstrapper.dll</HintPath>
+      <HintPath>E:\Servers\project_union\bridge\runtime\Bootstrapper.dll</HintPath>
     </Reference>
   </ItemGroup>
 
