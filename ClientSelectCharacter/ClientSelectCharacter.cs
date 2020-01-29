@@ -3,17 +3,15 @@ using RAGE.NUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Timers;
 
 namespace ClientSelectCharacter
 {
-    public class Main : Events.Script
+    public class ClientSelectCharacter : Events.Script
     {
 
-        public Main()
+        public ClientSelectCharacter()
         {
             Events.Add("SelectCharacter", ShowSelectCharacterMenu);
-            Events.Add("StartPlayerSwitch", StartPlayerSwitch);
             Events.Add("PedCreated", OnPedCreated);
         }
 
@@ -24,16 +22,9 @@ namespace ClientSelectCharacter
 
         private RAGE.Elements.Ped ped = null;
 
-        private void StartPlayerSwitch(object[] args)
-        {
-            int currentPedId = RAGE.Game.Player.GetPlayerPed();
-            RAGE.Game.Streaming.StartPlayerSwitch(currentPedId, currentPedId, 1, 1);
-        }
-
+  
         private void ShowSelectCharacterMenu(object[] args)
         {
-
-            RAGE.Chat.Output("Show select character menu!");
 
             MenuPool menuPool = new MenuPool();
 
@@ -116,5 +107,7 @@ namespace ClientSelectCharacter
                 menuPool.ProcessMenus();
             };
         }
+
+      
     }
 }

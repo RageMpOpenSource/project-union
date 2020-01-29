@@ -18,6 +18,10 @@ namespace ProjectUnion
         [ServerEvent(Event.ResourceStart)]
         public async void OnResourceStart()
         {
+
+            //NAPI.Server.SetAutoRespawnAfterDeath(false);
+            //NAPI.Server.SetAutoSpawnOnConnect(false);
+
             Database db = new Database();
             Connection = db.Connection;
 

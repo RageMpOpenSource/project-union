@@ -127,17 +127,17 @@ namespace ProjectUnion.Events
         private void UpdatePlayerPed(Client client, Vector3 pos, float heading)
         {
             uint tempModel = (uint)PedHash.AviSchwartzman;
-            NAPI.ClientEvent.TriggerClientEvent(client, "StartPlayerSwitch");
+            NAPI.ClientEvent.TriggerClientEvent(client, "StartPlayerSwitch", pos);
 
             System.Timers.Timer aTimer = new System.Timers.Timer();
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 100;
+            aTimer.Interval = 3000;
             aTimer.Enabled = true;
             void OnTimedEvent(object sender, EventArgs e)
             {
                 NAPI.Player.SetPlayerSkin(client, tempModel);
                 client.Position = pos;
-                NAPI.ClientEvent.TriggerClientEvent(client, "StartPlayerSwitch");
+                //NAPI.ClientEvent.TriggerClientEvent(client, "StartPlayerSwitch");
                 aTimer.Stop();
                 aTimer.Dispose();
             };
@@ -146,9 +146,6 @@ namespace ProjectUnion.Events
 
         public void SpawnPlayer(Client client)
         {
-            NAPI.Server.SetAutoRespawnAfterDeath(false);
-            NAPI.Server.SetAutoSpawnOnConnect(false);
-
             CharacterData characterData = client.GetData(CharacterData.CHARACTER_DATA_KEY);
 
             if (characterData.GetPosition() == null)
