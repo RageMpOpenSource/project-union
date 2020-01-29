@@ -16,15 +16,13 @@ namespace ProjectUnion.Server
         [ServerEvent(Event.ResourceStart)]
         public void OnResourceStart()
         {
-            NAPI.Util.ConsoleOutput("Initialized veh spawner");
-
             RespawnVehicles();
 
-            int timeBeforeRespawnToAnnounceInMinutes = 1;
+            int[] announcementTimesBeforeRespawn = new int[] { 10, 5, 1};
             int lastHour = DateTime.Now.Hour;
             bool isRespawnAnnounced = false;
 
-            
+
             _timer = new System.Threading.Timer((e) =>
             {
                 if (lastHour < DateTime.Now.Hour || (lastHour == 23 && DateTime.Now.Hour == 0))
@@ -35,12 +33,27 @@ namespace ProjectUnion.Server
                 }
                 else
                 {
-                    if (isRespawnAnnounced == false && DateTime.Now.Minute == (60 - timeBeforeRespawnToAnnounceInMinutes))
+                    if (isRespawnAnnounced == false)
                     {
-                        //TODO : Logger.LogChatAll
-                        Main.Logger.LogAllClients($"Vehicles will be respawned in {(timeBeforeRespawnToAnnounceInMinutes)} minutes.");
-                        Main.Logger.LogAllClients($"Make sure you / park to save your vehicle's position. (or get in it to avoid respawn)");
-                        isRespawnAnnounced = true;
+                        foreach (int timeTillRespawnInMinutes in announcementTimesBeforeRespawn)
+                        {
+                            if (DateTime.Now.Minute == (60 - timeTillRespawnInMinutes))
+                            {
+                                //TODO : Logger.LogChatAll
+                                if (timeTillRespawnInMinutes == 1)
+                                {
+                                    Main.Logger.LogAllClients($"Vehicles will be respawned in {(timeTillRespawnInMinutes)} minute.");
+                                }
+                                else
+                                {
+                                    Main.Logger.LogAllClients($"Vehicles will be respawned in {(timeTillRespawnInMinutes)} minutes.");
+                                }
+
+                                Main.Logger.LogAllClients($"Make sure you / park to save your vehicle's position. (or get in it to avoid respawn)");
+                                isRespawnAnnounced = true;
+                            }
+                        }
+
                     }
                 }
 

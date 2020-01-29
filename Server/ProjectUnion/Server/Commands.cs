@@ -126,14 +126,14 @@ namespace ProjectUnion.Server
                 return;
             }
 
-            CharacterData ownerData = owner.GetData(CharacterData.CHARACTER_DATA_KEY);
+            CharacterData ownerCharacterData = owner.GetData(CharacterData.CHARACTER_DATA_KEY);
 
-            if (ownerData == null) return;
+            if (ownerCharacterData == null) return;
 
-            CharacterData clientData = client.GetData(CharacterData.CHARACTER_DATA_KEY);
+            CharacterData clientCharacterData = client.GetData(CharacterData.CHARACTER_DATA_KEY);
             //Owner is Client
             bool isClientOwner = false;
-            if (clientData != null && clientData.Id == ownerData.Id)
+            if (clientCharacterData != null && clientCharacterData.Id == ownerCharacterData.Id)
             {
                 isClientOwner = true;
             }
@@ -141,7 +141,7 @@ namespace ProjectUnion.Server
             VehicleData vehicleData = vehicle.GetData(VehicleData.VEHICLE_DATA_KEY);
             if (vehicleData != null)
             {
-                if (vehicleData.OwnerId == ownerData.Id)
+                if (vehicleData.OwnerId == ownerCharacterData.Id)
                 {
                     if (isClientOwner)
                     {
@@ -149,7 +149,7 @@ namespace ProjectUnion.Server
                     }
                     else
                     {
-                        Main.Logger.LogClient(client, $"{ownerData.Name} already owns this vehicle!");
+                        Main.Logger.LogClient(client, $"{ownerCharacterData.Name} already owns this vehicle!");
                     }
                     return;
                 }
@@ -162,7 +162,7 @@ namespace ProjectUnion.Server
                 Color1 = vehicle.PrimaryColor,
                 Color2 = vehicle.SecondaryColor,
                 Heading = vehicle.Heading,
-                OwnerId = ownerData.Id
+                OwnerId = ownerCharacterData.Id
             };
 
             vehicleData.SetPosition(vehicle.Position);
@@ -171,8 +171,8 @@ namespace ProjectUnion.Server
             vehicle.SetData(VehicleData.VEHICLE_DATA_KEY, vehicleData);
 
 
-            Main.Logger.LogClient(client, $"Gave {owner.Name} ownership of {vehicle.DisplayName}.");
-            Main.Logger.LogClient(owner, $"{client.Name} gave you ownership of {vehicle.DisplayName}.");
+            Main.Logger.LogClient(client, $"Gave {ownerCharacterData.Name} ownership of {vehicle.DisplayName}.");
+            Main.Logger.LogClient(owner, $"{clientCharacterData.Name} gave you ownership of {vehicle.DisplayName}.");
         }
 
 
