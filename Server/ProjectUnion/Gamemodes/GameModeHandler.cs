@@ -19,6 +19,19 @@ namespace ProjectUnion.GameModes
 
     public class GameModeHandler
     {
+        private static GameModeHandler _instance;
+        public static GameModeHandler Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new GameModeHandler();
+                }
+                return _instance;
+            }
+        }
+
         private List<BaseGameMode> _gameModes = new List<BaseGameMode>();
         private BaseGameModeMapData[] _maps;
 
@@ -41,9 +54,10 @@ namespace ProjectUnion.GameModes
             switch (gameModeType)
             {
                 case GameModeType.Deathmatch:
-                    gameMode = new GameModeDeathmatch(GameModeIndex, host);
+                    gameMode = new GameModeDeathmatch(this, GameModeIndex, host);
                     break;
                 case GameModeType.LastCarStanding:
+                    gameMode = new GameModeLastCarStanding(this, GameModeIndex, host);
                     break;
                 default:
                     throw new Exception("Game Type not found!");
@@ -74,5 +88,13 @@ namespace ProjectUnion.GameModes
             return _maps.Single(e => e.MapId == mapId);
         }
 
+
+        public void OnDeath(Client player, Client killer, uint reason)
+        {
+            foreach (BaseGameMode gameMode in _gameModes)
+            {
+                gameMode.OnDeath(player, killer, reason);
+            }
+        }
     }
 }

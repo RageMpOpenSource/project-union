@@ -16,7 +16,9 @@ namespace ProjectUnion.Data
         public float? PositionX { get; set; }
         public float? PositionY { get; set; }
         public float? PositionZ { get; set; }
+        public float? Heading { get; set; }
 
+   
         public Vector3 GetPosition()
         {
             if (PositionX.HasValue && PositionY.HasValue && PositionZ.HasValue)
@@ -39,6 +41,7 @@ namespace ProjectUnion.Data
                             `position_x` LONGTEXT NULL,
                             `position_y` LONGTEXT NULL,
                             `position_z` LONGTEXT NULL,
+                            `heading` LONGTEXT NULL,
                             FOREIGN KEY(owner_id) REFERENCES Users(id)
                             );";
 
@@ -85,7 +88,9 @@ namespace ProjectUnion.Data
                                 `name` = '{characterData.Name}',
                                 `position_x` = '{characterData.PositionX}', 
                                 `position_y` = '{characterData.PositionY}', 
-                                `position_z` = '{characterData.PositionZ}'  WHERE id = {characterData.Id}";
+                                `position_z` = '{characterData.PositionZ}', 
+                                `heading` = '{characterData.Heading}' 
+                                WHERE id = {characterData.Id}";
 
             using (MySqlCommand command = new MySqlCommand(query, Main.Connection))
             {
@@ -153,7 +158,8 @@ namespace ProjectUnion.Data
                                 Name = reader[2].ToString(),
                                 PositionX = reader.FloatOrNull(3),
                                 PositionY = reader.FloatOrNull(4),
-                                PositionZ = reader.FloatOrNull(5)
+                                PositionZ = reader.FloatOrNull(5),
+                                Heading = reader.FloatOrNull(6),
                             };
 
                             return characterData;

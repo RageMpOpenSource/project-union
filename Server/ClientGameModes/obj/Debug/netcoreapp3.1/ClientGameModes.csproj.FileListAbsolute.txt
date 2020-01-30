@@ -1,0 +1,14 @@
+E:\Servers\Resources\Server\ClientGameModes\bin\Debug\netcoreapp3.1\ClientGameModes.deps.json
+E:\Servers\Resources\Server\ClientGameModes\bin\Debug\netcoreapp3.1\ClientGameModes.dll
+E:\Servers\Resources\Server\ClientGameModes\bin\Debug\netcoreapp3.1\ClientGameModes.pdb
+E:\Servers\Resources\Server\ClientGameModes\bin\Debug\netcoreapp3.1\rage-sharp.dll
+E:\Servers\Resources\Server\ClientGameModes\bin\Debug\netcoreapp3.1\NeoSmart.Hashing.dll
+E:\Servers\Resources\Server\ClientGameModes\bin\Debug\netcoreapp3.1\xxHash.dll
+E:\Servers\Resources\Server\ClientGameModes\bin\Debug\netcoreapp3.1\rage-sharp.xml
+E:\Servers\Resources\Server\ClientGameModes\obj\Debug\netcoreapp3.1\ClientGameModes.AssemblyInfoInputs.cache
+E:\Servers\Resources\Server\ClientGameModes\obj\Debug\netcoreapp3.1\ClientGameModes.AssemblyInfo.cs
+E:\Servers\Resources\Server\ClientGameModes\obj\Debug\netcoreapp3.1\ClientGameModes.csproj.CopyComplete
+E:\Servers\Resources\Server\ClientGameModes\obj\Debug\netcoreapp3.1\ClientGameModes.dll
+E:\Servers\Resources\Server\ClientGameModes\obj\Debug\netcoreapp3.1\ClientGameModes.pdb
+E:\Servers\Resources\Server\ClientGameModes\bin\Debug\netcoreapp3.1\GameModeEvents.cs
+E:\Servers\Resources\Server\ClientGameModes\obj\Debug\netcoreapp3.1\ClientGameModes.csprojAssemblyReference.cache

@@ -35,12 +35,28 @@ namespace ProjectUnion.Server
         [Command("pos")]
         public void CMD_GetPosition(Client client)
         {
-            Main.Logger.LogClient(client, $"Position: [{client.Position}]");
+            Vehicle vehicle = client.Vehicle;
+            if (vehicle != null)
+            {
+                Main.Logger.LogClient(client, $"Position: [{vehicle.Position}, Heading: {vehicle.Heading}]");
+                Main.Logger.Log($"Position: [{vehicle.Position}, Heading: {vehicle.Heading}]");
+            }
+            else
+            {
+                Main.Logger.LogClient(client, $"Position: [{client.Position}, Heading: {client.Heading}]");
+                Main.Logger.Log($"Position: [{client.Position}, Heading: {client.Heading}]");
+            }
         }
         [Command("dc")]
         public void Disconnect(Client client)
         {
             NAPI.Player.KickPlayer(client);
+        }
+
+        [Command("die")]
+        public void Die(Client client)
+        {
+            NAPI.Player.SetPlayerHealth(client, 0);
         }
 
         #endregion
@@ -201,14 +217,51 @@ namespace ProjectUnion.Server
         public const string COMMAND_GAMEMODE_CREATE = "creategm";
         public const string COMMAND_GAMEMODE_GET_MY_GAMEMODES = "mygms";
         public const string COMMAND_GAMEMODE_SET_MAP = "setgmmap";
+        public const string COMMAND_GAMEMODE_ADD_PLAYER_TO_GAMEMODE = "addplayertogm";
+        public const string COMMAND_GAMEMODE_START = "startgm";
+        public const string COMMAND_GAMEMODE_STOP = "stopgm";
 
+        [Command(COMMAND_GAMEMODE_START)]
+        public void StartGameMode(Client client, uint gmId, bool startImmediately = false)
+        {
+            try
+            {
+                BaseGameMode gameMode = GameModeHandler.Instance.GetGameModeById(gmId);
 
+                if (startImmediately == false)
+                {
+                    gameMode.StartCountdown();
+                }
+                else
+                {
+                    gameMode.StartGameMode();
+                }
+            }
+            catch (Exception e)
+            {
+                Main.Logger.LogClient(client, e.Message);
+            }
+        }
+
+        [Command(COMMAND_GAMEMODE_STOP)]
+        public void StartGameMode(Client client, uint gmId)
+        {
+            try
+            {
+                BaseGameMode gameMode = GameModeHandler.Instance.GetGameModeById(gmId);
+                gameMode.StopGameMode();
+            }
+            catch (Exception e)
+            {
+                Main.Logger.LogClient(client, e.Message);
+            }
+        }
         [Command(COMMAND_GAMEMODE_CREATE)]
         public void CreateGameMode(Client client, int gmType)
         {
             try
             {
-                uint gameModeId = Main.GameModeHandler.CreateGameMode(client, (GameModeType)gmType);
+                uint gameModeId = GameModeHandler.Instance.CreateGameMode(client, (GameModeType)gmType);
                 Main.Logger.LogClient(client, $"Created Game Mode with Id {gameModeId}");
             }
             catch (Exception e)
@@ -222,7 +275,7 @@ namespace ProjectUnion.Server
         {
             try
             {
-                List<BaseGameMode> myGameModes = Main.GameModeHandler.GetGameModeByHost(client);
+                List<BaseGameMode> myGameModes = GameModeHandler.Instance.GetGameModeByHost(client);
                 string response = "";
 
                 if (myGameModes.Count == 0)
@@ -237,7 +290,7 @@ namespace ProjectUnion.Server
 
                     if (i < myGameModes.Count - 1)
                     {
-                        response += ",";
+                        response += ", ";
                     }
                 }
                 Main.Logger.LogClient(client, response);
@@ -249,12 +302,36 @@ namespace ProjectUnion.Server
         }
 
         [Command(COMMAND_GAMEMODE_SET_MAP)]
-        public void SetGameModeMap(Client client, uint gmId, uint mapId)
+        public void SetGameModeMap(Client client, uint gmId, uint mapId = 99999999)
         {
             try
             {
-                BaseGameMode gameMode = Main.GameModeHandler.GetGameModeById(gmId);
-                gameMode.SetGameModeMapId(mapId);
+                //map id not specified
+                if (mapId == 99999999)
+                {
+                    BaseGameMode gameMode = GameModeHandler.Instance.GetGameModeById(gmId);
+                    List<BaseGameModeMapData> suitableMaps = GameModeHandler.Instance.GetSuitableMaps(gameMode.GetGameModeData().Type);
+
+                    string response = "Suitable Maps: ";
+                    for (int i = 0; i < suitableMaps.Count; i++)
+                    {
+                        BaseGameModeMapData mapData = suitableMaps[i];
+                        response += $"({mapData.MapId}) {mapData.DisplayName}";
+
+                        if (i < suitableMaps.Count - 1)
+                        {
+                            response += ", ";
+                        }
+                    }
+
+                    Main.Logger.LogClient(client, response);
+                }
+                else
+                {
+
+                    BaseGameMode gameMode = GameModeHandler.Instance.GetGameModeById(gmId);
+                    gameMode.SetGameModeMapId(mapId);
+                }
             }
             catch (Exception e)
             {
@@ -262,7 +339,7 @@ namespace ProjectUnion.Server
             }
         }
 
-        [Command("addplayertogm")]
+        [Command(COMMAND_GAMEMODE_ADD_PLAYER_TO_GAMEMODE)]
         public void AddPlayerToGameMode(Client client, uint gmId, string playerFirstName, string playerSecondName = "")
         {
             Client player = ServerUtilities.GetPlayerIfExists(client, playerFirstName, playerSecondName);
@@ -273,7 +350,7 @@ namespace ProjectUnion.Server
 
             try
             {
-                BaseGameMode gameMode = Main.GameModeHandler.GetGameModeById(gmId);
+                BaseGameMode gameMode = GameModeHandler.Instance.GetGameModeById(gmId);
                 gameMode.AddPlayer(player);
                 Main.Logger.LogClient(gameMode.GetGameModeData().EventHost, $"{client.Name} joined the event ({gameMode.GetGameModeData().Id}) {gameMode.GetGameModeData().Name}.");
                 Main.Logger.LogClient(client, $"You joined the event ({gameMode.GetGameModeData().Id}) {gameMode.GetGameModeData().Name}.");
@@ -281,38 +358,6 @@ namespace ProjectUnion.Server
             catch (Exception e)
             {
                 Main.Logger.LogClient(client, e.Message);
-            }
-        }
-
-        [ServerEvent(Event.ChatMessage)]
-        public void OnChatTest(Client client, uint gmId, string message)
-        {
-            if (message.Trim() == COMMAND_GAMEMODE_SET_MAP)
-            {
-                try
-                {
-                    BaseGameMode gameMode = Main.GameModeHandler.GetGameModeById(gmId);
-                    List<BaseGameModeMapData> suitableMaps = Main.GameModeHandler.GetSuitableMaps(gameMode.GetGameModeData().Type);
-
-                    string response = "";
-                    for (int i = 0; i < suitableMaps.Count; i++)
-                    {
-                        BaseGameModeMapData mapData = suitableMaps[i];
-                        response += $"({mapData.MapId}) ${mapData.DisplayName}";
-
-                        if (i < suitableMaps.Count - 1)
-                        {
-                            response += ",";
-                        }
-                    }
-
-                    Main.Logger.LogClient(client, "Suitable Maps:");
-                    Main.Logger.LogClient(client, response);
-                }
-                catch (Exception e)
-                {
-                    Main.Logger.LogClient(client, e.Message);
-                }
             }
         }
 

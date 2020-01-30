@@ -1,5 +1,6 @@
 ﻿using GTANetworkAPI;
 using ProjectUnion.Data;
+using ProjectUnion.GameModes;
 using ProjectUnion.Server;
 using System;
 using System.Collections.Generic;
@@ -16,20 +17,7 @@ namespace ProjectUnion.Events
     {
         //TODO : Create LoginEvents class?
 
-        private readonly PlayerSpawnPoint spawnPositions;
 
-        private class PlayerSpawnPoint
-        {
-           
-            public GamePosition[] Locations { get; set; }
-        }
-
-        public PlayerEvents()
-        {
-            var currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            var json = File.ReadAllText(Path.Combine(currentDirectory, "PlayerSpawnPoints.json"));
-            spawnPositions = NAPI.Util.FromJson<PlayerSpawnPoint>(json);
-        }
 
         [ServerEvent(Event.PlayerConnected)]
         public async void OnPlayerConnected(Client client)
@@ -43,7 +31,7 @@ namespace ProjectUnion.Events
                 Main.Logger.Log($"Last login was at {playerData.LastLogin.ToString()}");
             }
 
-           if (playerData == null)
+            if (playerData == null)
             {
 
                 playerData = new PlayerData()
@@ -57,7 +45,7 @@ namespace ProjectUnion.Events
 
 
             client.SetData(PlayerData.PLAYER_DATA_KEY, playerData);
-            
+
             PlayerTempData playerTempData = new PlayerTempData()
             {
                 LoginIndex = ServerUtilities.GetPlayerLoginIndex()
@@ -87,11 +75,12 @@ namespace ProjectUnion.Events
             uint characterId = (uint)(int)args[0];
             CharacterData characterData = await CharacterDatabase.GetCharacterData(characterId);
 
-            var position = characterData.GetPosition();
-            float heading = 0;
+            Vector3 position = characterData.GetPosition();
+            float heading = characterData.Heading.HasValue ? characterData.Heading.Value : 0;
+
             if (position == null)
             {
-                var spawnPoint = GetRandomSpawnPoint();
+                GamePosition spawnPoint = ServerUtilities.GetRandomSpawnPoint();
                 position = spawnPoint.GetPosition();
                 heading = spawnPoint.GetHeading();
             }
@@ -109,48 +98,21 @@ namespace ProjectUnion.Events
             ServerUtilities.SwitchPlayerPosition(client, position, heading);
         }
 
-     
-
-
-        public void SpawnPlayer(Client client)
-        {
-            CharacterData characterData = client.GetData(CharacterData.CHARACTER_DATA_KEY);
-
-            if (characterData.GetPosition() == null)
-            {
-                var spawnPoint = GetRandomSpawnPoint();
-                NAPI.Player.SpawnPlayer(client, spawnPoint.GetPosition(), spawnPoint.GetHeading());
-                NAPI.Chat.SendChatMessageToPlayer(client, "Spawned at random pos");
-            }
-            else
-            {
-                NAPI.Player.SpawnPlayer(client, characterData.GetPosition(), 0);
-            }
-        }
-
-        private GamePosition GetRandomSpawnPoint()
-        {
-            GamePosition spawnPoint = spawnPositions.Locations[Main.Random.Next(spawnPositions.Locations.Length)];
-            return spawnPoint;
-        }
 
 
 
         [ServerEvent(Event.PlayerDeath)]
         public void OnPlayerDeath(Client client, Client killer, uint reason)
         {
-            System.Timers.Timer aTimer = new System.Timers.Timer();
-            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 5000;
-            aTimer.Enabled = true;
+            PlayerTempData playerTempData = client.GetData(PlayerTempData.PLAYER_TEMP_DATA_KEY);
 
-            void OnTimedEvent(object sender, EventArgs e)
+            if (playerTempData.GamemodeId.HasValue)
             {
-                //Call method
-                SpawnPlayer(client);
-                aTimer.Stop();
-                aTimer.Dispose();
+                GameModeHandler.Instance.OnDeath(client, killer, reason);
+                return;
             }
+
+            ServerUtilities.SpawnPlayerAfter(client);
         }
 
         [ServerEvent(Event.PlayerDisconnected)]

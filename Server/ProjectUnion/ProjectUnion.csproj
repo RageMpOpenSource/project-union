@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="GameModeMaps.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="GameModeMaps.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="meta.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -23,12 +30,6 @@
     <Reference Include="Bootstrapper">
       <HintPath>E:\Servers\project_union\bridge\runtime\Bootstrapper.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="GameModeMaps.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

@@ -11,20 +11,21 @@ namespace ProjectUnion
 {
     public class Main : Script
     {
+
         public static Logger Logger = new Logger();
         public static Random Random = new Random();
         public static MySqlConnection Connection;
-        public static GameModeHandler GameModeHandler = new GameModeHandler();
-
 
         [ServerEvent(Event.ResourceStart)]
         public async void OnResourceStart()
         {
 
-            //NAPI.Server.SetAutoRespawnAfterDeath(false);
-            //NAPI.Server.SetAutoSpawnOnConnect(false);
+            NAPI.Server.SetAutoRespawnAfterDeath(false);
+            NAPI.Server.SetAutoSpawnOnConnect(false);
             //NAPI.Server.SetGlobalServerChat(false);
             //NAPI.Server.SetCommandErrorMessage("");
+
+            ServerUtilities.Initialise();
 
             Database db = new Database();
             Connection = db.Connection;

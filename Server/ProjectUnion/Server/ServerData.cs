@@ -24,6 +24,15 @@ namespace ProjectUnion.Server
             Z = z;
         }
 
+
+        public void SetPosition(Vector3 v)
+        {
+            X = v.X;
+            Y = v.Y;
+            Z = v.Z;
+        }
+
+
         public Vector3 GetPosition()
         {
             return new Vector3(X, Y, Z);

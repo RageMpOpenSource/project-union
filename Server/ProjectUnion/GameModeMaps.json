@@ -9,12 +9,20 @@
             ],
             "SpawnPoints": [
                 {
-                    "x": 15,
-                    "y": 23,
-                    "z": 51,
-                    "heading": 0
+                    "x": 32.35366,
+                    "y": 189.8717,
+                    "z": 125.734,
+                    "heading": 216.8348
                 }
-            ]
+            ],
+            "MaxPlayers": 15,
+            "WeaponList": [
+                "VintagePistol",
+                "SniperRifle",
+                "Molotov",
+                "Pistol",
+                "SMG"
+            ],
         },
         {
             "MapId": 1,
@@ -23,14 +31,61 @@
             "SuitedGameModes": [
                 "LastCarStanding"
             ],
+            "VehicleList": [
+                "Banshee",
+                "Manana",
+                "Sultan"
+            ],
+            "VehicleStartPositions": [
+                {
+                    "x": 32.35366,
+                    "y": 189.8717,
+                    "z": 125.734,
+                    "heading": 216.8348
+                },
+                {
+                    "x": 44.53608,
+                    "y": 183.8958,
+                    "z": 125.651,
+                    "heading": 163.9492
+                },
+                {
+                    "x": 37.92686,
+                    "y": 187.7377,
+                    "z": 125.7207,
+                    "heading": 174.4182
+                }
+            ],
             "SpawnPoints": [
                 {
-                    "x": 15,
-                    "y": 23,
-                    "z": 51,
-                    "heading": 0
+                    "x": 27.72852,
+                    "y": 165.8663,
+                    "z": 128.1744,
+                    "heading": 244.2011
                 }
-            ]
+            ],
+            "SpectateSpawnPoints": [
+                {
+                    "x": 27.72852,
+                    "y": 165.8663,
+                    "z": 128.1744,
+                    "heading": 244.2011
+                }
+            ],
+            "DeathZ": 110,
+            "MaxPlayers": 3
         }
     ]
 }
+// [SERVER
+// ]: Position: [
+//     50.76688 181.7254 125.6458, Heading: 113.1039
+// ]
+// [SERVER
+// ]: Position: [
+//     54.63087 176.5355 125.6919, Heading: 67.31714
+// ]
+// [SERVER
+// ]: Position: [
+//     50.53538 168.9873 125.6487, Heading: 72.42688
+// ]
