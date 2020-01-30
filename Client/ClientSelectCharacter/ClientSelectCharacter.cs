@@ -23,10 +23,6 @@ namespace ClientSelectCharacter
 
             createCharacterWindow = new RAGE.Ui.HtmlWindow("package://cs_packages/ClientSelectCharacter/SelectCharacter.html");
             createCharacterWindow.Active = false;
-
-
-            //TODO : Move this into it's own client package
-            RAGE.Nametags.Enabled = true;
         }
 
 

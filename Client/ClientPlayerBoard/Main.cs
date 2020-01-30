@@ -30,7 +30,6 @@ namespace ClientPlayerBoard
             string indexes = args[0].ToString();
             string names = args[1].ToString();
             playerBoard.ExecuteJs($"UpdatePlayerList('{indexes}', '{names}')");
-            //playerBoard.ExecuteJs($"UpdatePlayerList({args[0].ToString()}, {args[1].ToString()})");
         }
 
         private void OnTick(List<Events.TickNametagData> nametags)
