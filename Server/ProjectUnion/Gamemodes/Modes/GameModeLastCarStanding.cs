@@ -38,6 +38,7 @@ namespace ProjectUnion.GameModes.Modes
         protected override void OnStart()
         {
             LogAllCurrentPlayers("Don't fall off the edge!");
+            SavePlayerPositions();
             SpawnPlayersIntoVehicles();
         }
 
@@ -57,6 +58,7 @@ namespace ProjectUnion.GameModes.Modes
         protected override void OnStop()
         {
             DeleteVehicles();
+            TeleportPlayersOut();
         }
 
         private void DeleteVehicles()
@@ -65,7 +67,8 @@ namespace ProjectUnion.GameModes.Modes
             {
                 NAPI.Task.Run(() =>
                 {
-                    vehicle.Delete();
+                    if (vehicle != null)
+                        vehicle.Delete();
                 });
             }
 
@@ -103,7 +106,7 @@ namespace ProjectUnion.GameModes.Modes
                 if (vehicle.Position.Z <= GetMapData().DeathZ)
                 {
                     NAPI.ClientEvent.TriggerClientEvent(Data.CurrentPlayers[i], "TriggerVehicleExplosion");
-                    vehiclesToRemove.Add(i);
+                    Data.CurrentVehicles[i] = null;
                     Data.CurrentPlayers[i].Health = 100;
                 }
                 else
@@ -112,9 +115,17 @@ namespace ProjectUnion.GameModes.Modes
                 }
             }
 
-            for (int i = vehiclesToRemove.Count - 1; i >= 0; i--)
+            List<Vehicle> vehiclesLeft = Data.CurrentVehicles.Where(e => e != null).ToList();
+            if (vehiclesLeft.Count == 1)
             {
-                Data.CurrentVehicles.RemoveAt(vehiclesToRemove[i]);
+                for (int i = 0; i < vehiclesLeft.Count; i++)
+                {
+                    if (vehiclesLeft[i] != null)
+                    {
+                        LogAllCurrentPlayers($"{Data.CurrentPlayers[i].Name} wins!");
+                        StopGameMode();
+                    }
+                }
             }
         }
 

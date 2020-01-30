@@ -38,6 +38,7 @@ namespace ProjectUnion
 
 
             await GroupDatabase.AddCommandsToGroup(Config.GROUP_NAME_ADMIN, Commands.AdminCommands.ToArray());
+            await GroupDatabase.AddCommandsToGroup(Config.GROUP_NAME_LEAD_ADMIN, Commands.OwnerCommands.ToArray());
             await GroupDatabase.AddCommandsToGroup(Config.GROUP_NAME_OWNER, Commands.OwnerCommands.ToArray());
         }
 

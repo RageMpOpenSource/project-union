@@ -62,7 +62,7 @@ namespace ProjectUnion.GameModes.Modes
                 Client client = GetGameModeData().CurrentPlayers[i];
                 Data.WeaponStash.Add(i, new List<StoredWeaponData>());
 
-                if(client.Weapons == null)
+                if (client.Weapons == null)
                 {
                     Data.WeaponStash[i] = new List<StoredWeaponData>();
                     continue;
@@ -135,7 +135,10 @@ namespace ProjectUnion.GameModes.Modes
         protected override void OnPlayerDeath(Client client, Client killer, uint reason)
         {
             GamePosition randomSpawn = GetRandomSpawnPosition();
-            Data.TotalKills[0]++;
+
+            var killerIndex = Data.CurrentPlayers.IndexOf(killer);
+            if (killerIndex != -1)
+                Data.TotalKills[killerIndex]++;
 
             ServerUtilities.SpawnPlayerAfter(client, randomSpawn, callback: () =>
             {

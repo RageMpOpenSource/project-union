@@ -12,22 +12,23 @@ namespace ProjectUnion.Server
     public class Commands : Script
     {
 
-        public static List<string> GeneralCommands;
         public static List<string> AdminCommands;
+        public static List<string> LeadAdminCommands;
         public static List<string> OwnerCommands;
 
         public Commands()
         {
-            GeneralCommands = new List<string>() { COMMAND_VEHICLE_PARK };
-
             AdminCommands = new List<string>();
-            AdminCommands.AddRange(GeneralCommands);
             AdminCommands.AddRange(new List<string>() { COMMAND_VEHICLE_CREATE });
+
+            LeadAdminCommands = new List<string>();
+            LeadAdminCommands.AddRange(AdminCommands);
+            LeadAdminCommands.AddRange(new List<string>() { COMMAND_VEHICLE_RESPAWN_ALL, COMMAND_VEHICLE_SET_OWNER });
 
 
             OwnerCommands = new List<string>();
-            OwnerCommands.AddRange(AdminCommands);
-            OwnerCommands.AddRange(new List<string>() { COMMAND_VEHICLE_RESPAWN_ALL, COMMAND_VEHICLE_SET_OWNER });
+            OwnerCommands.AddRange(LeadAdminCommands);
+            OwnerCommands.AddRange(new List<string>() {});
         }
 
         #region General Commands
@@ -97,7 +98,6 @@ namespace ProjectUnion.Server
         [Command(COMMAND_VEHICLE_PARK)]
         public async void CMD_ParkVehicle(Client client)
         {
-            if (await ServerUtilities.CanUseCommand(client, COMMAND_VEHICLE_PARK) == false) return;
             Vehicle vehicle = NAPI.Player.GetPlayerVehicle(client);
             if (vehicle == null) return;
 
@@ -353,7 +353,7 @@ namespace ProjectUnion.Server
                 BaseGameMode gameMode = GameModeHandler.Instance.GetGameModeById(gmId);
                 gameMode.AddPlayer(player);
                 Main.Logger.LogClient(gameMode.GetGameModeData().EventHost, $"{client.Name} joined the event ({gameMode.GetGameModeData().Id}) {gameMode.GetGameModeData().Name}.");
-                Main.Logger.LogClient(client, $"You joined the event ({gameMode.GetGameModeData().Id}) {gameMode.GetGameModeData().Name}.");
+                Main.Logger.LogClient(player, $"You were added to the event ({gameMode.GetGameModeData().Id}) {gameMode.GetGameModeData().Name} by {client.Name}.");
             }
             catch (Exception e)
             {

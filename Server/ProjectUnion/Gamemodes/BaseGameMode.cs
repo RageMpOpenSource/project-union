@@ -246,7 +246,7 @@ namespace ProjectUnion.GameModes
             }
         }
 
-        protected void TeleportPlayersIn()
+        protected void SavePlayerPositions()
         {
             for (int i = 0; i < GameModeData.CurrentPlayers.Count; i++)
             {
@@ -256,6 +256,17 @@ namespace ProjectUnion.GameModes
                 gamePosition.SetPosition(player.Position);
                 gamePosition.Heading = player.Heading;
                 GameModeData.PlayerPositions.Insert(i, gamePosition);
+            }
+        }
+
+        protected void TeleportPlayersIn()
+        {
+            SavePlayerPositions();
+            for (int i = 0; i < GameModeData.CurrentPlayers.Count; i++)
+            {
+                Client player = GameModeData.CurrentPlayers[i];
+
+
                 GamePosition randomSpawn = GetRandomSpawnPosition();
                 ServerUtilities.SpawnPlayer(player, randomSpawn);
             }
