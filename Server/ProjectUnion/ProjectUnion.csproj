@@ -25,6 +25,12 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="GameModeMaps.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="del &quot;E:\Servers\project_union\bridge\resources\ProjectUnion\*.*&quot; /Q&#xD;&#xA;xcopy &quot;$(OutDir)*&quot; &quot;E:\Servers\project_union\bridge\resources\ProjectUnion&quot; /Y" />
   </Target>

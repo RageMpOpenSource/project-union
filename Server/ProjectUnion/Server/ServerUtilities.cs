@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using GTANetworkAPI;
 using ProjectUnion.Data;
@@ -38,7 +36,7 @@ namespace ProjectUnion.Server
             PlayerData playerData = client.GetData(PlayerData.PLAYER_DATA_KEY);
             CharacterData characterData = client.GetData(CharacterData.CHARACTER_DATA_KEY);
             GroupData highestRankedGroup = await GroupDatabase.GetPlayerHighestRankingGroup(playerData.Id);
-            
+
 
 
             if (characterData == null) return;
@@ -57,6 +55,24 @@ namespace ProjectUnion.Server
             NAPI.Player.SetPlayerName(client, "[!{" + hexColor + "}" + highestRankedGroup.Name + "~w~] " + characterData.Name);
         }
 
+
+        public static void SwitchPlayerPosition(Client client, Vector3 pos, float heading)
+        {
+            uint tempModel = (uint)PedHash.AviSchwartzman;
+            NAPI.ClientEvent.TriggerClientEvent(client, "StartPlayerSwitch", pos);
+
+            System.Timers.Timer aTimer = new System.Timers.Timer();
+            aTimer.Elapsed += new System.Timers.ElapsedEventHandler(OnTimedEvent);
+            aTimer.Interval = 2500;
+            aTimer.Enabled = true;
+            void OnTimedEvent(object sender, EventArgs e)
+            {
+                NAPI.Player.SetPlayerSkin(client, tempModel);
+                client.Position = pos;
+                aTimer.Stop();
+                aTimer.Dispose();
+            };
+        }
 
         public static async Task<bool> CanUseCommand(Client client, string command)
         {

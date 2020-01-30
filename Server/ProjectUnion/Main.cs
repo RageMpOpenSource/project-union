@@ -1,6 +1,7 @@
 ﻿using GTANetworkAPI;
 using MySql.Data.MySqlClient;
 using ProjectUnion.Data;
+using ProjectUnion.GameModes;
 using ProjectUnion.Server;
 using System;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace ProjectUnion
         public static Logger Logger = new Logger();
         public static Random Random = new Random();
         public static MySqlConnection Connection;
+        public static GameModeHandler GameModeHandler = new GameModeHandler();
 
 
         [ServerEvent(Event.ResourceStart)]

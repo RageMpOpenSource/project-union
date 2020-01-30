@@ -12,6 +12,8 @@ namespace ProjectUnion.Data
     {
         public const string PLAYER_TEMP_DATA_KEY = "PLAYER_TEMP_DATA_KEY";
         public uint LoginIndex { get; set; }
+
+        public uint? GamemodeId { get; set; }
     }
 
     public class PlayerData

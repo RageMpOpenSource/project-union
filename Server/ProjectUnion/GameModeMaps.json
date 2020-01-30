@@ -1,0 +1,36 @@
+{
+    "Maps": [
+        {
+            "MapId": 0,
+            "DisplayName": "Canyon",
+            "EnumName": "Canyon",
+            "SuitedGameModes": [
+                "Deathmatch"
+            ],
+            "SpawnPoints": [
+                {
+                    "x": 15,
+                    "y": 23,
+                    "z": 51,
+                    "heading": 0
+                }
+            ]
+        },
+        {
+            "MapId": 1,
+            "DisplayName": "Cannibal Hill",
+            "EnumName": "CannibalHill",
+            "SuitedGameModes": [
+                "LastCarStanding"
+            ],
+            "SpawnPoints": [
+                {
+                    "x": 15,
+                    "y": 23,
+                    "z": 51,
+                    "heading": 0
+                }
+            ]
+        }
+    ]
+}

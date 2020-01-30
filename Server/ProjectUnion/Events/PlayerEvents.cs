@@ -20,20 +20,8 @@ namespace ProjectUnion.Events
 
         private class PlayerSpawnPoint
         {
-            public class Vector4
-            {
-                public float X { get; set; }
-                public float Y { get; set; }
-                public float Z { get; set; }
-                public float Heading { get; set; }
-
-                public Vector3 GetPosition()
-                {
-                    return new Vector3(X, Y, Z);
-                }
-            }
-
-            public Vector4[] Locations { get; set; }
+           
+            public GamePosition[] Locations { get; set; }
         }
 
         public PlayerEvents()
@@ -105,7 +93,7 @@ namespace ProjectUnion.Events
             {
                 var spawnPoint = GetRandomSpawnPoint();
                 position = spawnPoint.GetPosition();
-                heading = spawnPoint.Heading;
+                heading = spawnPoint.GetHeading();
             }
 
 
@@ -118,27 +106,10 @@ namespace ProjectUnion.Events
             if (characterData == null) return;
 
             ServerUtilities.SetPlayerNametag(client);
-
-            UpdatePlayerPed(client, position, heading);
+            ServerUtilities.SwitchPlayerPosition(client, position, heading);
         }
 
-        private void UpdatePlayerPed(Client client, Vector3 pos, float heading)
-        {
-            uint tempModel = (uint)PedHash.AviSchwartzman;
-            NAPI.ClientEvent.TriggerClientEvent(client, "StartPlayerSwitch", pos);
-
-            System.Timers.Timer aTimer = new System.Timers.Timer();
-            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 2500;
-            aTimer.Enabled = true;
-            void OnTimedEvent(object sender, EventArgs e)
-            {
-                NAPI.Player.SetPlayerSkin(client, tempModel);
-                client.Position = pos;
-                aTimer.Stop();
-                aTimer.Dispose();
-            };
-        }
+     
 
 
         public void SpawnPlayer(Client client)
@@ -148,7 +119,7 @@ namespace ProjectUnion.Events
             if (characterData.GetPosition() == null)
             {
                 var spawnPoint = GetRandomSpawnPoint();
-                NAPI.Player.SpawnPlayer(client, spawnPoint.GetPosition(), spawnPoint.Heading);
+                NAPI.Player.SpawnPlayer(client, spawnPoint.GetPosition(), spawnPoint.GetHeading());
                 NAPI.Chat.SendChatMessageToPlayer(client, "Spawned at random pos");
             }
             else
@@ -157,9 +128,9 @@ namespace ProjectUnion.Events
             }
         }
 
-        private PlayerSpawnPoint.Vector4 GetRandomSpawnPoint()
+        private GamePosition GetRandomSpawnPoint()
         {
-            var spawnPoint = spawnPositions.Locations[Main.Random.Next(spawnPositions.Locations.Length)];
+            GamePosition spawnPoint = spawnPositions.Locations[Main.Random.Next(spawnPositions.Locations.Length)];
             return spawnPoint;
         }
 

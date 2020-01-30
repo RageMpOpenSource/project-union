@@ -1,5 +1,7 @@
 ﻿using GTANetworkAPI;
 using ProjectUnion.Data;
+using ProjectUnion.GameModes;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -191,6 +193,129 @@ namespace ProjectUnion.Server
             uint tempModel = NAPI.Util.GetHashKey("ig_ballasog");
             NAPI.ClientEvent.TriggerClientEvent(client, "PedCreated", tempModel, client.Position, client.Heading);
         }
+        #endregion
+
+
+        #region GameMode Commands
+
+        public const string COMMAND_GAMEMODE_CREATE = "creategm";
+        public const string COMMAND_GAMEMODE_GET_MY_GAMEMODES = "mygms";
+        public const string COMMAND_GAMEMODE_SET_MAP = "setgmmap";
+
+
+        [Command(COMMAND_GAMEMODE_CREATE)]
+        public void CreateGameMode(Client client, int gmType)
+        {
+            try
+            {
+                uint gameModeId = Main.GameModeHandler.CreateGameMode(client, (GameModeType)gmType);
+                Main.Logger.LogClient(client, $"Created Game Mode with Id {gameModeId}");
+            }
+            catch (Exception e)
+            {
+                Main.Logger.LogClient(client, e.Message);
+            }
+        }
+
+        [Command(COMMAND_GAMEMODE_GET_MY_GAMEMODES)]
+        public void GetMyGameModes(Client client)
+        {
+            try
+            {
+                List<BaseGameMode> myGameModes = Main.GameModeHandler.GetGameModeByHost(client);
+                string response = "";
+
+                if (myGameModes.Count == 0)
+                {
+                    response += "You are not hosting any game modes.";
+                }
+
+                for (int i = 0; i < myGameModes.Count; i++)
+                {
+                    BaseGameMode gm = myGameModes[i];
+                    response += $"({gm.GetGameModeData().Id}) {gm.GetGameModeData().Name}";
+
+                    if (i < myGameModes.Count - 1)
+                    {
+                        response += ",";
+                    }
+                }
+                Main.Logger.LogClient(client, response);
+            }
+            catch (Exception e)
+            {
+                Main.Logger.LogClient(client, e.Message);
+            }
+        }
+
+        [Command(COMMAND_GAMEMODE_SET_MAP)]
+        public void SetGameModeMap(Client client, uint gmId, uint mapId)
+        {
+            try
+            {
+                BaseGameMode gameMode = Main.GameModeHandler.GetGameModeById(gmId);
+                gameMode.SetGameModeMapId(mapId);
+            }
+            catch (Exception e)
+            {
+                Main.Logger.LogClient(client, e.Message);
+            }
+        }
+
+        [Command("addplayertogm")]
+        public void AddPlayerToGameMode(Client client, uint gmId, string playerFirstName, string playerSecondName = "")
+        {
+            Client player = ServerUtilities.GetPlayerIfExists(client, playerFirstName, playerSecondName);
+            if (player == null)
+            {
+                return;
+            }
+
+            try
+            {
+                BaseGameMode gameMode = Main.GameModeHandler.GetGameModeById(gmId);
+                gameMode.AddPlayer(player);
+                Main.Logger.LogClient(gameMode.GetGameModeData().EventHost, $"{client.Name} joined the event ({gameMode.GetGameModeData().Id}) {gameMode.GetGameModeData().Name}.");
+                Main.Logger.LogClient(client, $"You joined the event ({gameMode.GetGameModeData().Id}) {gameMode.GetGameModeData().Name}.");
+            }
+            catch (Exception e)
+            {
+                Main.Logger.LogClient(client, e.Message);
+            }
+        }
+
+        [ServerEvent(Event.ChatMessage)]
+        public void OnChatTest(Client client, uint gmId, string message)
+        {
+            if (message.Trim() == COMMAND_GAMEMODE_SET_MAP)
+            {
+                try
+                {
+                    BaseGameMode gameMode = Main.GameModeHandler.GetGameModeById(gmId);
+                    List<BaseGameModeMapData> suitableMaps = Main.GameModeHandler.GetSuitableMaps(gameMode.GetGameModeData().Type);
+
+                    string response = "";
+                    for (int i = 0; i < suitableMaps.Count; i++)
+                    {
+                        BaseGameModeMapData mapData = suitableMaps[i];
+                        response += $"({mapData.MapId}) ${mapData.DisplayName}";
+
+                        if (i < suitableMaps.Count - 1)
+                        {
+                            response += ",";
+                        }
+                    }
+
+                    Main.Logger.LogClient(client, "Suitable Maps:");
+                    Main.Logger.LogClient(client, response);
+                }
+                catch (Exception e)
+                {
+                    Main.Logger.LogClient(client, e.Message);
+                }
+            }
+        }
+
         #endregion
 
     }
