@@ -53,24 +53,26 @@ namespace ClientCameraEffects
                     {
                         var interpolateBaby = new Timer(() =>
                         {
-                            int cameraTo = RAGE.Game.Cam.CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", targetX, targetY, targetZ + (firstHeight + secondHeight + thirdHeight), rotX, rotY, rotZ, 5, false, 0);
+
+                            var cameraRot = RAGE.Game.Cam.GetCamRot(camera, 2);
+                            int cameraTo = RAGE.Game.Cam.CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", targetX, targetY, targetZ + thirdHeight, cameraRot.X, cameraRot.Y, cameraRot.Z, 5, false, 0);
                             RAGE.Game.Cam.SetCamActive(cameraTo, true);
-                            RAGE.Game.Cam.PointCamAtEntity(cameraTo, player.Handle, 0f, 0f, 0f, true);
+                            //RAGE.Game.Cam.PointCamAtEntity(cameraTo, player.Handle, 0f, 0f, 0f, true);
 
                             RAGE.Game.Cam.SetCamActiveWithInterp(cameraTo, camera, 1500, 4, 1);
                             RAGE.Game.Cam.RenderScriptCams(true, true, 1, false, false, 0);
 
                             var finalDun = new Timer(() =>
                             {
-                                SetCameraPosWithEffect(cameraTo, targetX, targetY, targetZ + thirdHeight, 1000, () =>
+                                SetCameraPosWithEffect(cameraTo, targetX, targetY, targetZ + secondHeight, 1000, () =>
                                 {
-                                    SetCameraPosWithEffect(cameraTo, targetX, targetY, targetZ + secondHeight, 1000, () =>
+                                    SetCameraPosWithEffect(cameraTo, targetX, targetY, targetZ + firstHeight, 1000, () =>
                                     {
-                                        SetCameraPosWithEffect(cameraTo, targetX, targetY, targetZ + firstHeight, 1000, () =>
+                                        //SetCameraPosWithEffect(cameraTo, targetX, targetY, targetZ + firstHeight, 1000, () =>
                                         {
                                             RAGE.Game.Cam.RenderScriptCams(false, false, 0, false, false, 0);
                                             RAGE.Game.Graphics.StartScreenEffect("SwitchShortNeutralIn", 0, false);
-                                        });
+                                        }
 
                                     });
 
