@@ -28,11 +28,6 @@ namespace ProjectUnion.Server
             OwnerCommands.AddRange(new List<string>() { COMMAND_VEHICLE_RESPAWN_ALL, COMMAND_VEHICLE_SET_OWNER });
         }
 
-
-        #region Utilities
-
-        #endregion
-
         #region General Commands
 
         [Command("pos")]
@@ -66,7 +61,8 @@ namespace ProjectUnion.Server
         {
             if (await ServerUtilities.CanUseCommand(client, COMMAND_VEHICLE_CREATE) == false) return;
             uint vehHash = NAPI.Util.GetHashKey(vehName);
-            NAPI.Vehicle.CreateVehicle(vehHash, client.Position.Around(5), client.Heading, 112, 112);
+            var vehicle = NAPI.Vehicle.CreateVehicle(vehHash, client.Position.Around(5), client.Heading, 112, 112);
+            Main.Logger.LogClient(client, $"Spawned vehicle ({vehicle.DisplayName}).");
         }
 
         /// <summary>
@@ -92,22 +88,24 @@ namespace ProjectUnion.Server
             if (characterData == null) return;
 
             VehicleData vehicleData = vehicle.GetData(VehicleData.VEHICLE_DATA_KEY);
-            if (vehicleData != null)
-            {
-                if (vehicleData.OwnerId != characterData.Id)
-                {
-                    client.SendChatMessage("You do not own this vehicle!");
-                    return;
-                }
 
-                vehicleData.SetPosition(vehicle.Position);
-                vehicleData.Heading = vehicle.Heading;
-                VehicleDatabase.SaveVehicle(vehicleData);
-            }
-            else
+            //No owner
+            if (vehicleData == null)
             {
                 client.SendChatMessage("You do not own this vehicle!");
+                return;
             }
+
+            if (vehicleData.OwnerId != characterData.Id)
+            {
+                client.SendChatMessage("You do not own this vehicle!");
+                return;
+            }
+
+            vehicleData.SetPosition(vehicle.Position);
+            vehicleData.Heading = vehicle.Heading;
+            VehicleDatabase.SaveVehicle(vehicleData);
+            Main.Logger.LogClient(client, $"({vehicle.DisplayName}) parked at {vehicle.Position}");
         }
 
 
@@ -126,52 +124,59 @@ namespace ProjectUnion.Server
                 return;
             }
 
-            CharacterData ownerCharacterData = owner.GetData(CharacterData.CHARACTER_DATA_KEY);
+            CharacterData newOwnerCharacterData = owner.GetData(CharacterData.CHARACTER_DATA_KEY);
 
-            if (ownerCharacterData == null) return;
+            if (newOwnerCharacterData == null) return;
 
             CharacterData clientCharacterData = client.GetData(CharacterData.CHARACTER_DATA_KEY);
             //Owner is Client
             bool isClientOwner = false;
-            if (clientCharacterData != null && clientCharacterData.Id == ownerCharacterData.Id)
+            if (clientCharacterData != null && clientCharacterData.Id == newOwnerCharacterData.Id)
             {
                 isClientOwner = true;
             }
 
             VehicleData vehicleData = vehicle.GetData(VehicleData.VEHICLE_DATA_KEY);
+
             if (vehicleData != null)
             {
-                if (vehicleData.OwnerId == ownerCharacterData.Id)
+                if (vehicleData.OwnerId == newOwnerCharacterData.Id)
                 {
                     if (isClientOwner)
                     {
-                        Main.Logger.LogClient(client, "You already own this vehicle!");
+                        Main.Logger.LogClient(client, $"You already own ({vehicleData.Id}) {vehicle.DisplayName}.");
                     }
                     else
                     {
-                        Main.Logger.LogClient(client, $"{ownerCharacterData.Name} already owns this vehicle!");
+                        Main.Logger.LogClient(client, $"{newOwnerCharacterData.Name} already owns ({vehicleData.Id}) {vehicle.DisplayName}.");
                     }
                     return;
                 }
+                else
+                {
+                    vehicleData.OwnerId = newOwnerCharacterData.Id;
+                    VehicleDatabase.SaveVehicle(vehicleData);
+                }
+            }
+            else
+            {
+                vehicleData = new VehicleData()
+                {
+                    VehicleName = ((VehicleHash)vehicle.Model).ToString(),
+                    Color1 = vehicle.PrimaryColor,
+                    Color2 = vehicle.SecondaryColor,
+                    Heading = vehicle.Heading,
+                    OwnerId = newOwnerCharacterData.Id
+                };
+
+                vehicleData.SetPosition(vehicle.Position);
+
+                vehicleData = await VehicleDatabase.CreateVehicle(vehicleData);
+                vehicle.SetData(VehicleData.VEHICLE_DATA_KEY, vehicleData);
             }
 
 
-            vehicleData = new VehicleData()
-            {
-                VehicleName = ((VehicleHash)vehicle.Model).ToString(),
-                Color1 = vehicle.PrimaryColor,
-                Color2 = vehicle.SecondaryColor,
-                Heading = vehicle.Heading,
-                OwnerId = ownerCharacterData.Id
-            };
-
-            vehicleData.SetPosition(vehicle.Position);
-
-            vehicleData = await VehicleDatabase.CreateVehicle(vehicleData);
-            vehicle.SetData(VehicleData.VEHICLE_DATA_KEY, vehicleData);
-
-
-            Main.Logger.LogClient(client, $"Gave {ownerCharacterData.Name} ownership of {vehicle.DisplayName}.");
+            Main.Logger.LogClient(client, $"Gave {newOwnerCharacterData.Name} ownership of {vehicle.DisplayName}.");
             Main.Logger.LogClient(owner, $"{clientCharacterData.Name} gave you ownership of {vehicle.DisplayName}.");
         }
 

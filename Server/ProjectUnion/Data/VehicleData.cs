@@ -96,6 +96,7 @@ namespace ProjectUnion.Data
         public static async void SaveVehicle(VehicleData vehicleData)
         {
             string query = $@"UPDATE Vehicles SET 
+                                `owner_id` = '{vehicleData.OwnerId}', 
                                 `position_x` = '{vehicleData.PositionX}', 
                                 `position_y` = '{vehicleData.PositionY}', 
                                 `position_z` = '{vehicleData.PositionZ}',
