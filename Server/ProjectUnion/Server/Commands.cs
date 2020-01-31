@@ -1,5 +1,7 @@
 ﻿using GTANetworkAPI;
 using ProjectUnion.Data;
+using ProjectUnion.GameModes;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -10,22 +12,23 @@ namespace ProjectUnion.Server
     public class Commands : Script
     {
 
-        public static List<string> GeneralCommands;
         public static List<string> AdminCommands;
+        public static List<string> LeadAdminCommands;
         public static List<string> OwnerCommands;
 
         public Commands()
         {
-            GeneralCommands = new List<string>() { COMMAND_VEHICLE_PARK };
-
             AdminCommands = new List<string>();
-            AdminCommands.AddRange(GeneralCommands);
             AdminCommands.AddRange(new List<string>() { COMMAND_VEHICLE_CREATE });
+
+            LeadAdminCommands = new List<string>();
+            LeadAdminCommands.AddRange(AdminCommands);
+            LeadAdminCommands.AddRange(new List<string>() { COMMAND_VEHICLE_RESPAWN_ALL, COMMAND_VEHICLE_SET_OWNER });
 
 
             OwnerCommands = new List<string>();
-            OwnerCommands.AddRange(AdminCommands);
-            OwnerCommands.AddRange(new List<string>() { COMMAND_VEHICLE_RESPAWN_ALL, COMMAND_VEHICLE_SET_OWNER });
+            OwnerCommands.AddRange(LeadAdminCommands);
+            OwnerCommands.AddRange(new List<string>() { });
         }
 
         #region General Commands
@@ -33,12 +36,28 @@ namespace ProjectUnion.Server
         [Command("pos")]
         public void CMD_GetPosition(Client client)
         {
-            Main.Logger.LogClient(client, $"Position: [{client.Position}]");
+            Vehicle vehicle = client.Vehicle;
+            if (vehicle != null)
+            {
+                Main.Logger.LogClient(client, $"Position: [{vehicle.Position}, Heading: {vehicle.Heading}]");
+                Main.Logger.Log($"Position: [{vehicle.Position}, Heading: {vehicle.Heading}]");
+            }
+            else
+            {
+                Main.Logger.LogClient(client, $"Position: [{client.Position}, Heading: {client.Heading}]");
+                Main.Logger.Log($"Position: [{client.Position}, Heading: {client.Heading}]");
+            }
         }
         [Command("dc")]
         public void Disconnect(Client client)
         {
             NAPI.Player.KickPlayer(client);
+        }
+
+        [Command("die")]
+        public void Die(Client client)
+        {
+            NAPI.Player.SetPlayerHealth(client, 0);
         }
 
         #endregion
@@ -79,7 +98,6 @@ namespace ProjectUnion.Server
         [Command(COMMAND_VEHICLE_PARK)]
         public async void CMD_ParkVehicle(Client client)
         {
-            if (await ServerUtilities.CanUseCommand(client, COMMAND_VEHICLE_PARK) == false) return;
             Vehicle vehicle = NAPI.Player.GetPlayerVehicle(client);
             if (vehicle == null) return;
 
@@ -193,5 +211,198 @@ namespace ProjectUnion.Server
         }
         #endregion
 
+
+        #region GameMode Commands
+
+        public const string COMMAND_GAMEMODE_CREATE = "creategm";
+        public const string COMMAND_GAMEMODE_DESTROY = "destroygm";
+        public const string COMMAND_GAMEMODE_GET_MY_GAMEMODES = "mygms";
+        public const string COMMAND_GAMEMODE_SET_MAP = "setgmmap";
+        public const string COMMAND_GAMEMODE_ADD_PLAYER_TO_GAMEMODE = "addgmplayer";
+        public const string COMMAND_GAMEMODE_REMOVE_PLAYER_TO_GAMEMODE = "removegmplayer";
+        public const string COMMAND_GAMEMODE_START = "startgmcount";
+        public const string COMMAND_GAMEMODE_STOP_COUNTDOWN = "stopgmcount";
+
+        [Command(COMMAND_GAMEMODE_START)]
+        public void StartGameMode(Client client, uint gmId, bool startImmediately = false)
+        {
+            try
+            {
+                BaseGameMode gameMode = GameModeHandler.Instance.GetGameModeById(gmId);
+
+                if (startImmediately == false)
+                {
+                    gameMode.StartCountdown();
+                }
+                else
+                {
+                    gameMode.StartGameMode();
+                }
+
+
+            }
+            catch (Exception e)
+            {
+                Main.Logger.LogClient(client, e.Message);
+            }
+        }
+
+        [Command(COMMAND_GAMEMODE_STOP_COUNTDOWN)]
+        public void StartGameMode(Client client, uint gmId)
+        {
+            try
+            {
+                BaseGameMode gameMode = GameModeHandler.Instance.GetGameModeById(gmId);
+                gameMode.StopGameModeCountdown();
+                Main.Logger.LogClient(client, "Game Mode countdown stopped.");
+            }
+            catch (Exception e)
+            {
+                Main.Logger.LogClient(client, e.Message);
+            }
+        }
+        [Command(COMMAND_GAMEMODE_CREATE)]
+        public void CreateGameMode(Client client, int gmType)
+        {
+            try
+            {
+                uint gameModeId = GameModeHandler.Instance.CreateGameMode(client, (GameModeType)gmType);
+                Main.Logger.LogClient(client, $"Created Game Mode with Id {gameModeId}");
+            }
+            catch (Exception e)
+            {
+                Main.Logger.LogClient(client, e.Message);
+            }
+        }
+        [Command(COMMAND_GAMEMODE_DESTROY)]
+        public void CMD_DestroyGameMode(Client client, uint gmId)
+        {
+            try
+            {
+                BaseGameMode gameMode = GameModeHandler.Instance.GetGameModeById(gmId);
+                gameMode.DestroyGameMode();
+                Main.Logger.LogClient(client, $"Destroyed Game Mode with Id {gmId}");
+            }
+            catch (Exception e)
+            {
+                Main.Logger.LogClient(client, e.Message);
+            }
+        }
+
+        [Command(COMMAND_GAMEMODE_GET_MY_GAMEMODES)]
+        public void GetMyGameModes(Client client)
+        {
+            try
+            {
+                List<BaseGameMode> myGameModes = GameModeHandler.Instance.GetGameModeByHost(client);
+                string response = "";
+
+                if (myGameModes.Count == 0)
+                {
+                    response += "You are not hosting any game modes.";
+                }
+
+                for (int i = 0; i < myGameModes.Count; i++)
+                {
+                    BaseGameMode gm = myGameModes[i];
+                    response += $"({gm.GetGameModeData().Id}) {gm.GetGameModeData().Name}";
+
+                    if (i < myGameModes.Count - 1)
+                    {
+                        response += ", ";
+                    }
+                }
+                Main.Logger.LogClient(client, response);
+            }
+            catch (Exception e)
+            {
+                Main.Logger.LogClient(client, e.Message);
+            }
+        }
+
+        [Command(COMMAND_GAMEMODE_SET_MAP)]
+        public void SetGameModeMap(Client client, uint gmId, uint mapId = 99999999)
+        {
+            try
+            {
+                //map id not specified
+                if (mapId == 99999999)
+                {
+                    BaseGameMode gameMode = GameModeHandler.Instance.GetGameModeById(gmId);
+                    List<BaseGameModeMapData> suitableMaps = GameModeHandler.Instance.GetSuitableMaps(gameMode.GetGameModeData().Type);
+
+                    string response = "Suitable Maps: ";
+                    for (int i = 0; i < suitableMaps.Count; i++)
+                    {
+                        BaseGameModeMapData mapData = suitableMaps[i];
+                        response += $"({mapData.MapId}) {mapData.DisplayName}";
+
+                        if (i < suitableMaps.Count - 1)
+                        {
+                            response += ", ";
+                        }
+                    }
+
+                    Main.Logger.LogClient(client, response);
+                }
+                else
+                {
+
+                    BaseGameMode gameMode = GameModeHandler.Instance.GetGameModeById(gmId);
+                    gameMode.SetGameModeMapId(mapId);
+                }
+            }
+            catch (Exception e)
+            {
+                Main.Logger.LogClient(client, e.Message);
+            }
+        }
+
+        [Command(COMMAND_GAMEMODE_ADD_PLAYER_TO_GAMEMODE)]
+        public void AddPlayerToGameMode(Client client, uint gmId, string playerFirstName, string playerSecondName = "")
+        {
+            Client player = ServerUtilities.GetPlayerIfExists(client, playerFirstName, playerSecondName);
+            if (player == null)
+            {
+                return;
+            }
+
+            try
+            {
+                BaseGameMode gameMode = GameModeHandler.Instance.GetGameModeById(gmId);
+                gameMode.AddPlayer(player);
+                Main.Logger.LogClient(gameMode.GetGameModeData().EventHost, $"{client.Name} joined the event ({gameMode.GetGameModeData().Id}) {gameMode.GetGameModeData().Name}.");
+                Main.Logger.LogClient(player, $"You were added to the event ({gameMode.GetGameModeData().Id}) {gameMode.GetGameModeData().Name} by {client.Name}.");
+            }
+            catch (Exception e)
+            {
+                Main.Logger.LogClient(client, e.Message);
+            }
+        }
+
+        [Command(COMMAND_GAMEMODE_REMOVE_PLAYER_TO_GAMEMODE)]
+        public void CMD_RemovePlayerFromGameMode(Client client, uint gmId, string playerFirstName, string playerSecondName = "")
+        {
+            Client player = ServerUtilities.GetPlayerIfExists(client, playerFirstName, playerSecondName);
+            if (player == null)
+            {
+                return;
+            }
+
+            try
+            {
+                BaseGameMode gameMode = GameModeHandler.Instance.GetGameModeById(gmId);
+                gameMode.RemovePlayer(player);
+                Main.Logger.LogClient(gameMode.GetGameModeData().EventHost, $"{client.Name} joined the event ({gameMode.GetGameModeData().Id}) {gameMode.GetGameModeData().Name}.");
+                Main.Logger.LogClient(player, $"You were added to the event ({gameMode.GetGameModeData().Id}) {gameMode.GetGameModeData().Name} by {client.Name}.");
+            }
+            catch (Exception e)
+            {
+                Main.Logger.LogClient(client, e.Message);
+            }
+        }
+
+
+        #endregion
     }
 }

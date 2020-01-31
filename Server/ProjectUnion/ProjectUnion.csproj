@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="GameModeMaps.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="GameModeMaps.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="meta.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -12,6 +12,8 @@ namespace ProjectUnion.Data
     {
         public const string PLAYER_TEMP_DATA_KEY = "PLAYER_TEMP_DATA_KEY";
         public uint LoginIndex { get; set; }
+
+        public uint? GamemodeId { get; set; }
     }
 
     public class PlayerData
@@ -154,6 +156,13 @@ namespace ProjectUnion.Data
             }
 
             return null;
+        }
+
+        internal static void SavePlayerData(Client player)
+        {
+            PlayerData playerData = player.GetData(PlayerData.PLAYER_DATA_KEY);
+            playerData.LastLogin = DateTime.Now;
+            SavePlayer(playerData);
         }
     }
 }
