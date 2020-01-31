@@ -2,8 +2,8 @@
     "Maps": [
         {
             "MapId": 0,
-            "DisplayName": "Canyon",
-            "EnumName": "Canyon",
+            "DisplayName": "Cannibal Fort",
+            "EnumName": "CannibalFort",
             "SuitedGameModes": [
                 "Deathmatch"
             ],
@@ -26,8 +26,8 @@
         },
         {
             "MapId": 1,
-            "DisplayName": "Cannibal Hill",
-            "EnumName": "CannibalHill",
+            "DisplayName": "Generic Rooftop",
+            "EnumName": "GenericRooftop",
             "SuitedGameModes": [
                 "LastCarStanding"
             ],
