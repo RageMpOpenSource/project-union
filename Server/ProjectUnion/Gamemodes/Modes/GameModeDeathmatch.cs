@@ -37,97 +37,95 @@ namespace ProjectUnion.GameModes.Modes
             base.TickTime = 50;
         }
 
-        protected override void OnAboutToStart()
-        {
-            Data.WeaponChosen = GetMapData().WeaponList[Main.Random.Next(GetMapData().WeaponList.Length)];
-        }
 
         protected override void OnAddPlayer(Client client)
         {
         }
 
-        protected override void OnStart()
+        private void StashPlayerWeapons(Client client, int clientIndex)
         {
-            Data.TotalKills = new int[Data.CurrentPlayers.Count];
-            TeleportPlayersIn();
-            StashPlayerWeapons();
-            GiveWeaponToPlayers();
-            LogAllCurrentPlayers($"Kill everyone on sight! First one to {Data.KillTarget} wins!");
-        }
+            Data.WeaponStash.Add(clientIndex, new List<StoredWeaponData>());
 
-        private void StashPlayerWeapons()
-        {
-            for (int i = 0; i < GetGameModeData().CurrentPlayers.Count; i++)
+            if (client.Weapons == null)
             {
-                Client client = GetGameModeData().CurrentPlayers[i];
-                Data.WeaponStash.Add(i, new List<StoredWeaponData>());
+                return;
+            }
 
-                if (client.Weapons == null)
+            foreach (WeaponHash weapon in client.Weapons)
+            {
+                var storedData = new StoredWeaponData()
                 {
-                    Data.WeaponStash[i] = new List<StoredWeaponData>();
-                    continue;
-                }
-
-                foreach (WeaponHash weapon in client.Weapons)
-                {
-                    var storedData = new StoredWeaponData()
-                    {
-                        Hash = weapon,
-                        Ammo = NAPI.Player.GetPlayerWeaponAmmo(client, weapon)
-                    };
-                    Data.WeaponStash[i].Add(storedData);
-                }
+                    Hash = weapon,
+                    Ammo = NAPI.Player.GetPlayerWeaponAmmo(client, weapon)
+                };
+                Data.WeaponStash[clientIndex].Add(storedData);
             }
         }
 
-        private void RestorePlayerWeapons()
+        private void RestorePlayerWeapons(Client client, int clientIndex)
         {
-            for (int i = 0; i < GetGameModeData().CurrentPlayers.Count; i++)
+            client.RemoveAllWeapons();
+
+            List<StoredWeaponData> storedWeapons = Data.WeaponStash[clientIndex];
+
+            foreach (StoredWeaponData storedWeaponData in storedWeapons)
             {
-                Client client = GetGameModeData().CurrentPlayers[i];
-                client.RemoveAllWeapons();
-
-                List<StoredWeaponData> storedWeapons = Data.WeaponStash[i];
-
-                foreach (StoredWeaponData storedWeaponData in storedWeapons)
-                {
-                    NAPI.Player.GivePlayerWeapon(client, storedWeaponData.Hash, storedWeaponData.Ammo);
-                }
+                NAPI.Player.GivePlayerWeapon(client, storedWeaponData.Hash, storedWeaponData.Ammo);
             }
         }
 
-        private void GiveWeaponToPlayers()
-        {
-            foreach (Client client in Data.CurrentPlayers)
-            {
-                GiveWeaponToPlayer(client);
-            }
-        }
 
         private void GiveWeaponToPlayer(Client client)
         {
             NAPI.Player.GivePlayerWeapon(client, Data.WeaponChosen, 200);
         }
 
-        protected override void OnStartCountdown()
+        protected override void OnPrepare()
+        {
+            Data.TotalKills = new int[Data.CurrentPlayers.Count];
+            Data.WeaponChosen = GetMapData().WeaponList[Main.Random.Next(GetMapData().WeaponList.Length)];
+        }
+
+
+        protected override void OnSetPlayerState(Client client, int clientIndex)
+        {
+            StashPlayerWeapons(client, clientIndex);
+            GiveWeaponToPlayer(client);
+        }
+
+
+
+        protected override void OnStart()
+        {
+            TeleportPlayersIn();
+            LogAllCurrentPlayers($"Kill everyone on sight! First one to {Data.KillTarget} wins!");
+        }
+        protected override void OnResetPlayerState(Client client, int clientIndex)
+        {
+            RestorePlayerWeapons(client, clientIndex);
+        }
+
+        protected override void OnFinished()
         {
         }
 
-        protected override void OnStop()
+
+        protected override void OnDestroy()
         {
-            RestorePlayerWeapons();
-            TeleportPlayersOut();
         }
 
         protected override void OnTick()
         {
-            for (int i = 0; i < Data.TotalKills.Length; i++)
+            if (IsGameModeFinished == false)
             {
-                int kills = Data.TotalKills[i];
-                if (kills >= Data.KillTarget)
+                for (int i = 0; i < Data.TotalKills.Length; i++)
                 {
-                    LogAllCurrentPlayers($"{Data.CurrentPlayers[i].Name} wins!");
-                    StopGameMode();
+                    int kills = Data.TotalKills[i];
+                    if (kills >= Data.KillTarget)
+                    {
+                        LogAllCurrentPlayers($"{Data.CurrentPlayers[i].Name} wins!");
+                        FinishGameMode();
+                    }
                 }
             }
         }
@@ -144,6 +142,10 @@ namespace ProjectUnion.GameModes.Modes
             {
                 GiveWeaponToPlayer(client);
             });
+        }
+
+        protected override void OnRemovePlayer(Client client)
+        {
         }
     }
 }

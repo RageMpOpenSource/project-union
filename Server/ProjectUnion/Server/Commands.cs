@@ -28,7 +28,7 @@ namespace ProjectUnion.Server
 
             OwnerCommands = new List<string>();
             OwnerCommands.AddRange(LeadAdminCommands);
-            OwnerCommands.AddRange(new List<string>() {});
+            OwnerCommands.AddRange(new List<string>() { });
         }
 
         #region General Commands
@@ -215,11 +215,13 @@ namespace ProjectUnion.Server
         #region GameMode Commands
 
         public const string COMMAND_GAMEMODE_CREATE = "creategm";
+        public const string COMMAND_GAMEMODE_DESTROY = "destroygm";
         public const string COMMAND_GAMEMODE_GET_MY_GAMEMODES = "mygms";
         public const string COMMAND_GAMEMODE_SET_MAP = "setgmmap";
-        public const string COMMAND_GAMEMODE_ADD_PLAYER_TO_GAMEMODE = "addplayertogm";
-        public const string COMMAND_GAMEMODE_START = "startgm";
-        public const string COMMAND_GAMEMODE_STOP = "stopgm";
+        public const string COMMAND_GAMEMODE_ADD_PLAYER_TO_GAMEMODE = "addgmplayer";
+        public const string COMMAND_GAMEMODE_REMOVE_PLAYER_TO_GAMEMODE = "removegmplayer";
+        public const string COMMAND_GAMEMODE_START = "startgmcount";
+        public const string COMMAND_GAMEMODE_STOP_COUNTDOWN = "stopgmcount";
 
         [Command(COMMAND_GAMEMODE_START)]
         public void StartGameMode(Client client, uint gmId, bool startImmediately = false)
@@ -236,6 +238,8 @@ namespace ProjectUnion.Server
                 {
                     gameMode.StartGameMode();
                 }
+
+
             }
             catch (Exception e)
             {
@@ -243,13 +247,14 @@ namespace ProjectUnion.Server
             }
         }
 
-        [Command(COMMAND_GAMEMODE_STOP)]
+        [Command(COMMAND_GAMEMODE_STOP_COUNTDOWN)]
         public void StartGameMode(Client client, uint gmId)
         {
             try
             {
                 BaseGameMode gameMode = GameModeHandler.Instance.GetGameModeById(gmId);
-                gameMode.StopGameMode();
+                gameMode.StopGameModeCountdown();
+                Main.Logger.LogClient(client, "Game Mode countdown stopped.");
             }
             catch (Exception e)
             {
@@ -263,6 +268,20 @@ namespace ProjectUnion.Server
             {
                 uint gameModeId = GameModeHandler.Instance.CreateGameMode(client, (GameModeType)gmType);
                 Main.Logger.LogClient(client, $"Created Game Mode with Id {gameModeId}");
+            }
+            catch (Exception e)
+            {
+                Main.Logger.LogClient(client, e.Message);
+            }
+        }
+        [Command(COMMAND_GAMEMODE_DESTROY)]
+        public void CMD_DestroyGameMode(Client client, uint gmId)
+        {
+            try
+            {
+                BaseGameMode gameMode = GameModeHandler.Instance.GetGameModeById(gmId);
+                gameMode.DestroyGameMode();
+                Main.Logger.LogClient(client, $"Destroyed Game Mode with Id {gmId}");
             }
             catch (Exception e)
             {
@@ -361,7 +380,29 @@ namespace ProjectUnion.Server
             }
         }
 
-        #endregion
+        [Command(COMMAND_GAMEMODE_REMOVE_PLAYER_TO_GAMEMODE)]
+        public void CMD_RemovePlayerFromGameMode(Client client, uint gmId, string playerFirstName, string playerSecondName = "")
+        {
+            Client player = ServerUtilities.GetPlayerIfExists(client, playerFirstName, playerSecondName);
+            if (player == null)
+            {
+                return;
+            }
 
+            try
+            {
+                BaseGameMode gameMode = GameModeHandler.Instance.GetGameModeById(gmId);
+                gameMode.RemovePlayer(player);
+                Main.Logger.LogClient(gameMode.GetGameModeData().EventHost, $"{client.Name} joined the event ({gameMode.GetGameModeData().Id}) {gameMode.GetGameModeData().Name}.");
+                Main.Logger.LogClient(player, $"You were added to the event ({gameMode.GetGameModeData().Id}) {gameMode.GetGameModeData().Name} by {client.Name}.");
+            }
+            catch (Exception e)
+            {
+                Main.Logger.LogClient(client, e.Message);
+            }
+        }
+
+
+        #endregion
     }
 }

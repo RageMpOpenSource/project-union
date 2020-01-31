@@ -25,21 +25,35 @@ namespace ProjectUnion.GameModes.Modes
         {
         }
 
-        protected override void OnAboutToStart()
-        {
-            Data.VehicleChosen = GetMapData().VehicleList[Main.Random.Next(GetMapData().VehicleList.Length)];
-            SpawnVehicles();
-        }
 
         protected override void OnAddPlayer(Client client)
         {
         }
 
+        protected override void OnRemovePlayer(Client client)
+        {
+        }
+
+        protected override void OnPrepare()
+        {
+            Data.VehicleChosen = GetMapData().VehicleList[Main.Random.Next(GetMapData().VehicleList.Length)];
+            SavePlayersPosition();
+            SpawnVehicles();
+        }
+
+        protected override void OnSetPlayerState(Client client, int clientIndex)
+        {
+            SpawnPlayersIntoVehicles();
+        }
+
+        protected override void OnResetPlayerState(Client client, int clientIndex)
+        {
+        }
+
+
         protected override void OnStart()
         {
             LogAllCurrentPlayers("Don't fall off the edge!");
-            SavePlayerPositions();
-            SpawnPlayersIntoVehicles();
         }
 
         private void SpawnPlayersIntoVehicles()
@@ -47,18 +61,12 @@ namespace ProjectUnion.GameModes.Modes
             for (int i = 0; i < Data.CurrentPlayers.Count; i++)
             {
                 NAPI.Player.SetPlayerIntoVehicle(Data.CurrentPlayers[i], Data.CurrentVehicles[i], -1);
-                NAPI.Vehicle.BreakVehicleDoor(Data.CurrentVehicles[i], 0, true);
-                NAPI.Vehicle.BreakVehicleWindow(Data.CurrentVehicles[i], 0, true);
-                NAPI.Vehicle.BreakVehicleWindow(Data.CurrentVehicles[i], 1, true);
-                NAPI.Vehicle.BreakVehicleWindow(Data.CurrentVehicles[i], 2, true);
-                NAPI.Vehicle.BreakVehicleWindow(Data.CurrentVehicles[i], 3, true);
             }
         }
 
-        protected override void OnStop()
+        protected override void OnDestroy()
         {
             DeleteVehicles();
-            TeleportPlayersOut();
         }
 
         private void DeleteVehicles()
@@ -75,10 +83,6 @@ namespace ProjectUnion.GameModes.Modes
             Data.CurrentVehicles = new List<Vehicle>();
         }
 
-        protected override void OnStartCountdown()
-        {
-            Data.VehicleChosen = GetMapData().VehicleList[Main.Random.Next(GetMapData().VehicleList.Length)];
-        }
 
         private void SpawnVehicles()
         {
@@ -89,11 +93,8 @@ namespace ProjectUnion.GameModes.Modes
                 int randomIndex = Main.Random.Next(0, vehicleStartPositions.Count);
                 GamePosition vehicleSpawnPoint = vehicleStartPositions[i];
                 vehicleStartPositions.RemoveAt(randomIndex);
-                NAPI.Task.Run(() =>
-                {
-                    Vehicle vehicle = NAPI.Vehicle.CreateVehicle(Data.VehicleChosen, vehicleSpawnPoint.GetPosition(), vehicleSpawnPoint.Heading, Main.Random.Next(0, 112), Main.Random.Next(0, 112), dimension: GameModeData.Id * 10);
-                    Data.CurrentVehicles.Add(vehicle);
-                });
+                Vehicle vehicle = NAPI.Vehicle.CreateVehicle(Data.VehicleChosen, vehicleSpawnPoint.GetPosition(), vehicleSpawnPoint.Heading, Main.Random.Next(0, 112), Main.Random.Next(0, 112), dimension: GameModeData.Id * 10);
+                Data.CurrentVehicles.Add(vehicle);
             }
         }
 
@@ -103,27 +104,33 @@ namespace ProjectUnion.GameModes.Modes
             for (int i = 0; i < Data.CurrentVehicles.Count; i++)
             {
                 Vehicle vehicle = Data.CurrentVehicles[i];
-                if (vehicle.Position.Z <= GetMapData().DeathZ)
+                if (vehicle != null)
                 {
-                    NAPI.ClientEvent.TriggerClientEvent(Data.CurrentPlayers[i], "TriggerVehicleExplosion");
-                    Data.CurrentVehicles[i] = null;
-                    Data.CurrentPlayers[i].Health = 100;
-                }
-                else
-                {
-                    vehicle.Health = 100;
+                    if (vehicle.Position.Z <= GetMapData().DeathZ)
+                    {
+                        NAPI.ClientEvent.TriggerClientEvent(Data.CurrentPlayers[i], "TriggerVehicleExplosion");
+                        Data.CurrentVehicles[i] = null;
+                    }
+
+                    if (vehicle.EngineStatus == false)
+                    {
+                        Data.CurrentVehicles[i] = null;
+                    }
                 }
             }
 
-            List<Vehicle> vehiclesLeft = Data.CurrentVehicles.Where(e => e != null).ToList();
-            if (vehiclesLeft.Count == 1)
+            if (IsGameModeFinished == false)
             {
-                for (int i = 0; i < vehiclesLeft.Count; i++)
+                List<Vehicle> vehiclesLeft = Data.CurrentVehicles.Where(e => e != null).ToList();
+                if (vehiclesLeft.Count == 0)
                 {
-                    if (vehiclesLeft[i] != null)
+                    for (int i = 0; i < vehiclesLeft.Count; i++)
                     {
-                        LogAllCurrentPlayers($"{Data.CurrentPlayers[i].Name} wins!");
-                        StopGameMode();
+                        if (vehiclesLeft[i] != null)
+                        {
+                            LogAllCurrentPlayers($"{Data.CurrentPlayers[i].Name} wins!");
+                            FinishGameMode();
+                        }
                     }
                 }
             }
@@ -135,6 +142,10 @@ namespace ProjectUnion.GameModes.Modes
         {
             GamePosition spectatePoint = GetMapData().SpectateSpawnPoints[Main.Random.Next(GetMapData().SpectateSpawnPoints.Length)];
             ServerUtilities.SpawnPlayerAfter(client, spectatePoint);
+        }
+
+        protected override void OnFinished()
+        {
         }
     }
 }

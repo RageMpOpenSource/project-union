@@ -68,15 +68,21 @@ namespace ProjectUnion.GameModes
 
         protected BaseGameModeData GameModeData = null;
         private bool _isStarted;
+        public bool IsGameModeDestroyed { get; internal set; }
+        public bool IsGameModeFinished { get; internal set; }
+        private bool DidGameModeBegin { get; set; }
 
 
-        protected abstract void OnAddPlayer(Client client);
-        protected abstract void OnAboutToStart();
+        protected abstract void OnPrepare();
         protected abstract void OnStart();
-        protected abstract void OnStop();
-        protected abstract void OnStartCountdown();
+        protected abstract void OnDestroy();
         protected abstract void OnTick();
         protected abstract void OnPlayerDeath(Client client, Client killer, uint reason);
+        protected abstract void OnAddPlayer(Client client);
+        protected abstract void OnRemovePlayer(Client client);
+        protected abstract void OnSetPlayerState(Client client, int clientIndex);
+        protected abstract void OnResetPlayerState(Client client, int clientIndex);
+        protected abstract void OnFinished();
 
         public BaseGameMode(GameModeHandler gameModeHandler, BaseGameModeData data, uint id, Client host, string name)
         {
@@ -93,7 +99,7 @@ namespace ProjectUnion.GameModes
         {
             if (_countdownTimer != null)
             {
-                throw new Exception($"GameMode countdown started, please stop gamemode with /{Commands.COMMAND_GAMEMODE_STOP} before trying to change any parameters.");
+                throw new Exception($"GameMode countdown started, please stop gamemode with /{Commands.COMMAND_GAMEMODE_STOP_COUNTDOWN} before trying to change any parameters.");
             }
         }
 
@@ -179,16 +185,13 @@ namespace ProjectUnion.GameModes
             _announceTimer = new System.Threading.Timer((e) =>
             {
                 AnnounceAboutToStart(timeTillGameModeStartsInMs / 1000);
-                OnAboutToStart();
             }, null, timeTillGameModeStartsInMs, System.Threading.Timeout.Infinite);
-
-            OnStartCountdown();
 
             Main.Logger.LogClient(GameModeData.EventHost, $"Game Mode {GameModeData.Id}'s countdown has begun.");
         }
 
 
-        public void StopCountdown()
+        private void StopCountdown()
         {
             if (_countdownTimer != null)
             {
@@ -221,21 +224,41 @@ namespace ProjectUnion.GameModes
         {
             StopCountdown();
             VerifyGameModeValid();
-            _isStarted = true;
-            Main.Logger.LogClient(GameModeData.EventHost, $"Game Mode {GameModeData.Id} has begun.");
-            _tickTimer = new System.Threading.Timer(Tick, null, TickTime, System.Threading.Timeout.Infinite);
-            OnStart();
 
-
-            foreach (Client client in GameModeData.CurrentPlayers)
+            NAPI.Task.Run(() =>
             {
-                PlayerTempData playerTempData = client.GetData(PlayerTempData.PLAYER_TEMP_DATA_KEY);
-                playerTempData.GamemodeId = GameModeData.Id;
-                client.SetData(PlayerTempData.PLAYER_TEMP_DATA_KEY, playerTempData);
-            }
 
+                OnPrepare();
+
+                for (int clientIndex = 0; clientIndex < GameModeData.CurrentPlayers.Count; clientIndex++)
+                {
+                    Client client = GameModeData.CurrentPlayers[clientIndex];
+                    PlayerTempData playerTempData = client.GetData(PlayerTempData.PLAYER_TEMP_DATA_KEY);
+                    playerTempData.GamemodeId = GameModeData.Id;
+                    client.SetData(PlayerTempData.PLAYER_TEMP_DATA_KEY, playerTempData);
+
+                    OnSetPlayerState(client, clientIndex);
+                }
+
+                _isStarted = true;
+                _tickTimer = new System.Threading.Timer(Tick, null, TickTime, System.Threading.Timeout.Infinite);
+                Main.Logger.LogClient(GameModeData.EventHost, $"Game Mode {GameModeData.Id} has begun.");
+                DidGameModeBegin = true;
+
+                OnStart();
+
+            });
         }
 
+        protected void FinishGameMode()
+        {
+            if (IsGameModeFinished == false)
+            {
+                DestroyGameMode();
+                OnFinished();
+                IsGameModeFinished = true;
+            }
+        }
 
         protected void Tick(object state)
         {
@@ -246,7 +269,7 @@ namespace ProjectUnion.GameModes
             }
         }
 
-        protected void SavePlayerPositions()
+        protected void SavePlayersPosition()
         {
             for (int i = 0; i < GameModeData.CurrentPlayers.Count; i++)
             {
@@ -261,7 +284,7 @@ namespace ProjectUnion.GameModes
 
         protected void TeleportPlayersIn()
         {
-            SavePlayerPositions();
+            SavePlayersPosition();
             for (int i = 0; i < GameModeData.CurrentPlayers.Count; i++)
             {
                 Client player = GameModeData.CurrentPlayers[i];
@@ -272,21 +295,35 @@ namespace ProjectUnion.GameModes
             }
         }
 
-        protected void TeleportPlayersOut()
+        private void TeleportPlayersOut()
         {
-            for (int i = 0; i < GameModeData.CurrentPlayers.Count; i++)
+            if (DidGameModeBegin)
             {
-                Client client = GameModeData.CurrentPlayers[i];
-                GamePosition position = GameModeData.PlayerPositions[i];
+                for (int i = 0; i < GameModeData.CurrentPlayers.Count; i++)
+                {
+                    TeleportPlayerOut(GameModeData.CurrentPlayers[i]);
+                }
+            }
+        }
+
+
+        private void TeleportPlayerOut(Client client)
+        {
+            int clientIndex = GameModeData.CurrentPlayers.IndexOf(client);
+
+            if (clientIndex > -1)
+            {
+                GamePosition position = GameModeData.PlayerPositions[clientIndex];
                 ServerUtilities.SpawnPlayer(client, position);
 
                 PlayerTempData playerTempData = client.GetData(PlayerTempData.PLAYER_TEMP_DATA_KEY);
                 playerTempData.GamemodeId = null;
                 client.SetData(PlayerTempData.PLAYER_TEMP_DATA_KEY, playerTempData);
-
+                OnResetPlayerState(client, clientIndex);
             }
 
         }
+
 
 
         protected GamePosition GetRandomSpawnPosition()
@@ -295,26 +332,41 @@ namespace ProjectUnion.GameModes
             return mapData.SpawnPoints[Main.Random.Next(mapData.SpawnPoints.Length)];
         }
 
-        public virtual void StopGameMode()
+        public virtual void StopGameModeCountdown()
         {
-            if (_isStarted == false && _countdownTimer == null)
+            if (_countdownTimer == null)
             {
-                throw new Exception("Game mode not started.");
+                throw new Exception("Game mode countdown not started.");
             }
-            _isStarted = false;
 
-            System.Timers.Timer _spawnTimer = new System.Timers.Timer();
-            _spawnTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            _spawnTimer.Interval = 5000;
-            _spawnTimer.Enabled = true;
+            StopCountdown();
+        }
+
+        public void DestroyGameMode()
+        {
+
+            if (IsGameModeDestroyed)
+            {
+                throw new Exception("Game Mode already destroyed.");
+            }
+
+            StopCountdown();
+            IsGameModeDestroyed = true;
+
+            System.Timers.Timer _stopTimer = new System.Timers.Timer();
+            _stopTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            _stopTimer.Interval = 5000;
+            _stopTimer.Enabled = true;
 
             void OnTimedEvent(object sender, EventArgs e)
             {
                 StopCountdown();
-                OnStop();
+                TeleportPlayersOut();
+                OnDestroy();
 
-                _spawnTimer.Dispose();
-                _spawnTimer.Stop();
+                _stopTimer.Dispose();
+                _stopTimer.Stop();
+                _gameModeHandler.DestroyGameMode(this);
             }
         }
 
@@ -326,28 +378,51 @@ namespace ProjectUnion.GameModes
         }
 
 
-        public void AddPlayer(Client client)
-        {
-            PlayerTempData playerTempData = client.GetData(PlayerTempData.PLAYER_TEMP_DATA_KEY);
-
-            if (playerTempData.GamemodeId.HasValue)
-            {
-                BaseGameMode baseGameMode = _gameModeHandler.GetGameModeById(playerTempData.GamemodeId.Value);
-                throw new Exception($"You are already in the event ({baseGameMode.GetGameModeData().Id}) {baseGameMode.GetGameModeData().Name}.");
-            }
-
-            GameModeData.CurrentPlayers.Add(client);
-
-            OnAddPlayer(client);
-        }
-
 
         public void OnDeath(Client player, Client killer, uint reason)
         {
-            if (_isStarted)
+            if (_isStarted && IsPlayerInGameMode(player))
             {
                 OnPlayerDeath(player, killer, reason);
             }
+        }
+
+        private bool IsPlayerInGameMode(Client client)
+        {
+            return GetGameModeData().CurrentPlayers.IndexOf(client) > -1;
+        }
+
+        public void AddPlayer(Client client)
+        {
+            if (GameModeData.CurrentPlayers.Contains(client))
+            {
+                throw new Exception($"Player already in the event ({GetGameModeData().Id}) {GetGameModeData().Name}.");
+            }
+
+            if (DidGameModeBegin)
+            {
+                throw new Exception($"Gamemode already started!");
+            }
+
+            GameModeData.CurrentPlayers.Add(client);
+            OnAddPlayer(client);
+        }
+        public void RemovePlayer(Client client)
+        {
+            if (GameModeData.CurrentPlayers.Contains(client) == false)
+            {
+                throw new Exception($"Player is not in the event ({GetGameModeData().Id}) {GetGameModeData().Name}.");
+            }
+
+
+            OnRemovePlayer(client);
+
+            if (DidGameModeBegin)
+            {
+                TeleportPlayerOut(client);
+            }
+
+            GameModeData.CurrentPlayers.Remove(client);
         }
 
     }

@@ -70,12 +70,19 @@ namespace ProjectUnion.GameModes
 
         public BaseGameMode GetGameModeById(uint id)
         {
-            return _gameModes.Single(e => e.GetGameModeData().Id == id);
+            BaseGameMode baseGameMode = _gameModes.SingleOrDefault(e => e.GetGameModeData().Id == id);
+
+            if (baseGameMode == null)
+            {
+                throw new Exception("Game mode not found");
+            }
+
+            return baseGameMode;
         }
 
         public List<BaseGameMode> GetGameModeByHost(Client host)
         {
-            return _gameModes.Where(e => e.GetGameModeData().EventHost == host).ToList();
+            return _gameModes.Where(e => e.IsGameModeDestroyed == false && e.GetGameModeData().EventHost == host).ToList();
         }
 
 
@@ -95,6 +102,11 @@ namespace ProjectUnion.GameModes
             {
                 gameMode.OnDeath(player, killer, reason);
             }
+        }
+
+        public void DestroyGameMode(BaseGameMode baseGameMode)
+        {
+            _gameModes.Remove(baseGameMode);
         }
     }
 }
