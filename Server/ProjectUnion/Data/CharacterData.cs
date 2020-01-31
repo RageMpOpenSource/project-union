@@ -28,6 +28,13 @@ namespace ProjectUnion.Data
 
             return null;
         }
+
+        internal void SetPosition(Vector3 position)
+        {
+            PositionX = position.X;
+            PositionY = position.Y;
+            PositionZ = position.Z;
+        }
     }
 
     public static class CharacterDatabase
@@ -135,6 +142,15 @@ namespace ProjectUnion.Data
             }
 
             return new uint[0];
+        }
+
+        internal static void SaveCharacterData(Client player)
+        {
+            CharacterData characterData = player.GetData(CharacterData.CHARACTER_DATA_KEY);
+            characterData.PositionX = player.Position.X;
+            characterData.PositionY = player.Position.Y;
+            characterData.PositionZ = player.Position.Z;
+            SaveCharacter(characterData);
         }
 
         public static async Task<CharacterData> GetCharacterData(uint id)

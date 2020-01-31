@@ -118,16 +118,8 @@ namespace ProjectUnion.Events
         [ServerEvent(Event.PlayerDisconnected)]
         public void OnPlayerDisconnect(Client player, DisconnectionType type, string reason)
         {
-            PlayerData playerData = player.GetData(PlayerData.PLAYER_DATA_KEY);
-            playerData.LastLogin = DateTime.Now;
-            PlayerDatabase.SavePlayer(playerData);
-
-            CharacterData characterData = player.GetData(CharacterData.CHARACTER_DATA_KEY);
-            characterData.PositionX = player.Position.X;
-            characterData.PositionY = player.Position.Y;
-            characterData.PositionZ = player.Position.Z;
-            CharacterDatabase.SaveCharacter(characterData);
-
+            PlayerDatabase.SavePlayerData(player);
+            CharacterDatabase.SaveCharacterData(player);
 
             player.ResetData(PlayerData.PLAYER_DATA_KEY);
             player.ResetData(CharacterData.CHARACTER_DATA_KEY);

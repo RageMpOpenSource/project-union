@@ -157,5 +157,12 @@ namespace ProjectUnion.Data
 
             return null;
         }
+
+        internal static void SavePlayerData(Client player)
+        {
+            PlayerData playerData = player.GetData(PlayerData.PLAYER_DATA_KEY);
+            playerData.LastLogin = DateTime.Now;
+            SavePlayer(playerData);
+        }
     }
 }
